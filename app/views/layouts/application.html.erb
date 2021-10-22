@@ -4,8 +4,6 @@
     <title>Bachef</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   <%= render 'shared/navbar' %>
-   <%= render 'shared/flashes' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -15,8 +13,9 @@
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div class="navbar-lewagon navbar-collapse navbar-bachef">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <div class="navbar-bachef  navbar-expand-sm mt-n3 navbar-light navbar-collapse">
+  
+  <%= link_to root_path, class: "navbar-brand ml-3" do %>
       <%= image_tag "bachef_logo2.png" %>
   <% end %>
     <%= link_to root_path, class: "navbar-shop" do %>
@@ -25,25 +24,25 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="navbar-lewagon navbar-collapse navbar-brand navbar-bachef">
+    <div class="collaspse navbar-collapse">
         <% if user_signed_in? %>
         <li class="nav-item dropdown">
-            <%= image_tag "jfp.png", class: "avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "jfp.jpg", class: "avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Sign out",  destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Sign out",  destroy_user_session_path, method: :delete, class: "nav-link active" %>
             </div>
         </li>
       <% else %>
-        <li class="nav-item">
-            <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-info" %>
+        <li class="nav-item bulletpoints">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-info" %>
+        <li class="nav-item bulletpoints">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link active" %>
         </li>
       <% end %>
       </li>
     </ul>
-  </div>
+  <!--</div>-->
 </div>
     <%= yield %>
   </body>

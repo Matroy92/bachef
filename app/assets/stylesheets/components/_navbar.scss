@@ -1,22 +1,23 @@
-.navbar-lewagon {
+.navbar-bachef {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  border-bottom: solid 1px #E5E5E5;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-bachef .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-bachef .navbar-brand img {
+  width: 90px;
 }
 
-.navbar-lewagon .navbar-shop img {
+.navbar-bachef .navbar-shop img {
   width: 40px;
-  justify-content: center;
   opacity: 42%;
+
 }
 
-.navbar-bachef {
-  border-bottom: solid 1px #E5E5E5;
+.bulletpoints {
+  list-style-type: none;
 }
