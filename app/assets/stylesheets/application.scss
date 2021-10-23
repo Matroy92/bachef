@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+#main-container {
+    min-height: calc(100vh - 100px - 150px)
+}
+
+.bachef-bg {
+  background-color: $beige-bg;
+}

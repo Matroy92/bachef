@@ -1,7 +1,7 @@
 .navbar-bachef {
-  display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #E5E5E5;
+  height: 100px;
 }
 
 .navbar-bachef .navbar-collapse {
@@ -9,7 +9,7 @@
 }
 
 .navbar-bachef .navbar-brand img {
-  width: 90px;
+  width: 70px;
 }
 
 .navbar-bachef .navbar-shop img {
@@ -21,3 +21,4 @@
 .bulletpoints {
   list-style-type: none;
 }
+
