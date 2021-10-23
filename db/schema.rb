@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_084111) do
+ActiveRecord::Schema.define(version: 2021_10_23_092227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "card_games", force: :cascade do |t|
+    t.bigint "card_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_card_games_on_card_id"
+    t.index ["game_id"], name: "index_card_games_on_game_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.integer "calories"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "recipe_title"
+    t.string "recipe_content"
+    t.string "recipe_comment"
+    t.integer "user_rating"
+    t.string "objective"
+    t.integer "calories"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +59,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_084111) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "card_games", "cards"
+  add_foreign_key "card_games", "games"
+  add_foreign_key "games", "users"
 end
