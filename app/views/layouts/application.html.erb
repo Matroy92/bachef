@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bachef</title>
+    <title>B a chef : l'app pour devenir un vrai petit chef !</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bachef-bg">
+    <%=render 'shared/navbar' unless params[:controller] == 'pages' && params[:action] == 'home' %>
+    <div id="main-container">
+      <%=render 'shared/flashes' %>
+      <%= yield %>
+    </div>
+    <%=render 'shared/footer' %>
   </body>
 </html>

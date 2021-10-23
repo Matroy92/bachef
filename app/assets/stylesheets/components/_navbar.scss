@@ -1,12 +1,24 @@
-.navbar-lewagon {
+.navbar-bachef {
   justify-content: space-between;
-  background: white;
+  border-bottom: solid 1px #E5E5E5;
+  height: 100px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-bachef .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-bachef .navbar-brand img {
+  width: 70px;
 }
+
+.navbar-bachef .navbar-shop img {
+  width: 40px;
+  opacity: 42%;
+
+}
+
+.bulletpoints {
+  list-style-type: none;
+}
+
