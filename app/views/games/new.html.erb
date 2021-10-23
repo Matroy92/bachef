@@ -1,1 +1,9 @@
-<h2>Slectionne ton profil</h2>
+<div class="container">
+<%= simple_form_for  @game do |f| %>
+    <%= f.input :objective, :collection => %w[Equilibre Végétarien Gras] %>
+    <%= f.input :calories, :collection => (300..2000),  as: :range %>
+    <div class="text-center">
+      <%= f.submit "C'est parti !", class: "btn btn-outline-success mb-4" %>
+    </div>
+  <% end %>
+</div>
