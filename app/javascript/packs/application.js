@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import {searchInput} from '../plugins/api_marmiton';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,5 +32,5 @@ import {searchInput} from '../plugins/api_marmiton';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  searchInput();
+  
 });
