@@ -2,7 +2,7 @@
 <div class="container">
 <%= simple_form_for  @game do |f| %>
     <%= f.input :objective, :collection => %w[Equilibre Végétarien Gras] %>
-    <%= f.input :calories, :collection => (300..2000),  as: :range %>
+    <%= f.input :calories, as: :numeric %>
     <div class="text-center">
       <%= f.submit "C'est parti !", class: "btn btn-outline-success mb-4" %>
     </div>
