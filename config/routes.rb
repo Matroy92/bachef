@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     member do
       get '/finish', to: 'games#finish'
     end
+    get 'test_scrap', to: 'games#test_scrap', as: :test_scrap
   end
 end
