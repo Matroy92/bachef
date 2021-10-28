@@ -2,10 +2,9 @@
 <h3><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
   <h5>Mes cartes:</h5>
   <div class="list-group">
-    <%= simple_form_for @game do |f| %>
-      <%= f.association :cards, collection: @cards, as: :check_boxes %>
-      <%= f.submit "Submit" %>
+    <%= @game.cards.each do |card| %>
+      <h5><%= card.title %></h5>
     <% end %>
   </div>
+  <h3><%= "Mon nombre de calories : #{@calories}" %></h3>
 </div>
-

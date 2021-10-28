@@ -22,17 +22,27 @@ class GamesController < ApplicationController
       @cards = Card.all
    end
    
-   def finish_game
+   def update
       @game = Game.find(params[:id])
-      cards = params # <= il y aura les cartes selectionnées
-      cards.each do |card|
-         CardGame.create(game: @game, card: card)
+      @card_game = params.dig(:game, :card_ids).reject(&:blank?).each do |card_id|
+      CardGame.create(game: @game, card: Card.find(card_id))
       end
-
+      redirect_to finish_game_path(@game)
    end
 
-   def display_result
+   def calories_sum(game)
+      sum = 0
+      game.cards.each do |card_calories|
+         sum += card_calories.calories
+      end
+      return sum
    end
+   
+   def finish
+      @game = Game.find(params[:id])
+      @calories = calories_sum(@game)
+   end
+
 
    private
 
