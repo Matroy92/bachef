@@ -1,0 +1,17 @@
+.main-container {
+    display: flex;
+    margin-top: 100px;
+  }
+
+.container-card {
+    flex-grow: 1;
+    grid-template-rows: 100vh;
+    height: 100%;
+  }
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: space-around;
+  }
