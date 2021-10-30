@@ -1,4 +1,19 @@
+<div class="main-container">
+  <div class="container-card">
+    <div class="container-grid">
+      <div class="cercle">
+        <%= video_tag "vegan.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "cercle-gif"%>
+      </div>
+      <div class="cercle">
+      </div>
+      <div class="cercle">
+      </div>
+      <div class="cercle">
 
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <%= simple_form_for  @game do |f| %>
     <%= f.input :objective, :collection => %w[Equilibre Végétarien Gras] %>
@@ -9,7 +24,6 @@
   <% end %>
 
 </div>
-
 <%# Old submit button %>
 <%# btn btn-outline-success %>
 <%# <%= f.submit "C'est parti !", class: "btn-bachef" %>

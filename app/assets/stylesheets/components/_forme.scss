@@ -1,0 +1,23 @@
+
+.cercle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 4px solid;
+    border-color: $blue-bachef;
+}
+
+.cercle-gif {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  top: 100;
+  z-index: 0;
+  width: 136px;
+  height: 136px;
+}
