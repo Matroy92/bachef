@@ -7,6 +7,5 @@ const initBtnSubmit = () => {
             form.submit()
         })
     }
-
 }
 export { initBtnSubmit };
