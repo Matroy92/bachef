@@ -8,8 +8,14 @@
 
 require 'csv'
 
+CardGame.delete_all
+puts 'CardGame deleted'
+
 Card.delete_all
 puts 'Cards deleted'
+
+Game.delete_all
+puts 'Game deleted'
 
 User.delete_all
 puts "Users deleted"

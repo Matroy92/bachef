@@ -3,22 +3,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class GamesController < ApplicationController
-  def test_scrap
-    if params[:query].present?
-      url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{params[:query]}" #ok
-      html_file = URI.open(url).read
-      html_doc = Nokogiri::HTML(html_file)
-      html_doc.search('.MRTN__sc-30rwkm-0.dJvfhM').each do |element|
-        #puts "\n\n\n#{element.text.strip}\n\n\n"
-        #puts element.text.strip
-        @test = element.text.strip
-        
-        
-        
-      end
-      
-    end
-  end
+  
 
   def index
     
@@ -62,6 +47,7 @@ class GamesController < ApplicationController
    def finish
       @game = Game.find(params[:id])
       @calories = calories_sum(@game)
+      test_scrap
    end
 
 
@@ -70,5 +56,22 @@ class GamesController < ApplicationController
    def game_params
       params.require(:game).permit(:objective, :calories)
    end
+
+  def test_scrap
+    @game = Game.find(params[:id])
+    @ingredients = @game.cards.pluck(:title).join("-")
+
+    url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@ingredients}" #ok
+    # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
+    html_file = URI.open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    @results =  []
+    html_doc.search('.MRTN__sc-30rwkm-0.dJvfhM').each do |element|
+      #puts "\n\n\n#{element.text.strip}\n\n\n"
+      #puts element.text.strip
+      @test = element.text.strip
+      @results << @test
+    end
+  end
 
 end
