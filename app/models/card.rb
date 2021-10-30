@@ -17,6 +17,8 @@ class Card < ApplicationRecord
     }[category]
   end
   
+  monetize :price_cents
+
 private
 
   def good_title

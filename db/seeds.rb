@@ -9,13 +9,13 @@
 require 'csv'
 
 CardGame.delete_all
-puts 'CardGame deleted'
+puts 'Card games deleted'
+
+Game.delete_all
+puts 'Card games deleted'
 
 Card.delete_all
 puts 'Cards deleted'
-
-Game.delete_all
-puts 'Game deleted'
 
 User.delete_all
 puts "Users deleted"
@@ -34,6 +34,20 @@ csv_options = { col_sep: ';', headers: :first_row }
 filepath    = 'app/assets/seed/cards.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
-    Card.create!(title: row['title'], category: row['category'], calories: row['calories'])
+    Card.create!(title: row['title'], category: row['category'], calories: row['calories'], premium: row['premium'] == 'true',
+    price_cents: row['price_cents'])
   end
   puts 'Some cards created ! '
+
+puts 'Create some games...'
+game1 = Game.create!(user_id: emilien.id, objective: 'Equilibre', calories: 800)
+game2 = Game.create!(user_id: emilien.id, objective: 'Végétarien', calories: 500)
+puts 'Some games created ! '
+
+puts 'Attach the cards...'
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+puts 'Cards attached ! '
