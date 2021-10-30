@@ -8,6 +8,8 @@ class Card < ApplicationRecord
 
   before_validation :good_title
 
+  monetize :price_cents
+
 private
 
   def good_title
