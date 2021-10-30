@@ -35,6 +35,6 @@ filepath    = 'app/assets/seed/cards.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
     Card.create!(title: row['title'], category: row['category'], calories: row['calories'], premium: row['premium'] == 'true',
-    price: row['price'])
+    price_cents: row['price_cents'])
   end
   puts 'Some cards created ! '
