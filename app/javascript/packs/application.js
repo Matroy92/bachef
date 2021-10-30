@@ -24,8 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import {initCardSelection} from 'packs/cardselection';
-import {initBtnSubmit} from 'packs/button';
+import { initCardSelection } from 'packs/cardselection';
+import { initBtnSubmit } from 'packs/button';
+import { getSelectedCheckboxValues } from 'packs/cards';
 
 
 // Internal imports, e.g:
@@ -37,6 +38,5 @@ document.addEventListener('turbolinks:load', () => {
 
   initCardSelection();
   initBtnSubmit();
+  getSelectedCheckboxValues();
 });
-
-
