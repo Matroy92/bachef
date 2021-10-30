@@ -8,6 +8,15 @@
 
 require 'csv'
 
+Game.delete_all
+puts 'Card games deleted'
+
+CardGame.delete_all
+puts 'Card games deleted'
+
+Card.delete_all
+puts 'Cards deleted'
+
 CardGame.delete_all
 puts 'CardGame deleted'
 
@@ -34,6 +43,6 @@ csv_options = { col_sep: ';', headers: :first_row }
 filepath    = 'app/assets/seed/cards.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
-    Card.create!(title: row['title'], category: row['category'], calories: row['calories'])
+    Card.create!(title: row['title'], category: row['category'], calories: row['calories'], premium: row['premium'] == 'true')
   end
   puts 'Some cards created ! '
