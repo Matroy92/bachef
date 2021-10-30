@@ -7,14 +7,8 @@
     </div>
 </section>
 <div class="main-container">
-<%# <%= simple_form_for  @game do |f| %>
-    <%# <%= f.input :calories, as: :numeric %>
-    <%# <div class="text-center"> %>
-      <%# <%= f.submit "C'est parti !", class: "btn btn-outline-success mb-4" %>
-    <%# </div> %>
-<%# <% end%>
   <div class="button-hp">
-    <h2 class="button-hp-text">Let's play</h2>
+    <h2 class="button-hp-text"><%= link_to "Let's play", new_game_path %></h2>
   </div>
 </div>
 <div class="main-container">
@@ -22,15 +16,19 @@
     <div class="container-grid">
       <div class="card-rules" id="rule-1">
         <div class="title"><h2>Choisis </br>ton profil</h2></div>
+          <p class="card-paragraph">Ton profil définit ton objectif en termes de calories et de type de repas.</p>
       </div>
       <div class="card-rules" id="rule-2">
         <div class="title"><h2>Sélectionne </br> tes ingrédients</h2></div>
+          <p class="card-paragraph">Choisis la meilleure association d'ingrédients pour tenter de valider ton objectif !</p>
       </div>
       <div class="card-rules"  id="rule-3">
-        <div class="title"><h2>Soumet ton </br>score</h2></div>
+        <div class="title"><h2>Soumets ton </br>score</h2></div>
+          <p class="card-paragraph">Le score doit s'approcher le plus possible de ton objectif de points et de calories. Sauras-tu choisir la meilleure combinaison ? </p>
       </div>
       <div class="card-rules"  id="rule-4">
         <div class="title"><h2>Cuisine ta </br>recette et rejoue !</h2></div>
+      <p class="card-paragraph">Sauvagarde tes asocciations d'ingrédients, choisis une des recettes proposées et n'hésite pas à rejouer avec tes amis ! </p>
       </div>
     </div>
   </div>
