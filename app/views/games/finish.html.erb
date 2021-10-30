@@ -2,7 +2,7 @@
 <h3><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
   <h5>Mes cartes:</h5>
   <div class="list-group">
-    <%= @game.cards.each do |card| %>
+    <% @game.cards.each do |card| %>
       <h5><%= card.title %></h5>
     <% end %>
   </div>

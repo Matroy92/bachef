@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import {initCardSelection} from 'packs/cardselection';
+import {initBtnSubmit} from 'packs/button';
 
 
 // Internal imports, e.g:
@@ -35,6 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 
   initCardSelection();
+  initBtnSubmit();
 });
 
 
