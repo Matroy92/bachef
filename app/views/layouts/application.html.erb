@@ -7,16 +7,16 @@
     <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body class="bachef-bg">
     <%=render 'shared/navbar' unless params[:controller] == 'pages' && params[:action] == 'home' %>
-    <div id="main-container">
-      <%=render 'shared/flashes' %>
-      <%= yield %>
-    </div>
-    <%=render 'shared/footer' %>
+      <div id="main-container">
+        <%=render 'shared/flashes' %>
+          <%= yield %>
+      </div>
   </body>
+  <!--<%=render 'shared/footer' %>
 </html>
