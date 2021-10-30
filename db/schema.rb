@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_124413) do
+ActiveRecord::Schema.define(version: 2021_10_30_132649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 2021_10_30_124413) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_orders_on_card_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -64,4 +76,6 @@ ActiveRecord::Schema.define(version: 2021_10_30_124413) do
   add_foreign_key "card_games", "cards"
   add_foreign_key "card_games", "games"
   add_foreign_key "games", "users"
+  add_foreign_key "orders", "cards"
+  add_foreign_key "orders", "users"
 end

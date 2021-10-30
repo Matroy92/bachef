@@ -9,4 +9,7 @@ Rails.application.routes.draw do
     
   end
   resources :cards
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 end

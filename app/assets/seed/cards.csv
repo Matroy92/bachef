@@ -1,6 +1,6 @@
 title;category;calories;premium;price_cents
 Pomme;Fruits & Légumes;52;true;100
-Banane;Fruits & Légumes;89;true;20000
+Banane;Fruits & Légumes;89;true;2000
 Fraises;Fruits & Légumes;33;true;200
 Viande de boeuf haché (100g);Viande;241;true;300
 Foie de veau (100g);Viande;142;false;100
@@ -8,5 +8,5 @@ Poulet rôti (100g);Viande;190;false;300
 Blanc de poulet (100g);Viande;121;false;100
 Riz blanc (50g);Accompagnement;65;false;200
 Frites;Accompagnement;280;false;300
-Yaourt nature;Dessert;60;false;1000
+Yaourt nature;Dessert;60;false;100
 Tarte au pomme;Dessert;230;false;200
