@@ -11,6 +11,7 @@ hello
           <div class="card-body">
             <h5 class="card-title"><%= card.title %></h5>
             <p class="card-text"><%= card.category %></p>
+            <p>Amount: <%= humanized_money_with_symbol(card.price) %></p>
           </div>
         </div>
       </div>
