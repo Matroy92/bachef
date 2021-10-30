@@ -1,0 +1,18 @@
+hello
+
+
+<div class="container">
+  <h1>cards</h1>
+  <div class="row">
+    <% @cards.each do |card| %>
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= card.title %></h5>
+            <p class="card-text"><%= card.category %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
