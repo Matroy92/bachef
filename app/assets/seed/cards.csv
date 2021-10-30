@@ -1,4 +1,4 @@
-title;category;calories;premium;price
+title;category;calories;premium;price_cents
 Pomme;Fruits & Légumes;52;true;100
 Banane;Fruits & Légumes;89;true;20000
 Fraises;Fruits & Légumes;33;true;200
