@@ -5,4 +5,12 @@ class Card < ApplicationRecord
   validates :title, presence: true
   validates :category, presence: true
   validates :calories, presence: true
+
+  before_validation :good_title
+
+private
+
+  def good_title
+    self.title = self.title.gsub("ô", "o")
+  end
 end
