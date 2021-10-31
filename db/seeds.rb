@@ -22,6 +22,7 @@ puts "Users deleted"
 
 puts 'Create some users...'
 
+adeline = User.create!(username:'Test', email:'test@test.com', password:'123456')
 adeline = User.create!(username:'Adeline', email:'adeline@cortijos.com', password:'123456')
 zak = User.create!(username:'Zak', email:'zak@lamjoun.com', password:'123456')
 mathieu = User.create!(username:'Mathieu', email:'mathieu@royer.com', password:'123456')
