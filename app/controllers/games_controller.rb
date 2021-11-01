@@ -1,7 +1,3 @@
-require "pry-byebug"
-require 'open-uri'
-require 'nokogiri'
-
 class GamesController < ApplicationController
   
 
