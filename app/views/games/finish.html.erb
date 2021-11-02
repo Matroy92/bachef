@@ -1,9 +1,14 @@
-<div class="container">
-<h3><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
+<div class="container-finish-view">
+<div class="header">
+  <h1>Félicitations !</h1>
+</div>
+<div class="subheader">
+<h2><%= "Ton nombre de calories contient #{@calories}, sur un objectf de #{@game.calories}"%></h2>
+</div>
   <h5>Mes cartes:</h5>
   <div class="list-group">
     <% @game.cards.each do |card| %>
-      <h5><%= card.title %></h5>
+      <%= render  "cards/card", card: card%>
     <% end %>
   </div>
   <h3><%= "Mon nombre de calories : #{@calories}" %></h3>
