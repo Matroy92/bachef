@@ -10,21 +10,21 @@
     <% end %>
   </div>
   <div class="navbar-section">
+    <% if user_signed_in? %>
     <div>
+      <%= image_tag "jfp.jpg", width: 50, height: 50, crop: :fill, gravity: :face, :radius => "max", class: "avatar-nav" %>
+    </div>
+    <% else %>
+    <div class="nav-item">
       <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
     </div>
     <div>
       <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
     </div>
-  <% if user_signed_in? %>
-    <div>
-      <%= image_tag "jfp.jpg", width: 50, height: 50, crop: :fill, gravity: :face, :radius => "max", class: "avatar-nav" %>
-          <%# <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+          <%# <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> %>
+            <%# <%= link_to "Action", "#", class: "dropdown-item" %>
             <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
-       <%= link_to "Action", "#", class: "dropdown-item" %>
-       <%= link_to "Another action", "#", class: "dropdown-item" %>
-    </div>
         <%# </li> %>
   <% end %>
   </div>
