@@ -43,13 +43,13 @@
 }
 
 /////////////////////////////////////////////////////////
-*,
-*::after,
-*::before {
-    padding: 0px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+// *,
+// *::after,
+// *::before {
+//     padding: 0px;
+//     margin: 0 auto;
+//     box-sizing: border-box;
+// }
 
 .container {
     max-width: -webkit-fill-available;
