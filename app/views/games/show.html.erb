@@ -80,10 +80,10 @@
     </div>
     </div>
   </div>
-    <div class="list-group d-none">
+    <div class="list-group">
     <%= simple_form_for @game do |f| %>
-      <%= f.association :cards, collection: @cards, as: :check_boxes %>
-      <%= f.submit "Submit" %>
+      <div class="d-none"><%= f.association :cards, collection: @cards, as: :check_boxes %></div>
+      <div class="btn-bachef"><%= f.submit "Submit" %></div>
     <% end %>
   </div>
 </div>
