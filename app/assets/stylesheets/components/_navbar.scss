@@ -1,18 +1,21 @@
 .navbar-bachef {
+  display: flex;
+  padding: 0 1rem;
   justify-content: space-between;
+  align-items: center;
   border-bottom: solid 1px #E5E5E5;
   height: 100px;
 }
 
-.navbar-bachef .navbar-collapse {
-  flex-grow: 0;
-}
+// .navbar-bachef .navbar-collapse {
+//   flex-grow: 0;
+// }
 
-.navbar-bachef .navbar-brand img {
+.navbar-brand img {
   width: 70px;
 }
 
-.navbar-bachef .navbar-shop img {
+ .navbar-shop img {
   width: 40px;
   opacity: 42%;
 
@@ -22,3 +25,13 @@
   list-style-type: none;
 }
 
+
+.avatar-nav{
+  border-radius: 50%;
+  border: 3px solid $blue-bachef;
+}
+
+.navbar-section {
+  display: flex;
+  justify-content: flex-end;
+}
