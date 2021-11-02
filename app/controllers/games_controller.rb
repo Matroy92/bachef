@@ -66,12 +66,14 @@ class GamesController < ApplicationController
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML(html_file)
     @results =  []
+    
     html_doc.search('.MRTN__sc-30rwkm-0.dJvfhM').each do |element|
       #puts "\n\n\n#{element.text.strip}\n\n\n"
       #puts element.text.strip
       @test = element.text.strip
       @results << @test
     end
+ 
   end
 
 end
