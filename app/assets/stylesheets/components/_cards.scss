@@ -43,25 +43,38 @@
 }
 
 /////////////////////////////////////////////////////////
-// *,
-// *::after,
-// *::before {
-//     padding: 0px;
-//     margin: 0 auto;
-//     box-sizing: border-box;
-// }
+.one {
+    margin: 0 auto;
+}
+
+.two {
+    margin: 0 auto;
+}
+
+.three {
+    margin: 0 auto;
+}
+
+.four {
+    margin: 0 auto;
+}
+
+.five {
+    margin: 0 auto;
+}
+
 
 .container {
     max-width: -webkit-fill-available;
 }
 
 .card-selected {
-    width: 150px !important;
-    height: 220px !important;
+    background-color: #FEFFFE !important;
 }
 
 .card-1 {
     cursor: pointer;
+
     &__side {
         width: 140px;
         height: 200px;
