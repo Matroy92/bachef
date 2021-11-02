@@ -13,10 +13,10 @@ class Card < ApplicationRecord
       "Fruits & Légumes" => 'green',
       "Viande" => 'blue',
       "Accompagnement" => 'orange',
-      "Dessert" => 'red',
+      "Dessert" => 'red'
     }[category]
   end
-  
+
   monetize :price_cents
 
 private
