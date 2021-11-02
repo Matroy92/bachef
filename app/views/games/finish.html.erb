@@ -1,19 +1,23 @@
 <div class="container-finish-view">
 <div class="header">
-  <h1>Félicitations !</h1>
+  <h1>Félicitations ! &#128540; </h1>
 </div>
 <div class="subheader">
-<h2><%= "Ton nombre de calories contient #{@calories}, sur un objectf de #{@game.calories}"%></h2>
+<h2>Ton deck contient <strong class="cal-deck"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong></h2>
 </div>
-  <h5>Mes cartes:</h5>
-  <div class="list-group">
+  <div class="card-container">
     <% @game.cards.each do |card| %>
       <%= render  "cards/card", card: card%>
     <% end %>
   </div>
-  <h3><%= "Mon nombre de calories : #{@calories}" %></h3>
-
- <%= @results.first(3)%>
-
-
+<div class="recipe-container">
+<h3>On te propose les recettes suivantes:</h3>
+ <% recipes = @results.first(3)%>
+  <% recipes.each do |recipe| %>
+    <%= "#{recipe} / "%>
+  <% end %>
+</div>
+<div class="button-hp">
+    <h2 class="button-hp-text"><%= link_to "Recommencer", new_game_path %></h2>
+  </div>
 </div>
