@@ -22,6 +22,7 @@ puts "Users deleted"
 
 puts 'Create some users...'
 
+adeline = User.create!(username:'Test', email:'test@test.com', password:'123456')
 adeline = User.create!(username:'Adeline', email:'adeline@cortijos.com', password:'123456')
 zak = User.create!(username:'Zak', email:'zak@lamjoun.com', password:'123456')
 mathieu = User.create!(username:'Mathieu', email:'mathieu@royer.com', password:'123456')
@@ -38,3 +39,16 @@ CSV.foreach(filepath, csv_options) do |row|
     price_cents: row['price_cents'])
   end
   puts 'Some cards created ! '
+
+puts 'Create some games...'
+game1 = Game.create!(user_id: emilien.id, objective: 'Equilibre', calories: 800)
+game2 = Game.create!(user_id: emilien.id, objective: 'Végétarien', calories: 500)
+puts 'Some games created ! '
+
+puts 'Attach the cards...'
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+puts 'Cards attached ! '

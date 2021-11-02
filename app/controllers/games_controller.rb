@@ -1,12 +1,7 @@
-require "pry-byebug"
-require 'open-uri'
-require 'nokogiri'
-
 class GamesController < ApplicationController
   
 
   def index
-    
   end
 
    def new
@@ -25,7 +20,7 @@ class GamesController < ApplicationController
 
    def show
       @game = Game.find(params[:id])
-      @cards = Card.all
+      @cards = Card.where(premium: false)
    end
    
    def update
