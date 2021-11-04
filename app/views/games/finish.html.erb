@@ -10,14 +10,15 @@
       <%= render  "cards/card", card: card%>
     <% end %>
   </div>
+
 <div class="recipe-container">
 <h3>On te propose les recettes suivantes:</h3>
- <% recipes = @results.first(3)%>
-  <% recipes.each do |recipe| %>
-    <%= "#{recipe} / "%>
+ <% @results.first(3).each do |recipe|%>
+    <a href=<%= "#{recipe[:link]}"%>> <%= "#{recipe[:title]} / "%></a>
   <% end %>
 </div>
 <div class="button-hp">
     <h2 class="button-hp-text"><%= link_to "Recommencer", new_game_path %></h2>
   </div>
+
 </div>
