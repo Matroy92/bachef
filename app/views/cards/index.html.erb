@@ -1,5 +1,3 @@
-hello
-
 
 <div class="container">
   <h1>cards</h1>
@@ -9,6 +7,7 @@ hello
       <div class="col-6 col-md-4">
         <div class="card">
           <div class="card-body">
+          <%= render  "cards/card", card: card%>
             <h5 class="card-title"><%= card.title %></h5>
             <p class="card-text"><%= card.category %></p>
             <p>Amount: <%= humanized_money_with_symbol(card.price) %></p>
