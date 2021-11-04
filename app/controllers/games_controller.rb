@@ -61,12 +61,12 @@ class GamesController < ApplicationController
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML(html_file)
     @results =  []
-    
-    html_doc.search('.MRTN__sc-30rwkm-0.dJvfhM').each do |element|
+    html_doc.search('.MRTN__sc-1gofnyi-2.gACiYG').each do |element|
       #puts "\n\n\n#{element.text.strip}\n\n\n"
       #puts element.text.strip
-      @test = element.text.strip
-      @results << @test
+      link = element.attribute("href").value
+      test = element.search(".MRTN__sc-30rwkm-0.dJvfhM").text.strip
+      @results << {link: link, title: test}
     end
  
   end

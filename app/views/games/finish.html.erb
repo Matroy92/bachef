@@ -13,9 +13,8 @@
 
 <div class="recipe-container">
 <h3>On te propose les recettes suivantes:</h3>
- <% recipes = @results.first(3)%>
-  <% recipes.each do |recipe| %>
-    <%= "#{recipe} / "%>
+ <% @results.first(3).each do |recipe|%>
+    <a href=<%= "#{recipe[:link]}"%>> <%= "#{recipe[:title]} / "%></a>
   <% end %>
 </div>
 <div class="button-hp">
