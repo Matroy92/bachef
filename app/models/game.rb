@@ -5,4 +5,6 @@ class Game < ApplicationRecord
 
   validates :objective, presence: true
   validates :calories, presence: true
+
+  validates :objective, inclusion: { in: %w(Vegan Végétarien Equilibré Gras)}
 end

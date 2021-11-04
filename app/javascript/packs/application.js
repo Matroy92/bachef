@@ -27,6 +27,7 @@ import "bootstrap";
 import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
+import { stopAutoplayonHover } from 'packs/profiles';
 
 
 // Internal imports, e.g:
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initCardSelection();
   initBtnSubmit();
   getSelectedCheckboxValues();
+  stopAutoplayonHover();
 });
