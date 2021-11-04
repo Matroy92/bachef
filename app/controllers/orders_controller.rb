@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
     def create
         card = Card.find(params[:card_id])
         order  = Order.create!(card: card, amount: card.price, state: 'pending', user: current_user)
+        card.update(premium: false)
       
         session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
@@ -22,4 +23,11 @@ class OrdersController < ApplicationController
     def show
         @order = current_user.orders.find(params[:id])
     end
+
+    def complete_order
+      @order =Order.find(params[:order_id])
+      @order.card.update(premium: false)
+      @order.save!
+    end
+    
 end
