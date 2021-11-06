@@ -41,7 +41,7 @@ CSV.foreach(filepath, csv_options) do |row|
   puts 'Some cards created ! '
 
 puts 'Create some games...'
-game1 = Game.create!(user_id: emilien.id, objective: 'Equilibre', calories: 800)
+game1 = Game.create!(user_id: emilien.id, objective: 'Equilibré', calories: 800)
 game2 = Game.create!(user_id: emilien.id, objective: 'Végétarien', calories: 500)
 puts 'Some games created ! '
 
