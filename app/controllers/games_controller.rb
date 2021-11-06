@@ -22,7 +22,22 @@ class GamesController < ApplicationController
    def show
       @game = Game.find(params[:id])
       @cards = Card.where(premium: false)
+   case @game.objective
+      when 'Végétarien'
+         @cards = Card.where.not(category: 'Viande')
+      when 'Gras'
+         @cards = Card.where.not(category: 'Fruits & Légumes')
+      when 'Vegan'
+         @cards = Card.where.not(category: 'Viande')
+      end
    end
+
+=begin 
+
+<%= unless @game.objective == 'Végétarien' %>
+   div class="viandes"
+<% end %>
+=end
    
    def update
       @game = Game.find(params[:id])
@@ -50,6 +65,10 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
       @game.update(saved: true)
       redirect_to games_path
+   end
+
+   def display_according_objectives
+       
    end
 
    private
