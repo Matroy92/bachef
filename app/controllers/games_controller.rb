@@ -2,6 +2,7 @@ class GamesController < ApplicationController
   
 
   def index
+   @games = Game.where(saved: true).all
   end
 
    def new
@@ -45,6 +46,11 @@ class GamesController < ApplicationController
       test_scrap
    end
 
+   def saved
+      @game = Game.find(params[:id])
+      @game.update(saved: true)
+      redirect_to games_path
+   end
 
    private
 
