@@ -2,7 +2,6 @@
     display: flex;
     margin-top: 70px;
   }
-
 .container-card {
     flex-grow: 1;
     grid-template-rows: 100vh;
@@ -15,3 +14,20 @@
     grid-gap: 10px;
     justify-content: space-around;
   }
+
+.container-grid-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+}
+
+#head {
+  background-color: $beige-bg;
+  height: 640px;
+}
+
+.container-form {
+  display: flex;
+  order: 5;
+  margin-top: 20px;
+}

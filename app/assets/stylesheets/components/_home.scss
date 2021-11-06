@@ -1,0 +1,95 @@
+.input-home {
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid #E9E7E2;
+    font-family: Rubik;
+    color: rgba(57, 57, 56, 0.6);
+    margin-left: 5px;
+    height: 50px;
+    padding: 10px;
+}
+
+.input-home-calories {
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid #E9E7E2;
+    font-family: Rubik;
+    color: rgba(57, 57, 56, 0.6);
+    margin-left: 5px;
+    height: 50px;
+    padding: 0 30px 0 30px;
+    width: 120px;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  height: 50px;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  color: gray;
+}
+
+// /* not necessary*/
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// body {
+//   display: flex;
+//   min-height: 100vh;
+// }
+
+.quantity-block {
+  margin: auto;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-arrow-minus,
+.quantity-arrow-plus {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: gray;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.quantity-num {
+  font-size: 14px;
+  outline: none;
+  text-align: center
+}
+
+.quantity-arrow-minus {
+  left: 0;
+}
+
+.quantity-arrow-plus {
+  right: 0;
+}
+

@@ -13,10 +13,12 @@
 @import "pages/index";
 @import "components/cards";
 
-#main-container {
-    min-height: calc(100vh - 100px - 150px)
-}
+// #main-container {
+//     min-height: calc(100vh - 100px - 150px)
+// }
 
 .bachef-bg {
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }

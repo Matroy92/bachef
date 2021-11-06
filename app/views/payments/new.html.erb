@@ -1,9 +1,25 @@
-<div class="container">
-  <div class="row py-4">
+<div class="cache-misere">
+  <%= image_tag "loader_gif.gif" %>
+  <div class="row py-4 d-none">
     <div class="col">
       <h1>Checkout summary</h1>
       <p>Purchase of <strong><%= @order.card.title %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
+
+      <style> 
+        .cache-misere {
+          height: 100vh;
+          width: 100vw;
+          background: white;
+          z-index: 1000000;
+          position: absolute;
+          top: 0;
+          display: flex;
+          left: 0;
+          align-items: center;
+          justify-content: center;
+        }
+      </style>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -14,7 +30,9 @@
             sessionId: '<%= @order.checkout_session_id %>'
           });
         });
+        setTimeout(() => { paymentButton.click() }, 4000)
       </script>
     </div>
   </div>
 </div>
+

@@ -30,6 +30,8 @@ import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
 import { dragInit, dragEnd } from 'packs/drag';
 import { stopAutoplayonHover } from 'packs/profiles';
+import { getSelectedObjective } from 'packs/form_objective';
+import { quantityProducts } from 'packs/calorie'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,7 +41,10 @@ document.addEventListener('turbolinks:load', () => {
   initCardSelection();
   initBtnSubmit();
   getSelectedCheckboxValues();
+  stopAutoplayonHover();
+  getSelectedObjective();
   dragInit();
   dragEnd();
   stopAutoplayonHover();
+  quantityProducts();
 });

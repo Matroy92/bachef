@@ -1,28 +1,28 @@
-<div class="main-container">
+<div class="main-container" id="new_game_objective">
   <div class="container-card">
     <div class="container-grid">
-      <div class="cercle">
+      <div class="cercle" data-obj='Vegan'>
         <%= video_tag "vegan.mp4", muted: :muted, loop: :loop, class: "cercle-gif" %>
         <p class="profiles-text">Vegan</p>
       </div>
-      <div class="cercle">
+      <div class="cercle" data-obj='Végétarien'>
       <%= video_tag "veggie.mp4", loop: :loop, muted: :muted, class: "cercle-gif"%>
       <p class="profiles-text">Végétarien</p>
       </div>
-      <div class="cercle">
+      <div class="cercle" data-obj='Equilibré'>
       <%= video_tag "equi.mp4", loop: :loop, muted: :muted, class: "cercle-gif"%>
       <p class="profiles-text">Equilibré</p>
       </div>
-      <div class="cercle">
+      <div class="cercle" data-obj='Gras'>
       <%= video_tag "fat2.mp4", loop: :loop, muted: :muted, class: "cercle-gif"%>
-      <p class="profiles-text">Gras</p>
+      <p class="profiles-text"> Gras</p>
       </div>
     </div>
   </div>
 </div>
-<div class="container" id="game_new">
+<div class="container-form" id="game_new">
   <%= simple_form_for  @game do |f| %>
-    <%= f.input :objective, as: :radio_buttons, :collection => %w(Vegan Végétarien Equilibré Gras) %>
+    <%= f.input :objective %>
    <%= f.input :calories, as: :range, input_html:{ min:"0", max:"3000", oninput:"updateTextInput(this.value)"}%>
  <div class="d-flex justify-content-center mb-3">
   <input class="input-calories" id="textInput" value="">
