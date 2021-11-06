@@ -24,6 +24,7 @@
 }
 
 .recipe-container {
-    text-align: center;
-    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
