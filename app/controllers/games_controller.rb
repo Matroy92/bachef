@@ -43,7 +43,7 @@ class GamesController < ApplicationController
    def finish
       @game = Game.find(params[:id])
       @calories = calories_sum(@game)
-      test_scrap
+      recipes_scrap
    end
 
    def saved
@@ -58,7 +58,7 @@ class GamesController < ApplicationController
       params.require(:game).permit(:objective, :calories)
    end
 
-  def test_scrap
+  def recipes_scrap
     @game = Game.find(params[:id])
     @ingredients = @game.cards.pluck(:title).join("-")
 
@@ -66,16 +66,38 @@ class GamesController < ApplicationController
     # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML(html_file)
-    @results =  []
+    @recipes =  []
     html_doc.search('.MRTN__sc-1gofnyi-2.gACiYG').each do |element|
       #puts "\n\n\n#{element.text.strip}\n\n\n"
       #puts element.text.strip
       link = element.attribute("href").value
       test = element.search(".MRTN__sc-30rwkm-0.dJvfhM").text.strip
       picture = element.search(".SHRD__sc-dy77ha-0.vKBPb")[0].values.first
-      @results << {link: link, title: test, picture: picture}
+      @recipes << {link: link, title: test, picture: picture}
+      break if @recipes.length > 3
     end
- 
+    @recipes.each_with_index do |recipe, index|
+      recipe_scrap(recipe[:link], index)
+    end
   end
 
+    def recipe_scrap(recipe_link, index)
+      url = "https://www.marmiton.org#{recipe_link}" #ok
+      # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
+      html_file = URI.open(url).read
+      html_doc = Nokogiri::HTML(html_file)
+      html_doc.search('.RCP__sc-1418ayg-0.fJAlgo').each do |element|
+         texts = element.search(".RCP__sc-1418ayg-1.dbYbAl")
+        #puts "\n\n\n#{element.text.strip}\n\n\n"
+        #puts element.text.strip
+         texts.each_with_index do |text,  id|
+            @recipes[index][:duration] = text.children.text if id == 0
+            @recipes[index][:difficulty] =  text.children.text if id == 1
+            @recipes[index][:price] = text.children.text if id == 2 
+            
+            #binding.pry
+            
+         end
+      end
+    end
 end
