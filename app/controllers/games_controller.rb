@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  
+
 
   def index
   end
@@ -22,7 +22,7 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
       @cards = Card.where(premium: false)
    end
-   
+
    def update
       @game = Game.find(params[:id])
       @card_game = params.dig(:game, :card_ids).reject(&:blank?).each do |card_id|
@@ -38,9 +38,12 @@ class GamesController < ApplicationController
       end
       return sum
    end
-   
+
    def finish
+      selected_card_ids = params[:game][:cards].split(',').map(&:to_i)
       @game = Game.find(params[:id])
+      @game.card_ids = selected_card_ids
+      @game.save
       @calories = calories_sum(@game)
       test_scrap
    end
@@ -68,7 +71,7 @@ class GamesController < ApplicationController
       test = element.search(".MRTN__sc-30rwkm-0.dJvfhM").text.strip
       @results << {link: link, title: test}
     end
- 
+
   end
 
 end

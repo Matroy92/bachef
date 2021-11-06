@@ -41,6 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   getSelectedCheckboxValues();
   dragInit();
   dragEnd();
-});
   stopAutoplayonHover();
 });
