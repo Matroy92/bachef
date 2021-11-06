@@ -1,68 +1,60 @@
 <div class="container" id="game_checkbox">
-  <h3><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
-  <h6>Mes cartes:</h6>
-  <div class="container">
+<br>
+  <h3 style="text-align: center"><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
+  <div class="container" data-controller="drag">
+  <br>
     <div class="row">
-      <div class="cards">
+      <div class="cards" >
         <div class="one">
-          <h6>Fruits & Légumes</h6>
-          <i class="fas fa-arrow-circle-up" style="font-size: 50px; color: blue"></i>
+          <div>
+            <%= image_tag "broccoli.gif", class: "image_tag"%>
+          </div>
           <br>
+          <h5>Fruits & Légumes</h5>
           <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
-            <br>
             <%= render "cards/card", card: card%>
           <% end %>
           <br>
-          <i class="fas fa-arrow-circle-down" style="font-size: 50px; color: blue"></i>
-          <br>
-        </div>
+        </div> 
         <div class="two">
-          <h6>Viandes</h6>
-          <i class="fas fa-arrow-circle-up" style="font-size: 50px; color: blue"></i>
-          <br>
-          <% @cards.select {|card| card.category == "Viande"}.each do |card| %>
+            <div>
+            <%= image_tag "meat.gif", class: "image_tag"%>
+          </div>
             <br>
-            <%= render  "cards/card", card: card%>
-          <% end %>
-          <i class="fas fa-arrow-circle-down" style="font-size: 50px; color: blue"></i>
+            <h5>Viandes</h5>
+            <% @cards.select {|card| card.category == "Viande"}.each do |card| %>
+              <%= render "cards/card", card: card%>
+            <% end %>
+          <br>
         </div>
         <div class="three">
-          <h6>Accompagnement</h6>
-          <i class="fas fa-arrow-circle-up" style="font-size: 50px; color: blue"></i>
-          <br>
-          <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
+            <div>
+            <%= image_tag "fries.gif", class: "image_tag_2"%>
+          </div>
             <br>
-            <%= render  "cards/card", card: card%>
-          <% end %>
-          <br>
-          <i class="fas fa-arrow-circle-down" style="font-size: 50px; color: blue"></i>
+            <h5>Accompagnements</h5>
+            <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
+              <%= render "cards/card", card: card%>
+            <% end %>
           <br>
         </div>
         <div class="four">
-          <h6>Dessert</h6>
-          <i class="fas fa-arrow-circle-up" style="font-size: 50px; color: blue"></i>
+            <div>
+            <%= image_tag "dessert.gif", class: "image_tag"%>
+          </div>
           <br>
-          <% @cards.select {|card| card.category == "Dessert"}.each do |card| %>
-            <br>
-          <%= render  "cards/card", card: card%>
-          <% end %>
-          <br>
-          <i class="fas fa-arrow-circle-down" style="font-size: 50px; color: blue"></i>
+          <h5>Desserts</h5>
+            <% @cards.select {|card| card.category == "Dessert"}.each do |card| %>
+              <%= render "cards/card", card: card%>
+            <% end %>
           <br>
         </div>
-
-        <%# //////////////////////////////////////////////////////////////////////////////// %>
-
         <div class="five">
+          <div>
+            <%= image_tag "food.gif", class: "image_tag_3"%>
+          </div>
           <br>
-          <h3>dashboard</h3>
-          <br>
-
-          <div class="card_checklist">
-            <div class="card-1_description">
-              <div class="title_dashboard"><h4>Mon panier</h4></div>
-              <div class="title"><h4></h4></div>
-            </div>
+          <div class="card_checklist d-flex droppable">
           </div>
         </div>
       </div>
@@ -72,7 +64,7 @@
     <div class="list-group">
     <%= simple_form_for @game do |f| %>
       <div class="d-none"><%= f.association :cards, collection: @cards, as: :check_boxes %></div>
-      <div class="btn-bachef"><%= f.submit "Terminé" %></div>
+      <%= f.submit "J'ai fini !", class: 'button-hp button-hp-text middle' %>
     <% end %>
   </div>
 </div>
