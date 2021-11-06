@@ -72,7 +72,7 @@
     <div class="list-group">
     <%= simple_form_for @game do |f| %>
       <div class="d-none"><%= f.association :cards, collection: @cards, as: :check_boxes %></div>
-      <div class="btn-bachef"><%= f.submit "Submit" %></div>
+      <div class="btn-bachef"><%= f.submit "Terminé" %></div>
     <% end %>
   </div>
 </div>

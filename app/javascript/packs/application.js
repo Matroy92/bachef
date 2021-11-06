@@ -28,6 +28,7 @@ import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
 import { stopAutoplayonHover } from 'packs/profiles';
+import { getSelectedObjective } from 'packs/form_objective';
 
 
 // Internal imports, e.g:
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   initBtnSubmit();
   getSelectedCheckboxValues();
   stopAutoplayonHover();
+  getSelectedObjective();
 });
