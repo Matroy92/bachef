@@ -6,7 +6,7 @@ class Card < ApplicationRecord
   validates :category, presence: true
   validates :calories, presence: true
 
-  before_validation :good_title
+  # before_validation :good_title
 
   def primary_color
     {
@@ -21,8 +21,8 @@ class Card < ApplicationRecord
 
 private
 
-  def good_title
-    self.title = self.title.gsub("ô", "o")
-  end
+  # def good_title
+  #   self.title = self.title.gsub("ô", "o")
+  # end
 
 end

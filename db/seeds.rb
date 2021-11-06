@@ -31,24 +31,30 @@ puts 'Some users created ! '
 
 puts 'Create some cards... '
 
-csv_options = { col_sep: ';', headers: :first_row }
+csv_options = { col_sep: ';', headers: :first_row, header_converters: :symbol }
 filepath    = 'app/assets/seed/cards.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
-    Card.create!(title: row['title'], category: row['category'], calories: row['calories'], premium: row['premium'] == 'true',
-    price_cents: row['price_cents'])
-  end
-  puts 'Some cards created ! '
+    next if row[:title].blank?
+    Card.create!(title: row[:title], category: row[:category], calories: row[:calories], premium: row[:premium] == 'true',
+    price_cents: row[:price_cents])
+end
+puts 'Some cards created ! '
 
 puts 'Create some games...'
 game1 = Game.create!(user_id: emilien.id, objective: 'Equilibré', calories: 800)
 game2 = Game.create!(user_id: emilien.id, objective: 'Végétarien', calories: 500)
 puts 'Some games created ! '
 
+puts "\n\n\n#{Card.count}\n\n\n\n"
 puts 'Attach the cards...'
-CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
-CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
-CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
-CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
-CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+Game.all.each do |game|
+  3.times do
+    CardGame.create!(game: game, card: Card.all.sample)
+  end
+end
+# CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+# CardGame.create!(game_id: game1.id, card_id: Card.ids.sample)
+# CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
+# CardGame.create!(game_id: game2.id, card_id: Card.ids.sample)
 puts 'Cards attached ! '
