@@ -1,0 +1,10 @@
+<div class="card-1">
+  <div class="card-1__side card-1__side--front card-1__side--front-<%= @order.card.primary_color %> card-1__side--front-<%= card.primary_color %> card-1__description">
+    <div class="circle circle--<%= @order.card.primary_color %>"> <%= image_tag "carrot.png", height: 40 %> </div>
+    <div class="title title--<%= @order.card.primary_color %>"><h6><%=@order.card.title%></h6></div>
+  </div>
+  <div class="card-1__side card-1__side--back card-1__side--back-<%= @order.card.primary_color %> card-1__side--back-<%= @order.card.primary_color %> card-1__description">
+    <div class="circle card-1.circle--<%= @order.card.primary_color %>"> <%= image_tag "carrot.png", height: 40 %> </div>
+    <div class="text text--<%= @order.card.primary_color %>">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  </div>
+</div>
