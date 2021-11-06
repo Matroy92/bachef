@@ -1,4 +1,4 @@
-<div class="card-1" data-id='<%=card.id%>'>
+<div class="card-1 draggable" draggable="true" data-id="<%=card.id%>" id="card-<%=card.id%>">
   <div class="card-1__side card-1__side--front card-1__side--front-<%= card.primary_color %> card-1__side--front-<%= card.primary_color %> card-1__description">
     <div class="circle circle--<%= card.primary_color %>"> <%= image_tag "carrot.png", height: 40 %> </div>
     <div class="title title--<%= card.primary_color %>"><h6><%=card.title%></h6></div>

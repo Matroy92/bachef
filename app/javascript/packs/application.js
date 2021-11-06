@@ -24,9 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
+import { dragInit, dragEnd } from 'packs/drag';
 
 
 // Internal imports, e.g:
@@ -35,8 +37,9 @@ import { getSelectedCheckboxValues } from 'packs/cards';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
   initCardSelection();
   initBtnSubmit();
   getSelectedCheckboxValues();
+  dragInit();
+  dragEnd();
 });
