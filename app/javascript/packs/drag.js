@@ -28,12 +28,29 @@ function dragEnd() {
 
 function dragEnter(e) {
   e.preventDefault();
-  e.target.classList.add('drag-over');
+  if (!e.target.classList.contains('card')) {
+    if (!e.target.classList.contains('card-title')) {
+      if (!e.target.classList.contains('column-1')) {
+        if (!e.target.classList.contains('card-image')) {
+
+          e.target.classList.add('drag-over');
+        }
+      }
+    }
+  }
 }
 
 function dragOver(e) {
   e.preventDefault();
-  e.target.classList.add('drag-over');
+  if (!e.target.classList.contains('card')) {
+    if (!e.target.classList.contains('card-title')) {
+      if (!e.target.classList.contains('column-1')) {
+        if (!e.target.classList.contains('card-image')) {
+          e.target.classList.add('drag-over');
+        }
+      }
+    }
+  }
 }
 
 function dragLeave(e) {
@@ -45,12 +62,17 @@ function drop(e) {
 
   // get the draggable element
   const id = e.dataTransfer.getData('card');
-  console.log(id)
-  window.lol = e
   const draggable = document.getElementById(id);
 
-  // add it to the drop target
-  e.target.appendChild(draggable);
+  if (!e.target.classList.contains('card')) {
+    if (!e.target.classList.contains('card-title')) {
+      if (!e.target.classList.contains('column-1')) {
+        if (!e.target.classList.contains('card-image')) {
+          e.target.appendChild(draggable);
+        }
+      }
+    }
+  }
 
   // display the draggable element
   draggable.classList.remove('hidden');
