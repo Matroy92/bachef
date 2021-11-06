@@ -1,0 +1,48 @@
+.recipe-link {
+    text-decoration: none;
+}
+
+.recipe {
+    background: rgba(100, 71, 249, 0.08);
+    border-radius: 6px;
+    height: 180px;
+    width: 411px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 12px;
+
+  .recipe-card {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+      height: 150px;
+      width: 150px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .description {
+      flex-direction: column;
+      display:flex;
+      justify-content: space-around;
+
+      .title {
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px;
+        font-size: 18px;
+      }
+
+      .details {
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+}
