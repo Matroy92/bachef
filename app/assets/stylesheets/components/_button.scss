@@ -70,9 +70,16 @@
   }
 }
 
-//////////////////////////////////////////////////////////////@at-root
-
 .middle {
  display: flex;
  justify-content: center;
+}
+
+.input-calories {
+  border-width:0px;
+  border:none;
+  text-align: center;
+  font-size: 26px;
+  color: $blue-bachef;
+  font-weight: 500;
 }
