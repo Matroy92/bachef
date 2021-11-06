@@ -15,7 +15,7 @@ class GamesController < ApplicationController
          redirect_to game_path(@game)
        else
          render :new
-       end
+      end
    end
 
    def show
@@ -66,7 +66,8 @@ class GamesController < ApplicationController
       #puts element.text.strip
       link = element.attribute("href").value
       test = element.search(".MRTN__sc-30rwkm-0.dJvfhM").text.strip
-      @results << {link: link, title: test}
+      picture = element.search(".SHRD__sc-dy77ha-0.vKBPb")[0].values.first
+      @results << {link: link, title: test, picture: picture}
     end
  
   end

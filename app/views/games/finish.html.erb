@@ -14,7 +14,12 @@
 <div class="recipe-container">
 <h3>On te propose les recettes suivantes:</h3>
  <% @results.first(3).each do |recipe|%>
-    <a href=<%= "#{recipe[:link]}"%>> <%= "#{recipe[:title]} / "%></a>
+ <div>
+ <img class="fit-picture"
+     src="<%= recipe[:picture]%>"
+     alt="ok">
+ </div>
+    <a href=<%= "https://www.marmiton.org#{recipe[:link]}"%>> <%= "#{recipe[:title]} / "%></a>
   <% end %>
 </div>
 <div class="button-hp">
