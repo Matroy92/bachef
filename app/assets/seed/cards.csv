@@ -1,12 +1,151 @@
-title;category;calories;premium;price_cents
-Pomme;Fruits & Légumes;52;false;100
-Banane;Fruits & Légumes;89;false;2000
-Fraises;Fruits & Légumes;33;true;200
-Viande de boeuf haché (100g);Viande;241;false;300
-Foie de veau (100g);Viande;142;false;100
-Poulet rôti (100g);Viande;190;false;300
-Blanc de poulet (100g);Viande;121;true;100
-Riz blanc (50g);Accompagnement;65;false;200
-Frites;Accompagnement;280;false;300
-Yaourt nature;Dessert;60;false;100
-Tarte au pomme;Dessert;230;true;200
+title;category;calories;premium;price_cents;path_image
+Pomme;Fruits & Légumes;52;false;;App/assets/images/pomme.png
+Banane;Fruits & Légumes;89;false;;App/assets/images/banane.png
+Fraise;Fruits & Légumes;33;false;;App/assets/images/fraise.png
+Abricot;Fruits & Légumes;45;false;;
+Ananas frais;Fruits & Légumes;51;false;;
+Cerises;Fruits & Légumes;77;false;;
+Figue;Fruits & Légumes;80;false;;
+Framboises;Fruits & Légumes;40;false;;
+Grenade;Fruits & Légumes;64;false;;
+Kiwi;Fruits & Légumes;53;false;;
+Litchis;Fruits & Légumes;68;false;;
+Mandarine;Fruits & Légumes;40;false;;
+Mangue;Fruits & Légumes;62;false;;
+Melon;Fruits & Légumes;31;false;;
+Mirabelles;Fruits & Légumes;58;false;;
+Myrtilles;Fruits & Légumes;16;false;;
+Orange;Fruits & Légumes;40;false;;
+Pamplemousse;Fruits & Légumes;40;false;;
+Pastèque;Fruits & Légumes;30;false;;
+Pêche;Fruits & Légumes;47;false;;
+Poire;Fruits & Légumes;61;false;;
+Pomme;Fruits & Légumes;52;false;;
+Prune;Fruits & Légumes;58;false;;
+Raisin;Fruits & Légumes;81;false;;
+Artichaut;Fruits & Légumes;40;false;;
+Asperges;Fruits & Légumes;26;false;;
+Aubergine;Fruits & Légumes;29;false;;
+Avocat;Fruits & Légumes;200;false;;
+Brocolis;Fruits & Légumes;34;false;;
+Carotte;Fruits & Légumes;38;false;;
+Champignons;Fruits & Légumes;28;false;;
+Chou;Fruits & Légumes;28;false;;
+Chou de Bruxelles;Fruits & Légumes;54;false;;
+Concombre;Fruits & Légumes;13;false;;
+Courgette;Fruits & Légumes;30;false;;
+Endive;Fruits & Légumes;20;false;;
+Epinards;Fruits & Légumes;25;false;;
+Fenouil;Fruits & Légumes;20;false;;
+Haricot vert;Fruits & Légumes;40;false;;
+Laitue;Fruits & Légumes;18;false;;
+Mâche;Fruits & Légumes;36;false;;
+Maîs;Fruits & Légumes;356;false;;
+Navet;Fruits & Légumes;35;false;;
+Patate douce;Fruits & Légumes;110;false;;
+Petit pois;Fruits & Légumes;70;false;;
+Poireau;Fruits & Légumes;42;false;;
+Radis;Fruits & Légumes;20;false;;
+Tomate;Fruits & Légumes;20;false;;
+Côtelettes d’agneau;Viande & Fruits de mer;330;false;;
+Gigot d’agneau;Viande & Fruits de mer;250;false;;
+Andouillette;Viande & Fruits de mer;320;false;;
+Bacon;Viande & Fruits de mer;385;false;;
+Bavette (boeuf);Viande & Fruits de mer;200;false;;
+Bifteck de boeuf;Viande & Fruits de mer;200;false;;
+Bifteck de cheval;Viande & Fruits de mer;110;false;;
+Aiguillette de boeuf;Viande & Fruits de mer;200;false;;
+Côte de boeuf;Viande & Fruits de mer;260;false;;
+Entrecôte;Viande & Fruits de mer;200;false;;
+Faux-filet de boeuf;Viande & Fruits de mer;156;false;;
+Onglet;Viande & Fruits de mer;200;false;;
+Côte de porc;Viande & Fruits de mer;330;false;;
+Côte de veau;Viande & Fruits de mer;168;false;;
+Escalope de veau;Viande & Fruits de mer;170;false;;
+Jambon fumé;Viande & Fruits de mer;380;false;;
+Jambon cru;Viande & Fruits de mer;330;false;;
+Merguez;Viande & Fruits de mer;520;false;;
+Côte de mouton;Viande & Fruits de mer;300;false;;
+Travers de porc;Viande & Fruits de mer;305;false;;
+Poulet;Viande & Fruits de mer;150;false;;
+Rôti de proc;Viande & Fruits de mer;300;false;;
+Rôti de veau;Viande & Fruits de mer;168;false;;
+Tartare de boeuf;Viande & Fruits de mer;300;false;;
+Foie de veau;Viande & Fruits de mer;137;false;;
+Bar;Viande & Fruits de mer;90;false;;
+Lotte;Viande & Fruits de mer;79;false;;
+Cabillaud;Viande & Fruits de mer;79;false;;
+Calmar;Viande & Fruits de mer;89;false;;
+Colin;Viande & Fruits de mer;92;false;;
+Daurade;Viande & Fruits de mer;77;false;;
+Espadon;Viande & Fruits de mer;116;false;;
+Hareng frais;Viande & Fruits de mer;149;false;;
+Maquereau frais;Viande & Fruits de mer;128;false;;
+Poisson à l’huile;Viande & Fruits de mer;325;false;;
+Coquilles St-Jacques;Viande & Fruits de mer;74;false;;
+Sardines à l’huile;Viande & Fruits de mer;125;false;;
+Saumon fumé;Viande & Fruits de mer;265;false;;
+Sole;Viande & Fruits de mer;78;false;;
+Soupe de poissons;Viande & Fruits de mer;90;false;;
+Thon frais;Viande & Fruits de mer;225;false;;
+Couteaux;Viande & Fruits de mer;55;false;;
+Crabe frais;Viande & Fruits de mer;85;false;;
+Gambas;Viande & Fruits de mer;98;false;;
+Homard;Viande & Fruits de mer;80;false;;
+Huîtres;Viande & Fruits de mer;70;false;;
+Langoustine;Viande & Fruits de mer;90;false;;
+Moules;Viande & Fruits de mer;70;false;;
+Poulpe;Viande & Fruits de mer;70;false;;
+Crevettes;Viande & Fruits de mer;98;false;;
+Noix de cajou;Accompagnement;612;false;;
+Olives noires;Accompagnement;336;false;;
+Olives vertes;Accompagnement;123;false;;
+Anchois;Accompagnement;160;false;;
+Oeuf dur;Accompagnement;70;false;;
+Oeuf au plat;Accompagnement;90;false;;
+Cornichons;Accompagnement;13;false;;
+Lentilles;Accompagnement;338;false;;
+Macédoine de légumes;Accompagnement;72;false;;
+Frites;Accompagnement;420;false;;
+Purée de pomme de terre;Accompagnement;90;false;;
+Pain complet;Accompagnement;230;false;;
+Pain blanc;Accompagnement;255;false;;
+Pain de mie;Accompagnement;284;false;;
+Pain d’épice;Accompagnement;350;false;;
+Pâtes natures;Accompagnement;90;false;;
+Riz blanc cuit;Accompagnement;90;false;;
+Riz complet cuit;Accompagnement;98;false;;
+Taboulé;Accompagnement;150;false;;
+Brioche;Dessert;386;false;;
+Cookies;Dessert;464;false;;
+Gauffre;Dessert;291;false;;
+Madelaines;Dessert;490;false;;
+Biscuits;Dessert;400;false;;
+Crème glacée chocolat;Dessert;235;false;;
+Crème glacée vanille;Dessert;165;false;;
+Crêpe nature;Dessert;227;false;;
+Sorbet;Dessert;90;false;;
+Bleus;Dessert;410;false;;
+Brie;Dessert;263;false;;
+Camembert;Dessert;312;false;;
+Cheddar;Dessert;382;false;;
+Chèvre;Dessert;330;false;;
+Comté;Dessert;396;false;;
+Fromage blanc allégé;Dessert;44;false;;
+Fromage blanc;Dessert;80;false;;
+Mozzarella;Dessert;332;false;;
+Reblochon;Dessert;354;false;;
+Tomme;Dessert;354;false;;
+Yaourt allégé sucré;Dessert;80;false;;
+Yaourt au fruit;Dessert;100;false;;
+Pâté de campagne;Accompagnement;455;true;200;
+Tournedos;Viande & Fruits de mer;200;true;400;
+Tripes;Viande & Fruits de mer;94;true;500;
+Choucroute;Fruits & Légumes;27;true;200;
+Citrouille;Fruits & Légumes;30;true;200;
+Truffe fraîche;Fruits & Légumes;92;true;800;
+Carottes râpées;Fruits & Légumes;130;true;200;
+Soupe à la tomate;Fruits & Légumes;30;true;200;
+Eclair au chocolat;Dessert;262;true;300;
+Macaron (à l’unité);Dessert;120;true;500;
+Caviar;Accompagnement;275;true;1000;

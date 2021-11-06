@@ -28,17 +28,10 @@ class GamesController < ApplicationController
       when 'Gras'
          @cards = Card.where.not(category: 'Fruits & Légumes')
       when 'Vegan'
-         @cards = Card.where.not(category: 'Viande')
+         @cards = Card.where.not(category: 'Viande & Fruits de mer')
       end
    end
 
-=begin 
-
-<%= unless @game.objective == 'Végétarien' %>
-   div class="viandes"
-<% end %>
-=end
-   
    def update
       @game = Game.find(params[:id])
       @card_game = params.dig(:game, :card_ids).reject(&:blank?).each do |card_id|
@@ -65,10 +58,6 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
       @game.update(saved: true)
       redirect_to games_path
-   end
-
-   def display_according_objectives
-       
    end
 
    private
