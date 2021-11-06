@@ -24,21 +24,23 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
+import { dragInit, dragEnd } from 'packs/drag';
 import { stopAutoplayonHover } from 'packs/profiles';
-
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
   initCardSelection();
   initBtnSubmit();
   getSelectedCheckboxValues();
+  dragInit();
+  dragEnd();
+});
   stopAutoplayonHover();
 });

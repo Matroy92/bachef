@@ -70,6 +70,11 @@
   }
 }
 
+.middle {
+ display: flex;
+ justify-content: center;
+}
+
 .input-calories {
   border-width:0px;
   border:none;
