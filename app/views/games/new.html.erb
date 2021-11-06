@@ -20,7 +20,7 @@
     </div>
   </div>
 </div>
-<div class="container" id="game_new">
+<div class="container-form" id="game_new">
   <%= simple_form_for  @game do |f| %>
     <%= f.input :objective %>
    <%= f.input :calories, as: :range, input_html:{ min:"0", max:"3000", oninput:"updateTextInput(this.value)"}%>
