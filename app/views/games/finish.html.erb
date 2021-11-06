@@ -13,7 +13,7 @@
 
 <div class="recipe-container">
 <h3>On te propose les recettes suivantes:</h3>
- <% @results.first(3).each do |recipe|%>
+ <% @recipes.first(3).each do |recipe|%>
  <a href=<%= "https://www.marmiton.org#{recipe[:link]}"%> target="_blank">
  <div>
  <img class="fit-picture"
@@ -21,7 +21,11 @@
      alt="ok">
  </div>
  </a>
+ <%= recipe[:duration]%>
+ <%= recipe[:difficulty]%>
+ <%= recipe[:price]%>
     <a href=<%= "https://www.marmiton.org#{recipe[:link]}"%> target="_blank"> <%= "#{recipe[:title]} / "%></a>
+    <%= @box%>
   <% end %>
 </div>
 <div class="button-hp">
