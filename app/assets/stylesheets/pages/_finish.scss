@@ -1,18 +1,39 @@
-.header {
-    text-align: center;
-    padding-top: 8px;
+.finish-body {
+    background-color: $beige-bg;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
-.subheader {
-    text-align: center; 
+.finish-container {
+   width: auto;
+   height: auto;
+   border: 2px solid black;
+   padding: 8px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
 
-.cal-deck {
+.result-body {
+  border: 2px solid black;
+}
+
+.save-form {
+  border: 2px solid black;
+}
+
+.win {
     color: $green-bachef;
 }
 
-.cal-obj {
+.fail {
     color: $pink-bachef;
+}
+
+.cal-obj {
+    color: $blue-bachef;
 }
 
 .card-container {
@@ -27,4 +48,5 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 24px;
 }

@@ -63,7 +63,7 @@ class GamesController < ApplicationController
 
    def saved
       @game = Game.find(params[:id])
-      @game.update(saved: true)
+      @game.update!(saved: true)
       redirect_to games_path
    end
 
