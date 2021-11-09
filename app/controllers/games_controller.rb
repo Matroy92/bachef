@@ -12,7 +12,7 @@ class GamesController < ApplicationController
    def create
       @game = Game.new(game_params)
       @game.user = current_user
-      if @game.save
+      if @game.save!
          redirect_to game_path(@game)
        else
          render :new
@@ -24,11 +24,13 @@ class GamesController < ApplicationController
       @cards = Card.where(premium: false)
    case @game.objective
       when 'Végétarien'
-         @cards = Card.where.not(category: 'Viande')
+         @cards = Card.where.not(category: 'Viande & Fruits de mer')
       when 'Gras'
          @cards = Card.where.not(category: 'Fruits & Légumes')
       when 'Vegan'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
+      when 'Equilibré'
+         @cards = Card.all         
       end
    end
 
