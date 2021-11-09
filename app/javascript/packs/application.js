@@ -31,6 +31,7 @@ import { getSelectedCheckboxValues } from 'packs/cards';
 import { dragInit, dragEnd } from 'packs/drag';
 import { stopAutoplayonHover } from 'packs/profiles';
 import { getSelectedObjective } from 'packs/form_objective';
+import { quantityProducts } from 'packs/calorie'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -45,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   dragInit();
   dragEnd();
   stopAutoplayonHover();
+  quantityProducts();
 });

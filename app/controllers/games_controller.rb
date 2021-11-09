@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  
+
 
   def index
    @games = Game.where(saved: true).all
@@ -22,8 +22,16 @@ class GamesController < ApplicationController
    def show
       @game = Game.find(params[:id])
       @cards = Card.where(premium: false)
+   case @game.objective
+      when 'Végétarien'
+         @cards = Card.where.not(category: 'Viande')
+      when 'Gras'
+         @cards = Card.where.not(category: 'Fruits & Légumes')
+      when 'Vegan'
+         @cards = Card.where.not(category: 'Viande & Fruits de mer')
+      end
    end
-   
+
    def update
       @game = Game.find(params[:id])
       @card_game = params.dig(:game, :card_ids).reject(&:blank?).each do |card_id|
@@ -39,9 +47,12 @@ class GamesController < ApplicationController
       end
       return sum
    end
-   
+
    def finish
+      selected_card_ids = params[:game][:cards].split(',').map(&:to_i)
       @game = Game.find(params[:id])
+      @game.card_ids = selected_card_ids
+      @game.save
       @calories = calories_sum(@game)
       recipes_scrap
    end
@@ -79,6 +90,7 @@ class GamesController < ApplicationController
     @recipes.each_with_index do |recipe, index|
       recipe_scrap(recipe[:link], index)
     end
+    
   end
 
     def recipe_scrap(recipe_link, index)

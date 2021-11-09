@@ -1,0 +1,19 @@
+<a class="recipe-link" href=<%= "https://www.marmiton.org#{recipe[:link]}"%> target="_blank">
+  <div class="recipe mx-8">
+    <div class="recipe-card">
+      <div><img class="image" src="<%= recipe[:picture]%>" alt="ok"></div>
+      <div class="description px-4">
+        <div class="title"><%=recipe[:title]%></div>
+        <div class="details">
+          <ul>
+            &#9201; <%= recipe[:duration]%> <br>
+            &#127859; <%= recipe[:difficulty]%> <br>
+            &#127991; <%= recipe[:price]%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+

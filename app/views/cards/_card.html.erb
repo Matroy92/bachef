@@ -1,10 +1,5 @@
-<div class="card-1 draggable" draggable="true" data-id="<%=card.id%>" id="card-<%=card.id%>">
-  <div class="card-1__side card-1__side--front card-1__side--front-<%= card.primary_color %> card-1__side--front-<%= card.primary_color %> card-1__description">
-    <div class="circle circle--<%= card.primary_color %>"> <%= image_tag "carrot.png", height: 40 %> </div>
-    <div class="title title--<%= card.primary_color %>"><h6><%=card.title%></h6></div>
-  </div>
-  <div class="card-1__side card-1__side--back card-1__side--back-<%= card.primary_color %> card-1__side--back-<%= card.primary_color %> card-1__description">
-    <div class="circle card-1.circle--<%= card.primary_color %>"> <%= image_tag "carrot.png", height: 40 %> </div>
-    <div class="text text--<%= card.primary_color %>">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-  </div> 
-</div>
+    <div class="card card-column card-<%= card.primary_color %>" data-id="<%=card.id%>">
+      <div class="column-1"> <%= image_tag "carrot.png", height: 30, class: "card-image" %> </div>
+      <p class="card__title column-2 card-title"><%=card.title%></p>
+      </p>
+    </div>
