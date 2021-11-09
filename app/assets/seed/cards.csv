@@ -1,7 +1,7 @@
 ﻿title;category;calories;premium;price_cents;image_path
 Pomme;Fruits & Légumes;52;false;0;pomme.png
-Banane;Fruits & Légumes;89;false;0;
-Fraise;Fruits & Légumes;33;false;0;
+Banane;Fruits & Légumes;89;false;0;banane.png
+Fraise;Fruits & Légumes;33;false;0;fraise.png
 Abricot;Fruits & Légumes;45;false;0;abricot.png
 Ananas frais;Fruits & Légumes;51;false;0;ananas.png
 Cerises;Fruits & Légumes;77;false;0;cerise.png
@@ -23,8 +23,8 @@ Poire;Fruits & Légumes;61;false;0;poire.png
 Pomme;Fruits & Légumes;52;false;0;pomme.png
 Prune;Fruits & Légumes;58;false;0;prune.png
 Raisin;Fruits & Légumes;81;false;0;raisins.png
-Artichaut;Fruits & Légumes;40;false;0;
-Asperges;Fruits & Légumes;26;false;0;
+Artichaut;Fruits & Légumes;40;false;0;artichaut.png
+Asperges;Fruits & Légumes;26;false;0;asperge.png
 Aubergine;Fruits & Légumes;29;false;0;aubergine.png
 Avocat;Fruits & Légumes;200;false;0;avocat.png
 Brocolis;Fruits & Légumes;34;false;0;brocoli.png
@@ -32,21 +32,21 @@ Carotte;Fruits & Légumes;38;false;0;carotte.png
 Champignons;Fruits & Légumes;28;false;0;champignon.png
 Chou;Fruits & Légumes;28;false;0;chou.png
 Chou de Bruxelles;Fruits & Légumes;54;false;0;choux-de-bruxelles.png
-Concombre;Fruits & Légumes;13;false;0;
-Courgette;Fruits & Légumes;30;false;0;
+Concombre;Fruits & Légumes;13;false;0;concombre.png
+Courgette;Fruits & Légumes;30;false;0;courgette.png
 Endive;Fruits & Légumes;20;false;0;
-Epinards;Fruits & Légumes;25;false;0;
-Fenouil;Fruits & Légumes;20;false;0;
+Epinards;Fruits & Légumes;25;false;0;epinard.png
+Fenouil;Fruits & Légumes;20;false;0;fenouil.png
 Haricot vert;Fruits & Légumes;40;false;0;
 Laitue;Fruits & Légumes;18;false;0;
 Mâche;Fruits & Légumes;36;false;0;
 Maîs;Fruits & Légumes;356;false;0;mais.png
 Navet;Fruits & Légumes;35;false;0;
-Patate douce;Fruits & Légumes;110;false;0;
+Patate douce;Fruits & Légumes;110;false;0;patate-douce.png
 Petit pois;Fruits & Légumes;70;false;0;
 Poireau;Fruits & Légumes;42;false;0;
 Radis;Fruits & Légumes;20;false;0;radis.png
-Tomate;Fruits & Légumes;20;false;0;
+Tomate;Fruits & Légumes;20;false;0;tomate.png
 Côtelettes d’agneau;Viande & Fruits de mer;330;false;0;
 Gigot d’agneau;Viande & Fruits de mer;250;false;0;
 Andouillette;Viande & Fruits de mer;320;false;0;
@@ -67,7 +67,7 @@ Jambon cru;Viande & Fruits de mer;330;false;0;
 Merguez;Viande & Fruits de mer;520;false;0;
 Côte de mouton;Viande & Fruits de mer;300;false;0;
 Travers de porc;Viande & Fruits de mer;305;false;0;
-Poulet;Viande & Fruits de mer;150;false;0;
+Poulet;Viande & Fruits de mer;150;false;0;poulet-roti.png
 Rôti de proc;Viande & Fruits de mer;300;false;0;
 Rôti de veau;Viande & Fruits de mer;168;false;0;
 Tartare de boeuf;Viande & Fruits de mer;300;false;0;
@@ -83,28 +83,28 @@ Hareng frais;Viande & Fruits de mer;149;false;0;
 Maquereau frais;Viande & Fruits de mer;128;false;0;
 Poisson à l’huile;Viande & Fruits de mer;325;false;0;
 Coquilles St-Jacques;Viande & Fruits de mer;74;false;0;
-Sardines à l’huile;Viande & Fruits de mer;125;false;0;
-Saumon fumé;Viande & Fruits de mer;265;false;0;
+Sardines à l’huile;Viande & Fruits de mer;125;false;0;sardine.png
+Saumon fumé;Viande & Fruits de mer;265;false;0;saumon-fume.png
 Sole;Viande & Fruits de mer;78;false;0;
 Soupe de poissons;Viande & Fruits de mer;90;false;0;
-Thon frais;Viande & Fruits de mer;225;false;0;
+Thon frais;Viande & Fruits de mer;225;false;0;thon.png
 Couteaux;Viande & Fruits de mer;55;false;0;
 Crabe frais;Viande & Fruits de mer;85;false;0;
 Gambas;Viande & Fruits de mer;98;false;0;
 Homard;Viande & Fruits de mer;80;false;0;
 Huîtres;Viande & Fruits de mer;70;false;0;
-Langoustine;Viande & Fruits de mer;90;false;0;
-Moules;Viande & Fruits de mer;70;false;0;
-Poulpe;Viande & Fruits de mer;70;false;0;
+Langoustine;Viande & Fruits de mer;90;false;0;langoustine.png
+Moules;Viande & Fruits de mer;70;false;0;moule.png
+Poulpe;Viande & Fruits de mer;70;false;0;poulpe.png
 Crevettes;Viande & Fruits de mer;98;false;0;
-Noix de cajou;Accompagnement;612;false;0;
-Olives noires;Accompagnement;336;false;0;
-Olives vertes;Accompagnement;123;false;0;
+Noix de cajou;Accompagnement;612;false;0;cashew.png
+Olives noires;Accompagnement;336;false;0;olive-noire.png
+Olives vertes;Accompagnement;123;false;0;olive-verte.png
 Anchois;Accompagnement;160;false;0;
-Oeuf dur;Accompagnement;70;false;0;
-Oeuf au plat;Accompagnement;90;false;0;
+Oeuf dur;Accompagnement;70;false;0;œuf-dur.png
+Oeuf au plat;Accompagnement;90;false;0;œuf-au-plat.png
 Cornichons;Accompagnement;13;false;0;
-Lentilles;Accompagnement;338;false;0;
+Lentilles;Accompagnement;338;false;0;lentilles.png
 Macédoine de légumes;Accompagnement;72;false;0;
 Frites;Accompagnement;420;false;0;
 Purée de pomme de terre;Accompagnement;90;false;0;
@@ -113,9 +113,9 @@ Pain blanc;Accompagnement;255;false;0;
 Pain de mie;Accompagnement;284;false;0;
 Pain d’épice;Accompagnement;350;false;0;
 Pâtes natures;Accompagnement;90;false;0;
-Riz blanc cuit;Accompagnement;90;false;0;
+Riz blanc cuit;Accompagnement;90;false;0;riz-blanc.png
 Riz complet cuit;Accompagnement;98;false;0;
-Taboulé;Accompagnement;150;false;0;
+Taboulé;Accompagnement;150;false;0;taboule.png
 Brioche;Dessert;386;false;0;
 Cookies;Dessert;464;false;0;
 Gauffre;Dessert;291;false;0;
@@ -136,7 +136,7 @@ Fromage blanc;Dessert;80;false;0;
 Mozzarella;Dessert;332;false;0;mozzarella.png
 Reblochon;Dessert;354;false;0;
 Tomme;Dessert;354;false;0;
-Yaourt allégé sucré;Dessert;80;false;0;
+Yaourt allégé sucré;Dessert;80;false;0;yaourt.png
 Yaourt au fruit;Dessert;100;false;0;yaourt-fruits.png
 Pâté de campagne;Accompagnement;455;true;200;
 Tournedos;Viande & Fruits de mer;200;true;400;
