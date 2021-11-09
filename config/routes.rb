@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :games do
     member do
       get '/finish', to: 'games#finish'
-      get '/saved', to: 'games#saved'
+      patch '/saved', to: 'games#saved'
     end
     
   end
