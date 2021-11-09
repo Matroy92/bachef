@@ -4,25 +4,28 @@
   <div class="container">
     <div class="row">
       <div class="cards">
-        <div class="one">
-          <div>
-            <%= image_tag "broccoli.gif", class: "image_tag"%>
-          </div>
-          <h6>Fruits & Légumes</h6>
-          <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
-            <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
-          <% end %>
-        </div>
-        <div class="two">
+        <% if @game.objective != "Gras" %>
+          <div class="one">
             <div>
-            <%= image_tag "meat.gif", class: "image_tag"%>
-          </div>
-
-            <h6>Viandes</h6>
-            <% @cards.select {|card| card.category == "Viande"}.each do |card| %>
+              <%= image_tag "broccoli.gif", class: "image_tag"%>
+            </div>
+            <h6>Fruits & Légumes</h6>
+            <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
               <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
             <% end %>
-        </div>
+          </div>
+        <% end %>
+        <% unless ['Végétarien', 'Vegan'].include?(@game.objective) %>
+          <div class="two">
+              <div>
+              <%= image_tag "meat.gif", class: "image_tag"%>
+            </div>
+              <h6>Viandes</h6>
+              <% @cards.select {|card| card.category == "Viande & Fruits de mer"}.each do |card| %>
+                <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+              <% end %>
+          </div>
+        <% end %>
         <div class="three">
             <div>
             <%= image_tag "fries.gif", class: "image_tag_2"%>
