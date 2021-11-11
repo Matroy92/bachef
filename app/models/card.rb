@@ -11,7 +11,7 @@ class Card < ApplicationRecord
   def primary_color
     {
       "Fruits & Légumes" => 'green',
-      "Viande" => 'blue',
+      "Viande & Fruits de mer" => 'blue',
       "Accompagnement" => 'orange',
       "Dessert" => 'red'
     }[category]

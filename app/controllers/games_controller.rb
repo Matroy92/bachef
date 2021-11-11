@@ -12,7 +12,7 @@ class GamesController < ApplicationController
    def create
       @game = Game.new(game_params)
       @game.user = current_user
-      if @game.save
+      if @game.save!
          redirect_to game_path(@game)
        else
          render :new
@@ -24,11 +24,13 @@ class GamesController < ApplicationController
       @cards = Card.where(premium: false)
    case @game.objective
       when 'Végétarien'
-         @cards = Card.where.not(category: 'Viande')
+         @cards = Card.where.not(category: 'Viande & Fruits de mer')
       when 'Gras'
          @cards = Card.where.not(category: 'Fruits & Légumes')
       when 'Vegan'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
+      when 'Equilibré'
+         @cards = Card.all         
       end
    end
 
@@ -59,7 +61,7 @@ class GamesController < ApplicationController
 
    def saved
       @game = Game.find(params[:id])
-      @game.update(saved: true)
+      @game.update!(saved: true)
       redirect_to games_path
    end
 
@@ -74,9 +76,12 @@ class GamesController < ApplicationController
     @ingredients = @game.cards.pluck(:title).join("-")
 
     url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@ingredients}" #ok
+    clean_url= url.tr(
+      "ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝýÿŶŷŸŹźŻżŽž",
+      "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz")
     # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
-    html_file = URI.open(url).read
-    html_doc = Nokogiri::HTML(html_file)
+    html_file = URI.open(clean_url).read
+    html_doc = Nokogiri::HTML(html_file, nil, Encoding::UTF_8.to_s)
     @recipes =  []
     html_doc.search('.MRTN__sc-1gofnyi-2.gACiYG').each do |element|
       #puts "\n\n\n#{element.text.strip}\n\n\n"
@@ -96,8 +101,11 @@ class GamesController < ApplicationController
     def recipe_scrap(recipe_link, index)
       url = "https://www.marmiton.org#{recipe_link}" #ok
       # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
-      html_file = URI.open(url).read
-      html_doc = Nokogiri::HTML(html_file)
+      clean_url= url.tr(
+         "ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝýÿŶŷŸŹźŻżŽž",
+         "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz")
+      html_file = URI.open(clean_url).read
+      html_doc = Nokogiri::HTML(html_file, nil, Encoding::UTF_8.to_s)
       html_doc.search('.RCP__sc-1418ayg-0.fJAlgo').each do |element|
          texts = element.search(".RCP__sc-1418ayg-1.dbYbAl")
         #puts "\n\n\n#{element.text.strip}\n\n\n"

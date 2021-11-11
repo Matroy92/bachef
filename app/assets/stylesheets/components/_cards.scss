@@ -2,11 +2,11 @@
 .card-rules {
     margin: 0 auto;
     width: 80%;
-    height: 350px;
-    box-shadow: 1em 1em 2em rgba(0, 0, 0, .2);
-    border-radius: 80px;
-    border: 4px solid;
-}
+    height: 225px;
+    box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+    border-radius: 60px;
+    // border: 4px solid;
+  }
 
 #rule-1 {
     background-color: rgba(101, 172, 222, 0.5);
@@ -28,19 +28,17 @@
     border-color: $pink-bachef;
 }
 
-.card-rules {
-  margin: 0 auto;
-  width: 80%;
-  height: 280px;
-  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-  border-radius: 80px;
-  border: 4px solid;
-}
 
 .title-rules {
-  margin-top: 8px;
+  margin: 20px 15px 15px;
   text-align: center;
-  color: $dark-bachef;
+  color: white;
+}
+
+.card-paragraph {
+    margin: 0 15px 0 15px;
+    text-align: center;
+    color: grey;
 }
 
 /////////////////////////////////////////////////////////
