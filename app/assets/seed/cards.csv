@@ -34,36 +34,35 @@ Chou;Fruits & Légumes;28;false;0;chou.png
 Chou de Bruxelles;Fruits & Légumes;54;false;0;choux-de-bruxelles.png
 Concombre;Fruits & Légumes;13;false;0;concombre.png
 Courgette;Fruits & Légumes;30;false;0;courgette.png
-Endive;Fruits & Légumes;20;false;0;
 Epinards;Fruits & Légumes;25;false;0;epinard.png
 Fenouil;Fruits & Légumes;20;false;0;fenouil.png
-Haricot vert;Fruits & Légumes;40;false;0;
-Laitue;Fruits & Légumes;18;false;0;
-Mâche;Fruits & Légumes;36;false;0;
+Haricot vert;Fruits & Légumes;40;false;0;haricot-vert.png
+Laitue;Fruits & Légumes;18;false;0;laitue.png
+Mâche;Fruits & Légumes;36;false;0;mache.png
 Maîs;Fruits & Légumes;356;false;0;mais.png
-Navet;Fruits & Légumes;35;false;0;
+Navet;Fruits & Légumes;35;false;0;navet.png
 Patate douce;Fruits & Légumes;110;false;0;patate-douce.png
-Petit pois;Fruits & Légumes;70;false;0;
-Poireau;Fruits & Légumes;42;false;0;
+Petit pois;Fruits & Légumes;70;false;0;petit-pois.png
+Poireau;Fruits & Légumes;42;false;0;poireau.png
 Radis;Fruits & Légumes;20;false;0;radis.png
 Tomate;Fruits & Légumes;20;false;0;tomate.png
-Côtelettes d’agneau;Viande & Fruits de mer;330;false;0;
-Gigot d’agneau;Viande & Fruits de mer;250;false;0;
-Andouillette;Viande & Fruits de mer;320;false;0;
-Bacon;Viande & Fruits de mer;385;false;0;
-Bavette (boeuf);Viande & Fruits de mer;200;false;0;
-Bifteck de boeuf;Viande & Fruits de mer;200;false;0;
-Bifteck de cheval;Viande & Fruits de mer;110;false;0;
+Côtelettes d’agneau;Viande & Fruits de mer;330;false;0;cotelette-agneau.png
+Gigot d’agneau;Viande & Fruits de mer;250;false;0;gigot-agneau.png
+Andouillette;Viande & Fruits de mer;320;false;0;andouillette.png
+Bacon;Viande & Fruits de mer;385;false;0;bacon.png
+Bavette (boeuf);Viande & Fruits de mer;200;false;0;bavette.png
+Bifteck de boeuf;Viande & Fruits de mer;200;false;0;bifteck-boeuf.png
+Bifteck de cheval;Viande & Fruits de mer;110;false;0;bifteck-cheval.png
 Aiguillette de boeuf;Viande & Fruits de mer;200;false;0;
-Côte de boeuf;Viande & Fruits de mer;260;false;0;
+Côte de boeuf;Viande & Fruits de mer;260;false;0;cote-boeuf.png
 Entrecôte;Viande & Fruits de mer;200;false;0;
 Faux-filet de boeuf;Viande & Fruits de mer;156;false;0;
 Onglet;Viande & Fruits de mer;200;false;0;
 Côte de porc;Viande & Fruits de mer;330;false;0;
 Côte de veau;Viande & Fruits de mer;168;false;0;
 Escalope de veau;Viande & Fruits de mer;170;false;0;
-Jambon fumé;Viande & Fruits de mer;380;false;0;
-Jambon cru;Viande & Fruits de mer;330;false;0;
+Jambon fumé;Viande & Fruits de mer;380;false;0;jambon-fume.png
+Jambon cru;Viande & Fruits de mer;330;false;0;jambon-cru.png
 Merguez;Viande & Fruits de mer;520;false;0;
 Côte de mouton;Viande & Fruits de mer;300;false;0;
 Travers de porc;Viande & Fruits de mer;305;false;0;
@@ -96,35 +95,35 @@ Huîtres;Viande & Fruits de mer;70;false;0;
 Langoustine;Viande & Fruits de mer;90;false;0;langoustine.png
 Moules;Viande & Fruits de mer;70;false;0;moule.png
 Poulpe;Viande & Fruits de mer;70;false;0;poulpe.png
-Crevettes;Viande & Fruits de mer;98;false;0;
+Crevettes;Viande & Fruits de mer;98;false;0;crevette.png
 Noix de cajou;Accompagnement;612;false;0;cashew.png
 Olives noires;Accompagnement;336;false;0;olive-noire.png
 Olives vertes;Accompagnement;123;false;0;olive-verte.png
-Anchois;Accompagnement;160;false;0;
+Anchois;Accompagnement;160;false;0;anchois.png
 Oeuf dur;Accompagnement;70;false;0;oeuf-dur.png
 Oeuf au plat;Accompagnement;90;false;0;oeuf-au-plat.png
-Cornichons;Accompagnement;13;false;0;
+Cornichons;Accompagnement;13;false;0;cornichons.png
 Lentilles;Accompagnement;338;false;0;lentilles.png
-Macédoine de légumes;Accompagnement;72;false;0;
-Frites;Accompagnement;420;false;0;
-Purée de pomme de terre;Accompagnement;90;false;0;
-Pain complet;Accompagnement;230;false;0;
-Pain blanc;Accompagnement;255;false;0;
-Pain de mie;Accompagnement;284;false;0;
-Pain d’épice;Accompagnement;350;false;0;
-Pâtes natures;Accompagnement;90;false;0;
+Macédoine de légumes;Accompagnement;72;false;0;macedoine.png
+Frites;Accompagnement;420;false;0;frites.png
+Purée de pomme de terre;Accompagnement;90;false;0;puree.png
+Pain complet;Accompagnement;230;false;0;pain-complet.png
+Pain blanc;Accompagnement;255;false;0;pain-blanc.png
+Pain de mie;Accompagnement;284;false;0;pain-de-mie.png
+Pain d’épice;Accompagnement;350;false;0;pain-epices
+Pâtes natures;Accompagnement;90;false;0;pates.png
 Riz blanc cuit;Accompagnement;90;false;0;riz-blanc.png
-Riz complet cuit;Accompagnement;98;false;0;
+Riz complet cuit;Accompagnement;98;false;0;riz-blanc.png
 Taboulé;Accompagnement;150;false;0;taboule.png
-Brioche;Dessert;386;false;0;
-Cookies;Dessert;464;false;0;
-Gauffre;Dessert;291;false;0;
-Madelaines;Dessert;490;false;0;
-Biscuits;Dessert;400;false;0;
-Crème glacée chocolat;Dessert;235;false;0;
-Crème glacée vanille;Dessert;165;false;0;
-Crêpe nature;Dessert;227;false;0;
-Sorbet;Dessert;90;false;0;
+Brioche;Dessert;386;false;0;brioche.png
+Cookies;Dessert;464;false;0;cookie.png
+Gauffre;Dessert;291;false;0;gaufre.png
+Madeleines;Dessert;490;false;0;madeleine.png
+Biscuits;Dessert;400;false;0;biscuits.png
+Crème glacée chocolat;Dessert;235;false;0;glace-chocolat.png
+Crème glacée vanille;Dessert;165;false;0;glace-vanille.png
+Crêpe nature;Dessert;227;false;0;crepe.png
+Sorbet;Dessert;90;false;0;sorbet.png
 Bleus;Dessert;410;false;0;bleus.png
 Brie;Dessert;263;false;0;
 Camembert;Dessert;312;false;0;camembert.png
@@ -142,10 +141,10 @@ Pâté de campagne;Accompagnement;455;true;200;
 Tournedos;Viande & Fruits de mer;200;true;400;
 Tripes;Viande & Fruits de mer;94;true;500;
 Choucroute;Fruits & Légumes;27;true;200;
-Citrouille;Fruits & Légumes;30;true;200;
-Truffe fraîche;Fruits & Légumes;92;true;800;
-Carottes râpées;Fruits & Légumes;130;true;200;
+Citrouille;Fruits & Légumes;30;true;200;citrouille.png
+Truffe fraîche;Fruits & Légumes;92;true;800;truffe.png
+Carottes râpées;Fruits & Légumes;130;true;200;carotte.png
 Soupe à la tomate;Fruits & Légumes;30;true;200;soupe-tomate.png
-Eclair au chocolat;Dessert;262;true;300;
+Eclair au chocolat;Dessert;262;true;300;eclair.png
 Macaron (à l’unité);Dessert;120;true;500;macarons.png
-Caviar;Accompagnement;275;true;1000;
+Caviar;Accompagnement;275;true;1000;caviar.png
