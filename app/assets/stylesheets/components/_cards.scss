@@ -43,7 +43,9 @@
 
 /////////////////////////////////////////////////////////
 
-
+.card-margin {
+  margin: 5% auto;
+}
 ///////////////////////////////////////////////////////////////////////////////
 .cards {
     display: grid;
@@ -110,7 +112,6 @@
   /* CARDS */
 
   .card {
-    margin: 5px;
     padding: 5px;
     width: 200px;
     height: 70px;
@@ -207,7 +208,31 @@
     }
   }
 
-  .cards-pad {
+//////////////////////////////////////////////////////////
+
+.category-card {
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.card-title-shop {
+  color: $dark-bachef;
+  text-align: center;
+}
+
+.card-price-shop {
+  font-weight: bold;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: row;
+  margin-left: 68px;
+}
+
+ .cards-pad {
     padding: 10px;
 
   }
