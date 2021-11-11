@@ -1,30 +1,41 @@
-<div class="finish-body">
-  <div class="container finish-container">
-    <div class="result-body">
-      <div class="result-header"></div>
-      <% result = @calories - @game.calories %>
-      <% if (-100..100).include? result %>
-        <h1>Félicitations ! &#128540;</h1>
-      <% else %>
-        <h1>Peux mieux faire... &#128556;</h1>
-      <%end%>
-      <div class="result-message">
-        <% if (-100..100).include? result %>
-          <h5> Ton deck contient <strong class="win"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
-        <% else %>
-          <h5> Ton deck contient <strong class="fail"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
-        <%end%>
-      </div>
-    </div>
-    <div class="save-form form-group">
-      <%= form_for @game, url: saved_game_path(@game) do |f| %>
-          <%= f.text_field(:recipe_title, {:include_blank => "Titre"})%> <br>
-          <%= f.text_area(:recipe_content, {:include_blank => "Description"})%> <br>
-          <%= f.submit %>
-      <% end %>
-    </div>
+<div class="result-body">
+  <div class="result">
+    <% result = @calories - @game.calories %>
+    <% if (-100..100).include? result %>
+      <h1>Félicitations ! &#128540;</h1>
+      <h5> Ton deck contient <strong class="win"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
+    <% else %>
+      <h1>Peux mieux faire... &#128556;</h1>
+      <h5> Ton deck contient <strong class="fail"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
+    <%end%>
   </div>
+    <h3>Voici ton deck de cartes :</h3>
+  <div class="card-result">
+    <% @game.cards.each do |card|%>
+    <%= render "cards/card", card: card%>
+  <%end%>
+  </div>
+    <h3>Sauvegarde le :</h3>
+  <div class="save-form">
+    <%= form_for @game, url: saved_game_path(@game), :html => {:class => "form-horizontal center"} do |f| %>
+      <div class="form-group">
+        <%= f.label :recipe_title, "Titre:", class: "control-label" %>
+        <div>
+          <%= f.text_field :recipe_title, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :recipe_content, "Description:", class: "control-label" %>
+        <div>
+          <%= f.text_area :recipe_content, class: "form-control" %>
+        </div>
+      </div>
+      <%= f.submit "Sauvegarder", class: "btn btn-default btn-primary" %>  
+  <% end %>
+  </div>
+  
 </div>
+
 
 <div class="container">
   <div class="recipe-container">
