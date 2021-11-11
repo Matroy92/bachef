@@ -20,9 +20,9 @@
             <%= image_tag "meat.gif", class: "image_tag"%>
           </div>
 
-            <h6>Viandes</h6>
+            <h6>Viandes & Fruits de mer</h6>
             <div class="cards-pad droppable" id="viandes">
-              <% @cards.select {|card| card.category == "Viande"}.each do |card| %>
+              <% @cards.select {|card| card.category == "Viande & Fruits de mer"}.each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
             </div>
