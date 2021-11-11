@@ -21,7 +21,6 @@ class GamesController < ApplicationController
 
    def show
       @game = Game.find(params[:id])
-      @cards = Card.where(premium: false)
    case @game.objective
       when 'Végétarien'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
@@ -32,6 +31,7 @@ class GamesController < ApplicationController
       when 'Equilibré'
          @cards = Card.all         
       end
+      @cards = Card.where(premium: false)
    end
 
    def update
