@@ -76,6 +76,12 @@
  justify-content: center;
 }
 
+.btn-sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
 .input-calories {
   border-width:0px;
   border:none;
