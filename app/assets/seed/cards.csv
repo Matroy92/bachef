@@ -54,7 +54,7 @@ Bavette (boeuf);Viande & Fruits de mer;200;false;0;bavette.png
 Bifteck de boeuf;Viande & Fruits de mer;200;false;0;bifteck-boeuf.png
 Bifteck de cheval;Viande & Fruits de mer;110;false;0;bifteck-cheval.png
 Aiguillette de boeuf;Viande & Fruits de mer;200;false;0;
-Côte de boeuf;Viande & Fruits de mer;260;false;0;cote-bœuf.png
+Côte de boeuf;Viande & Fruits de mer;260;false;0;cote-boeuf.png
 Entrecôte;Viande & Fruits de mer;200;false;0;
 Faux-filet de boeuf;Viande & Fruits de mer;156;false;0;
 Onglet;Viande & Fruits de mer;200;false;0;
@@ -69,13 +69,13 @@ Poulet;Viande & Fruits de mer;150;false;0;poulet-roti.png
 Rôti de veau;Viande & Fruits de mer;168;false;0;
 Tartare de boeuf;Viande & Fruits de mer;300;false;0;
 Foie de veau;Viande & Fruits de mer;137;false;0;
-Bar;Viande & Fruits de mer;90;false;0;
-Lotte;Viande & Fruits de mer;79;false;0;
-Cabillaud;Viande & Fruits de mer;79;false;0;
-Calmar;Viande & Fruits de mer;89;false;0;
-Colin;Viande & Fruits de mer;92;false;0;
-Daurade;Viande & Fruits de mer;77;false;0;
-Espadon;Viande & Fruits de mer;116;false;0;
+Bar;Viande & Fruits de mer;90;false;0;bar.png
+Lotte;Viande & Fruits de mer;79;false;0;lotte.png
+Cabillaud;Viande & Fruits de mer;79;false;0;cabillaud.png
+Calamar;Viande & Fruits de mer;89;false;0;calamar.png
+Colin;Viande & Fruits de mer;92;false;0;colin.png
+Daurade;Viande & Fruits de mer;77;false;0;daurade.png
+Espadon;Viande & Fruits de mer;116;false;0;espadon.png
 Hareng frais;Viande & Fruits de mer;149;false;0;
 Maquereau frais;Viande & Fruits de mer;128;false;0;
 Poisson à l’huile;Viande & Fruits de mer;325;false;0;

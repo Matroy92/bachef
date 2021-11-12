@@ -10,7 +10,7 @@
                 <%# <h5 class="card-title-shop ml-2"><%= card.title %>
                   <p class="category-card"><%= card.category %></p>
                   <div class="card-price">
-                  <p class="card-price-shop ml-2">Total : <%= humanized_money_with_symbol(card.price).reverse%></p>
+                  <p class="card-price-shop ml-2">Total : <%= humanized_money(card.price)%> €</p>
                   <%= form_tag orders_path do %>
                   <%= hidden_field_tag 'card_id', card.id %> 
                   <%= submit_tag 'Acheter', class: 'btn-shop' %>
