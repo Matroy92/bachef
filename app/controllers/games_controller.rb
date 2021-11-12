@@ -59,7 +59,9 @@ class GamesController < ApplicationController
 
    def saved
       @game = Game.find(params[:id])
-      @game.update!(saved: true)
+      title = params.dig(:game, :recipe_title)
+      content = params.dig(:game, :recipe_content)
+      @game.update!(saved: true, recipe_title: title, recipe_content: content)
       redirect_to games_path
    end
 
