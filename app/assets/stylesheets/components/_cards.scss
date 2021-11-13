@@ -57,6 +57,10 @@
     margin-top: 10px;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .five {
     grid-column: 5;
 }
@@ -68,15 +72,16 @@
   margin: 5px;
   padding: 5px;
   width: 250px;
-  height: 100%;
+  height: 400px;
   border-radius: 10px;
   box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
   background-size: contain;
+  overflow-y: scroll
 }
 
 
 .drag-over {
-    border: dashed 3px red;
+    border: dashed 3px grey;
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -105,14 +110,13 @@
       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
-  .main-container {
-    padding: 30px;
-  }
-
 
   /* CARDS */
 
   .card {
+
+    margin: 10px;
+    margin-bottom: 20px;
     padding: 5px;
     width: 200px;
     height: 70px;
@@ -237,5 +241,6 @@
 
  .cards-pad {
     padding: 10px;
+    margin-bottom: 20px;
 
   }
