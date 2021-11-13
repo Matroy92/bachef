@@ -40,3 +40,12 @@
 #background {
   background-color: $beige-bg;
 }
+
+.container-show-order {
+  background-color: $beige-bg;
+  min-height: calc(100ch - 100px);
+}
+
+.marge-50 {
+  margin-top: 100px;
+}
