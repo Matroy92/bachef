@@ -4,15 +4,29 @@
     <% @games.each do |game| %>
     <div class="game-row">
     <div class="game-infos mt-2">
-    <div>
-      <h2 class="title-dashboard"><%= game.recipe_title %>&nbsp; &nbsp; <%= link_to game_path(game), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <div>
+      <h2 class="title-dashboard"><%= game.recipe_title %>&nbsp; &nbsp; <%= link_to game_path(game), method: :delete, data: { confirm: "Tu es sûr de toi ?" } do %>
         <i class="bin far fa-trash-alt"></i>
         <%end%>
       </h2>
-    </div>
+      </div>
       <p class="p-dashboard"><%= game.recipe_content %></p>
-      <p class="p-dashboard"><%= game.objective %> / <span id="obj-dashboard">Objectif : <%= game.calories %> calories</p></p>
-    </div>
+      <p class="p-dashboard"><%= game.objective %> / <span id="obj-dashboard">Objectif : <%= game.calories %> calories</span></p>
+      <% @games.each do |game| %>
+      <% result = 0 %>
+      <% game.cards.each do |card| %>
+      <% result += card.calories %>
+      <% end %>
+      <span class="p-dashboard">Mon résultat : <%= result %> calories </span>
+      </div> 
+      <div>
+      <div class="card-result">
+          <% game.cards.each do |card|%>
+            <%= render "cards/card", card: card%>
+          <%end%>
+      </div>
+    <% end %>
+  </div>
     </div>
     <% end %>
   </div>
