@@ -1,7 +1,11 @@
 <div class="dashboard-body">
-  <div class="container"> 
+    <h2 class="card-title-shop mt-4">Mon dashboard</h2>
+  <div class="container-show-order mt-4"> 
     <% @games.each do |game| %>
-      <%= game.id%>
+    <div class="game-row">
+      <h2><%= game.recipe_title %> <%= game.id %></h2>
+      <p><%= game.recipe_content %></p>
+    </div>
     <% end %>
   </div>
 </div>
