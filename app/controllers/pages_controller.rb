@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     if @game.save
        redirect_to game_path(@game)
      else
-       render 'pages#home'
+       render :home
     end
  end
 end
