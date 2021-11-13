@@ -53,45 +53,40 @@ Bacon;Viande & Fruits de mer;385;false;0;bacon.png
 Bavette (boeuf);Viande & Fruits de mer;200;false;0;bavette.png
 Bifteck de boeuf;Viande & Fruits de mer;200;false;0;bifteck-boeuf.png
 Bifteck de cheval;Viande & Fruits de mer;110;false;0;bifteck-cheval.png
-Aiguillette de boeuf;Viande & Fruits de mer;200;false;0;
 Côte de boeuf;Viande & Fruits de mer;260;false;0;cote-boeuf.png
-Entrecôte;Viande & Fruits de mer;200;false;0;
-Faux-filet de boeuf;Viande & Fruits de mer;156;false;0;
-Onglet;Viande & Fruits de mer;200;false;0;
-Côte de porc;Viande & Fruits de mer;330;false;0;
-Côte de veau;Viande & Fruits de mer;168;false;0;
-Escalope de veau;Viande & Fruits de mer;170;false;0;
+Entrecôte;Viande & Fruits de mer;200;false;0;entrecote.png
+Faux-filet de boeuf;Viande & Fruits de mer;156;false;0;faux-filet.png
+Onglet;Viande & Fruits de mer;200;false;0;onglet.png
+Côte de porc;Viande & Fruits de mer;330;false;0;cote-porc.png
+Côte de veau;Viande & Fruits de mer;168;false;0;cote-veau.png
+Escalope de veau;Viande & Fruits de mer;170;false;0;escalope.png
 Jambon fumé;Viande & Fruits de mer;380;false;0;jambon-fume.png
 Jambon cru;Viande & Fruits de mer;330;false;0;jambon-cru.png
-Merguez;Viande & Fruits de mer;520;false;0;
-Côte de mouton;Viande & Fruits de mer;300;false;0;
-Travers de porc;Viande & Fruits de mer;305;false;0;
+Merguez;Viande & Fruits de mer;520;false;0;merguez.png
+Travers de porc;Viande & Fruits de mer;305;false;0;travers-porc.png
 Poulet;Viande & Fruits de mer;150;false;0;poulet-roti.png
-Rôti de proc;Viande & Fruits de mer;300;false;0;
-Rôti de veau;Viande & Fruits de mer;168;false;0;
-Tartare de boeuf;Viande & Fruits de mer;300;false;0;
-Foie de veau;Viande & Fruits de mer;137;false;0;
-Bar;Viande & Fruits de mer;90;false;0;
-Lotte;Viande & Fruits de mer;79;false;0;
-Cabillaud;Viande & Fruits de mer;79;false;0;
-Calmar;Viande & Fruits de mer;89;false;0;
-Colin;Viande & Fruits de mer;92;false;0;
-Daurade;Viande & Fruits de mer;77;false;0;
-Espadon;Viande & Fruits de mer;116;false;0;
-Hareng frais;Viande & Fruits de mer;149;false;0;
-Maquereau frais;Viande & Fruits de mer;128;false;0;
-Poisson à l’huile;Viande & Fruits de mer;325;false;0;
-Coquilles St-Jacques;Viande & Fruits de mer;74;false;0;
+Rôti de veau;Viande & Fruits de mer;168;false;0;roti-veau.png
+Tartare de boeuf;Viande & Fruits de mer;300;false;0;tartare.png
+Bar;Viande & Fruits de mer;90;false;0;bar.png
+Lotte;Viande & Fruits de mer;79;false;0;lotte.png
+Cabillaud;Viande & Fruits de mer;79;false;0;cabillaud.png
+Calamar;Viande & Fruits de mer;89;false;0;calamar.png
+Colin;Viande & Fruits de mer;92;false;0;colin.png
+Daurade;Viande & Fruits de mer;77;false;0;daurade.png
+Espadon;Viande & Fruits de mer;116;false;0;espadon.png
+Hareng frais;Viande & Fruits de mer;149;false;0;hareng.png
+Maquereau frais;Viande & Fruits de mer;128;false;0;maquereau.png
+Poisson à l’huile;Viande & Fruits de mer;325;false;0;poisson-huile.png
+Coquilles St-Jacques;Viande & Fruits de mer;74;false;0;coquille.png
 Sardines à l’huile;Viande & Fruits de mer;125;false;0;sardines.png
 Saumon fumé;Viande & Fruits de mer;265;false;0;saumon-fume.png
-Sole;Viande & Fruits de mer;78;false;0;
-Soupe de poissons;Viande & Fruits de mer;90;false;0;
+Sole;Viande & Fruits de mer;78;false;0;sole.png
+Soupe de poissons;Viande & Fruits de mer;90;false;0;soupe-poisson.png
 Thon frais;Viande & Fruits de mer;225;false;0;thon.png
-Couteaux;Viande & Fruits de mer;55;false;0;
-Crabe frais;Viande & Fruits de mer;85;false;0;
-Gambas;Viande & Fruits de mer;98;false;0;
-Homard;Viande & Fruits de mer;80;false;0;
-Huîtres;Viande & Fruits de mer;70;false;0;
+Crabe frais;Viande & Fruits de mer;85;false;0;crabe.png
+Gambas;Viande & Fruits de mer;98;false;0;gambas.png
+Homard;Viande & Fruits de mer;80;false;0;homard.png
+Huîtres;Viande & Fruits de mer;70;false;0;huitre.png
 Langoustine;Viande & Fruits de mer;90;false;0;langoustine.png
 Moules;Viande & Fruits de mer;70;false;0;moule.png
 Poulpe;Viande & Fruits de mer;70;false;0;poulpe.png
@@ -125,22 +120,22 @@ Crème glacée vanille;Dessert;165;false;0;glace-vanille.png
 Crêpe nature;Dessert;227;false;0;crepe.png
 Sorbet;Dessert;90;false;0;sorbet.png
 Bleus;Dessert;410;false;0;bleus.png
-Brie;Dessert;263;false;0;
+Brie;Dessert;263;false;0;brie.png
 Camembert;Dessert;312;false;0;camembert.png
-Cheddar;Dessert;382;false;0;
+Cheddar;Dessert;382;false;0;cheddar.png
 Chèvre;Dessert;330;false;0;chevre.png
 Comté;Dessert;396;false;0;comte.png
-Fromage blanc allégé;Dessert;44;false;0;
-Fromage blanc;Dessert;80;false;0;
+Fromage blanc allégé;Dessert;44;false;0;fromage-blanc-allege.png
+Fromage blanc;Dessert;80;false;0;fromage-blanc.png
 Mozzarella;Dessert;332;false;0;mozzarella.png
-Reblochon;Dessert;354;false;0;
-Tomme;Dessert;354;false;0;
+Reblochon;Dessert;354;false;0;reblochon.png
+Tomme;Dessert;354;false;0;tomme.png
 Yaourt allégé sucré;Dessert;80;false;0;yaourt.png
 Yaourt au fruit;Dessert;100;false;0;yaourt-fruits.png
-Pâté de campagne;Accompagnement;455;true;200;
-Tournedos;Viande & Fruits de mer;200;true;400;
-Tripes;Viande & Fruits de mer;94;true;500;
-Choucroute;Fruits & Légumes;27;true;200;
+Beignets;Accompagnement;412;true;200;beignets.png
+Tournedos;Viande & Fruits de mer;200;true;400;tournedos.png
+Hamburger;Viande & Fruits de mer;254;true;500;burger.png
+Gnocchis;Fruits & Légumes;133;true;200;gnocchi.png
 Citrouille;Fruits & Légumes;30;true;200;citrouille.png
 Truffe fraîche;Fruits & Légumes;92;true;800;truffe.png
 Carottes râpées;Fruits & Légumes;130;true;200;carotte.png
@@ -148,3 +143,4 @@ Soupe à la tomate;Fruits & Légumes;30;true;200;soupe-tomate.png
 Eclair au chocolat;Dessert;262;true;300;eclair.png
 Macaron (à l’unité);Dessert;120;true;500;macarons.png
 Caviar;Accompagnement;275;true;1000;caviar.png
+Semoule;Accompagnement;130;true;200;semoule.png

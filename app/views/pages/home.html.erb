@@ -4,7 +4,7 @@
         <div class="form-bloc">
             <div class="video-title">
             <h1>B a Chef !</h1>
-              <h5 class="baseline">A vous de trouver ce que vous allez manger ce soir ! </h5>
+              <h5 class="baseline">A vous de trouver ce que vous allez manger ce soir en validant votre objectif de calories ! </h5>
             </div>
             <div class="container-form justify-content-between" id="game_new">
               <%= form_for @game, html: { class: "d-flex align-items-center"} do |f| %>
@@ -22,8 +22,8 @@
                       <%= f.number_field :calories, class: "input-home-calories quantity-num", value: 1000 %>
                   </div>
                 <%# </div> %>
-              <div class="btn-margin text-center">
-              <h2 class="btn-bachef">C'est parti !</h2>
+              <div class="text-center">
+              <h2 class="btn-bachef mb-0">C'est parti !</h2>
               </div>
               <% end %>
             </div>
@@ -34,8 +34,15 @@
         </div>
       <%# </section> %>
     </div>
+    <div class="d-flex text-center justify-content-center scroll">
+  <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="d-flex text-center justify-content-center scroll2">
+  <i class="fas fa-chevron-down"></i>
+    </div>
   </div>
 </div>
+
 <%# 
 <div class="main-container">
   <div class="button-hp">

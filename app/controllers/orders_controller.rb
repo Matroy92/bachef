@@ -3,10 +3,12 @@ class OrdersController < ApplicationController
     card = Card.find(params[:card_id])
     order = Order.create!(card: card, amount: card.price, state: 'pending', user: current_user)
     card.update(premium: false)
+    # complete_image_path = "app/assets/images/#{card.image_path}"
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: card.title,
+        images: ["https://www.lux-review.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/12/grocery-shopping.jpg.webp"],
         amount: card.price_cents,
         currency: 'eur',
         quantity: 1
@@ -17,7 +19,9 @@ class OrdersController < ApplicationController
   
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
+
   end
+
 
   def show
       @order = current_user.orders.find(params[:id])

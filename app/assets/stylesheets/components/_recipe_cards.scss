@@ -3,7 +3,7 @@
 }
 
 .recipe {
-    background: rgba(100, 71, 249, 0.08);
+    color: $blue-bachef;
     border-radius: 6px;
     height: 180px;
     width: 411px;
@@ -35,6 +35,7 @@
         font-weight: bold;
         line-height: 20px;
         font-size: 18px;
+        color: $dark-bachef;
       }
 
       .details {

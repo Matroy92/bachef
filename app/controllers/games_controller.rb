@@ -12,16 +12,15 @@ class GamesController < ApplicationController
    def create
       @game = Game.new(game_params)
       @game.user = current_user
-      if @game.save!
+      if @game.save
          redirect_to game_path(@game)
        else
-         render :new
+         render 'pages/home'
       end
    end
 
    def show
       @game = Game.find(params[:id])
-      @cards = Card.where(premium: false)
    case @game.objective
       when 'Végétarien'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
@@ -32,6 +31,7 @@ class GamesController < ApplicationController
       when 'Equilibré'
          @cards = Card.all
       end
+      @cards = Card.where(premium: false)
    end
 
    def update
@@ -66,8 +66,7 @@ class GamesController < ApplicationController
 
    def saved
       @game = Game.find(params[:id])
-      @game.update!(saved: true)
-      redirect_to games_path
+      @game.update!(saved: true, recipe_title: :title, recipe_content: :content)
    end
 
    private
@@ -84,7 +83,7 @@ class GamesController < ApplicationController
       "ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝýÿŶŷŸŹźŻżŽž",
       "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz")
     # url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=Banane-Poulet+roti+(100g)-Frites" #ok
-    html_file = URI.open(clean_url).read
+    html_file = URI.open(clean_url.gsub(/’/,'')).read
     html_doc = Nokogiri::HTML(html_file, nil, Encoding::UTF_8.to_s)
     @recipes =  []
     html_doc.search('.MRTN__sc-1gofnyi-2.gACiYG').each do |element|
@@ -108,7 +107,7 @@ class GamesController < ApplicationController
       clean_url= url.tr(
          "ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝýÿŶŷŸŹźŻżŽž",
          "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz")
-      html_file = URI.open(clean_url).read
+      html_file = URI.open(clean_url.gsub(/’/,'')).read
       html_doc = Nokogiri::HTML(html_file, nil, Encoding::UTF_8.to_s)
       html_doc.search('.RCP__sc-1418ayg-0.fJAlgo').each do |element|
          texts = element.search(".RCP__sc-1418ayg-1.dbYbAl")
