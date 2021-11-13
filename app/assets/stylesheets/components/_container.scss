@@ -23,11 +23,15 @@
 
 #head {
   background-color: $beige-bg;
-  height: 640px;
+  height: 100vh;
 }
 
 .container-form {
   display: flex;
   order: 5;
   margin-top: 20px;
+}
+
+#background {
+  background-color: $beige-bg;
 }

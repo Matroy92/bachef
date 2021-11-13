@@ -1,6 +1,10 @@
 <footer>
   <div class="row">
-    <div class="col-md-12" id="footer-bachef">
+  <% if params[:controller] == 'pages' && params[:action] == 'home'%>
+  <div class="col-md-12 footer-bachef footer-bachef-home">
+  <% else %>
+  <div class="col-md-12 footer-bachef">
+  <% end %>
       <p>Copyright &copy; B a Chef 2021</p>
     </div>
   </div>

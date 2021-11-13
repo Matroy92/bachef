@@ -21,7 +21,6 @@ class GamesController < ApplicationController
 
    def show
       @game = Game.find(params[:id])
-      @cards = Card.where(premium: false)
    case @game.objective
       when 'Végétarien'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
@@ -32,6 +31,7 @@ class GamesController < ApplicationController
       when 'Equilibré'
          @cards = Card.all         
       end
+      @cards = Card.where(premium: false)
    end
 
    def update
@@ -61,8 +61,7 @@ class GamesController < ApplicationController
 
    def saved
       @game = Game.find(params[:id])
-      @game.update!(saved: true)
-      redirect_to games_path
+      @game.update!(saved: true, recipe_title: :title, recipe_content: :content)
    end
 
    private

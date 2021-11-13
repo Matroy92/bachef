@@ -76,6 +76,12 @@
  justify-content: center;
 }
 
+.btn-sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
 .input-calories {
   border-width:0px;
   border:none;
@@ -87,4 +93,13 @@
 
 .btn-margin {
   margin-top: 8px;
+}
+
+.btn-shop {
+  border-radius: 4px;
+  background-color: $orange-bachef;
+  color: #ffffff;
+  margin-left: 50px;
+  border: 0;
+  font-size: 14px;
 }

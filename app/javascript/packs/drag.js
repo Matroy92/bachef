@@ -32,10 +32,15 @@ function dragEnter(e) {
     if (!e.target.classList.contains('card-title')) {
       if (!e.target.classList.contains('column-1')) {
         if (!e.target.classList.contains('card-image')) {
-
           e.target.classList.add('drag-over');
         }
       }
+    }
+  }
+  else {
+    const category = draggable.dataset.category.split("-")[1]
+    if (e.target.id === category) {
+      e.target.classList.add('drag-over');
     }
   }
 }
@@ -51,10 +56,30 @@ function dragOver(e) {
       }
     }
   }
+  else {
+    const category = draggable.dataset.category.split("-")[1]
+    if (e.target.id === category) {
+      e.target.classList.add('drag-over');
+    }
+  }
 }
 
 function dragLeave(e) {
-  e.target.classList.remove('drag-over');
+  if (!e.target.classList.contains('card')) {
+    if (!e.target.classList.contains('card-title')) {
+      if (!e.target.classList.contains('column-1')) {
+        if (!e.target.classList.contains('card-image')) {
+          e.target.classList.remove('drag-over');
+        }
+      }
+    }
+  }
+  else {
+    const category = draggable.dataset.category.split("-")[1]
+    if (e.target.id === category) {
+      e.target.classList.remove('drag-over');
+    }
+  }
 }
 
 function drop(e) {
@@ -63,14 +88,23 @@ function drop(e) {
   // get the draggable element
   const id = e.dataTransfer.getData('card');
   const draggable = document.getElementById(id);
-
-  if (!e.target.classList.contains('card')) {
-    if (!e.target.classList.contains('card-title')) {
-      if (!e.target.classList.contains('column-1')) {
-        if (!e.target.classList.contains('card-image')) {
-          e.target.appendChild(draggable);
+  if (e.target.classList.contains('card_checklist')) {
+    if (!e.target.classList.contains('card')) {
+      if (!e.target.classList.contains('card-title')) {
+        if (!e.target.classList.contains('column-1')) {
+          if (!e.target.classList.contains('card-image')) {
+            e.target.appendChild(draggable);
+            console.log(draggable)
+            console.log(e.target)
+          }
         }
       }
+    }
+  }
+  else {
+    const category = draggable.dataset.category.split("-")[1]
+    if (e.target.id === category) {
+      e.target.appendChild(draggable);
     }
   }
 
