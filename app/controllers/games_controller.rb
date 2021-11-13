@@ -15,7 +15,7 @@ class GamesController < ApplicationController
        if @game.save
           redirect_to game_path(@game)
         else
-          render root_path
+         redirect_to root_path
        end
     end
 
