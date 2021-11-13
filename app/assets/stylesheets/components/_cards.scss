@@ -43,7 +43,9 @@
 
 /////////////////////////////////////////////////////////
 
-
+.card-margin {
+  margin: 5% auto;
+}
 ///////////////////////////////////////////////////////////////////////////////
 .cards {
     display: grid;
@@ -62,13 +64,13 @@
 
 
 .card_checklist {
-    margin: 5px;
-    padding: 5px;
-    width: 250px;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
-    background: radial-gradient(#fffd92, #e6d92b);
+  margin: 5px;
+  padding: 5px;
+  width: 250px;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
+  background-size: contain;
 }
 
 
@@ -110,7 +112,6 @@
   /* CARDS */
 
   .card {
-    margin: 5px;
     padding: 5px;
     width: 200px;
     height: 70px;
@@ -186,23 +187,52 @@
   }
 
   .card-green {
-    background: radial-gradient(#1fe4f5, #3fbafe);
+    background: radial-gradient(#60efbc, #58d5c9);
   }
 
   .card-blue {
-    background: radial-gradient(#fbc1cc, #fa99b2);
+    background: radial-gradient(#1fe4f5, #3fbafe);
   }
 
   .card-orange {
-    background: radial-gradient(#76b2fe, #b69efe);
+    background: radial-gradient(#ffcc89, #ffa552);
   }
 
   .card-red {
-    background: radial-gradient(#60efbc, #58d5c9);
+    background: radial-gradient(#fd8d8d, #ff5454);
   }
 
   @media (max-width: 1600px) {
     .cards {
       justify-content: center;
     }
+  }
+
+//////////////////////////////////////////////////////////
+
+.category-card {
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.card-title-shop {
+  color: $dark-bachef;
+  text-align: center;
+}
+
+.card-price-shop {
+  font-weight: bold;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: row;
+  margin-left: 68px;
+}
+
+ .cards-pad {
+    padding: 10px;
+
   }

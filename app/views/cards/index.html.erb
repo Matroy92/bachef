@@ -1,27 +1,28 @@
-<div class ="finish-body">
-  <div class="container">
-    <h1>cards</h1>
-    
-    <div class="row">
+
+ <div id="background">
+ <h1 class="card-title-shop m-3">Agrandissez votre collection !</h1>
+<div class="container-card m-2">
+  <div class="container-grid">
       <% @cards.each do |card| %>
-      <%if card.premium == true %>
-        <div class="col-6 col-md-4">
-          <div class="card">
-            <div class="card-body">
-            <%= render  "cards/card", card: card%>
-              <h5 class="card-title"><%= card.title %></h5>
-              <p class="card-text"><%= card.category %></p>
-              <p>Amount: <%= humanized_money_with_symbol(card.price) %></p>
-              <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'card_id', card.id %>
-              
-              <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-              <% end %>
-            </div>
+        <%if card.premium == true %>
+          <div>
+              <div class="p-3">
+              <%= render  "cards/card", card: card%>
+                <%# <h5 class="card-title-shop ml-2"><%= card.title %>
+                  <p class="category-card"><%= card.category %></p>
+                  <div class="card-price">
+                  <p class="card-price-shop ml-2">Total : <%= humanized_money(card.price)%> €</p>
+                  <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'card_id', card.id %> 
+                  <%= submit_tag 'Acheter', class: 'btn-shop' %>
+                  <% end %>
+                  </div>
+              </div>
           </div>
-        </div>
-        <%end%>
-      <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 </div>
+</div>
+

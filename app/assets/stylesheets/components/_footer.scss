@@ -1,7 +1,15 @@
-#footer-bachef {
+.footer-bachef {
     border-top: solid 1px #E5E5E5;
     bottom: 0;
     position: relative;
     height: 50px;
     text-align: center;
+    background-color: $beige-bg;
+    color: grey;
+    font-style: italic;
+    font-size: 14px;
   }
+
+.footer-bachef-home {
+  background-color: #ffffff;
+}
