@@ -25,20 +25,18 @@ require("channels")
 // External imports
 import "bootstrap";
 import "controllers"
-import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
-import { dragInit, dragEnd } from 'packs/drag';
+import { dragInit, dragEnd, cardSelection } from 'packs/drag';
 import { stopAutoplayonHover } from 'packs/profiles';
 import { getSelectedObjective } from 'packs/form_objective';
-import { quantityProducts } from 'packs/calorie'
+import { quantityProducts } from 'packs/calorie';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initCardSelection();
   initBtnSubmit();
   getSelectedCheckboxValues();
   stopAutoplayonHover();
@@ -47,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   dragEnd();
   stopAutoplayonHover();
   quantityProducts();
+  cardSelection();
 });

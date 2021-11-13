@@ -1,4 +1,5 @@
 /* draggable element */
+import { csrfToken } from "@rails/ujs";
 
 function dragInit() {
   const draggableElements = document.querySelectorAll('.draggable');
@@ -28,58 +29,92 @@ function dragEnd() {
 
 function dragEnter(e) {
   e.preventDefault();
-  if (!e.target.classList.contains('card')) {
-    if (!e.target.classList.contains('card-title')) {
-      if (!e.target.classList.contains('column-1')) {
-        if (!e.target.classList.contains('card-image')) {
-          e.target.classList.add('drag-over');
+  const id = e.dataTransfer.getData('card');
+  const draggable = document.getElementById(id);
+  if (e.target.classList.contains('cards-pad')) {
+    //  const category = draggable.dataset.category.split("-")[1]
+    //  if (e.target.id === category) {
+    //    e.target.classList.add('drag-over');
+    //  }
+    if (!e.target.classList.contains('draggable')) {
+      if (!e.target.classList.contains('card')) {
+        if (!e.target.classList.contains('card-title')) {
+          if (!e.target.classList.contains('column-1')) {
+            if (!e.target.classList.contains('card-image')) {
+              e.target.classList.add('drag-over');
+            }
+          }
         }
       }
-    }
-  }
-  else {
-    const category = draggable.dataset.category.split("-")[1]
-    if (e.target.id === category) {
-      e.target.classList.add('drag-over');
     }
   }
 }
 
 function dragOver(e) {
   e.preventDefault();
-  if (!e.target.classList.contains('card')) {
-    if (!e.target.classList.contains('card-title')) {
-      if (!e.target.classList.contains('column-1')) {
-        if (!e.target.classList.contains('card-image')) {
-          e.target.classList.add('drag-over');
-        }
-      }
-    }
+  const id = e.dataTransfer.getData('card');
+  // console.log("id", id)
+  // const draggable = document.getElementById(id);
+  // columns vers checklist
+  if (e.target.classList.contains("card_checklist")) {
+    e.target.classList.add('drag-over');
+
+
   }
-  else {
-    const category = draggable.dataset.category.split("-")[1]
-    if (e.target.id === category) {
-      e.target.classList.add('drag-over');
-    }
-  }
+
+  // checklist vers columns
+
+  // if (e.target.classList.contains('cards-pad')) {
+  //   // const category = draggable.dataset.category.split("-")[1]
+  //   // if (e.target.id === category) {
+  //   //   e.target.classList.add('drag-over');
+  //   // }
+  //   if (!e.target.classList.contains('draggable')) {
+  //     console.log("1")
+
+  //     if (!e.target.classList.contains('card')) {
+  //       console.log("2")
+  //       if (!e.target.classList.contains('card-title')) {
+  //         console.log("3")
+  //         if (!e.target.classList.contains('column-1')) {
+  //           console.log("4")
+  //           if (!e.target.classList.contains('card-image')) {
+  //             console.log("5")
+  //             e.target.classList.add('drag-over');
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 function dragLeave(e) {
-  if (!e.target.classList.contains('card')) {
-    if (!e.target.classList.contains('card-title')) {
-      if (!e.target.classList.contains('column-1')) {
-        if (!e.target.classList.contains('card-image')) {
-          e.target.classList.remove('drag-over');
-        }
-      }
+
+  if (!e.target.classList.contains("card_checklist")) {
+    const checklist = document.querySelector(".card_checklist");
+    if (checklist.classList.contains("drag-over")) {
+      checklist.classList.remove("drag-over")
     }
+    // e.target.classList.add('drag-over');
   }
-  else {
-    const category = draggable.dataset.category.split("-")[1]
-    if (e.target.id === category) {
-      e.target.classList.remove('drag-over');
-    }
-  }
+  // const id = e.dataTransfer.getData('card');
+  // const draggable = document.getElementById(id);
+  // if (e.target.classList.contains('cards-pad')) {
+  //   const category = draggable.dataset.category.split("-")[1]
+  //   if (e.target.id === category) {
+  //     e.target.classList.remove('drag-over');
+  //   }
+  //   if (!e.target.classList.contains('card')) {
+  //     if (!e.target.classList.contains('card-title')) {
+  //       if (!e.target.classList.contains('column-1')) {
+  //         if (!e.target.classList.contains('card-image')) {
+  //           e.target.classList.remove('drag-over');
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 function drop(e) {
@@ -93,9 +128,8 @@ function drop(e) {
       if (!e.target.classList.contains('card-title')) {
         if (!e.target.classList.contains('column-1')) {
           if (!e.target.classList.contains('card-image')) {
-            e.target.appendChild(draggable);
             console.log(draggable)
-            console.log(e.target)
+            e.target.appendChild(draggable);
           }
         }
       }
@@ -112,7 +146,36 @@ function drop(e) {
   draggable.classList.remove('hidden');
 }
 
-export { dragInit, dragEnd };
+function cardSelection() {
+  const form = document.querySelector(".edit_game")
+  console.log(form);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    const selectedCards = document.querySelectorAll('.card_checklist .draggable');
+
+    const selectedCardsIds = Array.from(selectedCards).map((element) => {
+      return element.dataset.id
+    })
+    let formData = new FormData();
+    formData.append('card_ids', selectedCardsIds)
+    fetch(form.action, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/html', 'X-CSRF-Token': csrfToken()
+      },
+      body: formData,
+      redirect: 'follow'
+    })
+      .then(response => response.json())
+      .then((data) => {
+        window.location.href = data.url;
+      })
+  })
+}
+
+export { dragInit, dragEnd, cardSelection };
 //export { dragEnter };
 //export { dragLeave };
 //export { drop };

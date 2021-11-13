@@ -1,6 +1,6 @@
 .button-hp {
     margin: 0 auto;
-    width: 25%;
+    width: 80%;
     height: 70px;
     box-shadow: 1em 1em 2em rgba(0,0,0,.2);
     border-radius: 80px;
@@ -77,9 +77,18 @@
 }
 
 .btn-sticky {
-  position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 0;
+  top: 10px;
+  align-self: flex-start;
+  left: 80%;
+}
+
+.btn-sticky-2 {
+  position: fixed;
+  top: 85%;
+  left: 90%;
+  z-index: 99;
+
 }
 
 .input-calories {

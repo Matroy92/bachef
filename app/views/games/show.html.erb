@@ -53,16 +53,15 @@
           <div>
             <%= image_tag "food.gif", class: "image_tag_3"%>
           </div>
-          <div class="card_checklist justify-content-center sticky-top droppable draggable">
+          <div class="btn-sticky">
+            <h6>Mon panier</h6>
+            <div class="card_checklist justify-content-center droppable"></div>
+              <%= simple_form_for @game, url: finish_game_path, method: :get do |f| %>
+                <%= f.input :cards, as: :hidden %>
+                <%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text btn-sticky'%>
+              <% end %>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="list-group">
-      <%= simple_form_for @game, url: finish_game_path, method: :get do |f| %>
-        <%= f.input :cards, as: :hidden %>
-          <div class="btn-sticky"><%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text middle'%></div>
-      <% end %>
       </div>
     </div>
   </div>

@@ -30,7 +30,7 @@ class GamesController < ApplicationController
       when 'Vegan'
          @cards = Card.where.not(category: 'Viande & Fruits de mer')
       when 'Equilibré'
-         @cards = Card.all         
+         @cards = Card.all
       end
    end
 
@@ -51,10 +51,15 @@ class GamesController < ApplicationController
    end
 
    def finish
-      selected_card_ids = params[:game][:cards].split(',').map(&:to_i)
+      selected_card_ids = params[:card_ids].split(',').map(&:to_i)
       @game = Game.find(params[:id])
       @game.card_ids = selected_card_ids
       @game.save
+      render json: {url: finish_show_game_path }
+   end
+
+   def finish_show
+      @game = Game.find(params[:id])
       @calories = calories_sum(@game)
       recipes_scrap
    end
@@ -72,7 +77,6 @@ class GamesController < ApplicationController
    end
 
   def recipes_scrap
-    @game = Game.find(params[:id])
     @ingredients = @game.cards.pluck(:title).join("-")
 
     url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@ingredients}" #ok
@@ -95,7 +99,7 @@ class GamesController < ApplicationController
     @recipes.each_with_index do |recipe, index|
       recipe_scrap(recipe[:link], index)
     end
-    
+
   end
 
     def recipe_scrap(recipe_link, index)
@@ -113,10 +117,10 @@ class GamesController < ApplicationController
          texts.each_with_index do |text,  id|
             @recipes[index][:duration] = text.children.text if id == 0
             @recipes[index][:difficulty] =  text.children.text if id == 1
-            @recipes[index][:price] = text.children.text if id == 2 
-            
+            @recipes[index][:price] = text.children.text if id == 2
+
             #binding.pry
-            
+
          end
       end
     end
