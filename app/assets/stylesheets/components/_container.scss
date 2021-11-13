@@ -44,8 +44,13 @@
 .container-show-order {
   background-color: $beige-bg;
   min-height: calc(100ch - 100px);
+  width: 80%;
 }
 
 .marge-50 {
   margin-top: 100px;
+}
+
+#marginb {
+  margin-bottom: 100px;
 }
