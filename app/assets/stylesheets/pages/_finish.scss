@@ -1,38 +1,45 @@
-.result-body {
+.finish-body {
     background-color: $beige-bg;
-    height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: calc(100vh - 100px);
+    color: $dark-bachef;
+    font-family: $headers-font;
 }
-.result{
-    text-align: center;
-    margin-bottom: 24px;
-}
-.card-result {
-    width: 60%;
+
+.result-container {
+    margin-top: 80px;
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-bottom: 24px;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.message-container {
+    width: 550px;
+}
+
+.result-deck {
+    width: 632px;
+}
+
+.card-result {
+    width: 632px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .pen-cursor {
     cursor: pointer;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 16px;
 }
 
 .save-form {
-    width: 1000px;
-    margin-bottom: 24px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
 .win {
     color: $green-bachef;
@@ -43,13 +50,11 @@
 .cal-obj {
     color: $blue-bachef;
 }
-.card-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 50%;
-    padding: 24px;
+
+.light {
+    font-weight: lighter;
 }
+
 .recipe-container {
     display: flex;
     flex-direction: row;

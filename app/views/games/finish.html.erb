@@ -1,44 +1,57 @@
-<div class="result-body">
-  <div class="result">
-    <% result = @calories - @game.calories %>
-    <% if (-100..100).include? result %>
-      <h1>Félicitations ! &#128540;</h1>
-      <h5> Ton deck contient <strong class="win"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
-    <% else %>
-      <h1>Peux mieux faire... &#128556;</h1>
-      <h5> Ton deck contient <strong class="fail"><%=@calories%></strong> calories, sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h5>
-    <%end%>
-  </div>
-   <div class="form-container" data-controller="edit-game">
-    <div>
-      <h3>Voici ton deck de cartes, sauvegarde le  <span><i class="fas fa-pen fa-xs pen-cursor" data-action="click->edit-game#displayForm" ></i></span></h3>
+<div class="finish-body">
+  <div class="result-container">
+    <div class="message-container">
+      <% result = @calories - @game.calories %>
+      <% if (-100..100).include? result %>
+        <h3 class="light"> Ton deck contient <strong class="win"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+        <h1>Félicitations ! &#128540;</h1>
+      <% else %>
+        <h3 class="light"> Ton deck contient <strong class="fail"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+        <h1>Bof bof... &#128556;</h1>
+      <%end%>
+      <div>
+        <h2 class="btn-bachef" ><%= link_to "Recommencer", root_path %></h2>
+      </div>
     </div>
-    <div class="save-form">
-      <%= form_for @game, url: saved_game_path(@game), :html => {:class => " d-none form-inline center", data: { edit_game_target: 'form'}} do |f| %>
-      <div class="form-group">
-        <%= f.label :title, "Titre:", class: "control-label mr-3" %>
-        <div>
-          <%= f.text_field :recipe_title, class: "form-control mr-3" %>
+
+    <div class="result-deck">
+      <div>
+        <h3 class="light">Ton deck: </h3>
+        <div class="card-result">
+          <% @game.cards.each do |card|%>
+            <%= render "cards/card", card: card%>
+          <%end%>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label :content, "Description:", class: "control-label mr-3" %>
+      <div class="form-container" data-controller="edit-game">
         <div>
-          <%= f.text_field :recipe_content, class: "form-control mr-3" %>
+          <h3 class="light">Enregsitre ta partie <span>   <i class="far fa-save pen-cursor" data-action="click->edit-game#displayForm" ></i></span></h3>
+        </div>
+        <div class="save-form">
+          <%= form_for @game, url: saved_game_path(@game), :html => {:class => " d-none", data: { edit_game_target: 'form'}} do |f| %>
+            <div class="form-group">
+              <%= f.label :title, "Titre:", class: "control-label mb-1" %>
+              <div>
+                <%= f.text_field :recipe_title, class: "form-control mb-1" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :content, "Description:", class: "control-label mb-1" %>
+              <div>
+                <%= f.text_field :recipe_content, class: "form-control mb-1" %>
+              </div>
+            </div>
+            <%= f.submit "Sauvegarder", class: "btn-bachef" %>
+          <% end %>
         </div>
       </div>
-      <%= f.submit "Sauvegarder", class: "btn btn-default btn-primary" %>
-      <% end %>
     </div>
-  </div>
-  <div class="card-result">
-    <% @game.cards.each do |card|%>
-    <%= render "cards/card", card: card%>
-  <%end%>
-  </div>
-  <div class="recipe-container">
-    <% @recipes.first(3).each do |recipe|%>
-    <%= render "recipe/recipe_card", recipe: recipe%>
-  <%end%>
   </div>
 </div>
+  <div>
+    <div class="recipe-container">
+      <% @recipes.first(3).each do |recipe|%>
+        <%= render "recipe/recipe_card", recipe: recipe%>
+      <%end%>
+    </div>
+  </div>
