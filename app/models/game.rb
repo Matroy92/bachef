@@ -6,4 +6,8 @@ class Game < ApplicationRecord
 
   validates :objective, presence: true, inclusion: { in: OBJECTIVE_TYPE}
   validates :calories, presence: true
+
+  def score
+    cards.map { |card_calories| card_calories.calories}.sum
+  end
 end
