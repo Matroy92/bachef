@@ -17,6 +17,9 @@
 
 .message-container {
     width: 550px;
+    h1 {
+        font-size: 64px;
+    }
 }
 
 .result-deck {
@@ -64,4 +67,8 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 24px;
+}
+
+.txt-deco {
+    text-decoration: none !important;
 }

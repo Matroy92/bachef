@@ -10,7 +10,7 @@
         <h1>Bof bof... &#128556;</h1>
       <%end%>
       <div>
-        <h2 class="btn-bachef" ><%= link_to "Recommencer", root_path %></h2>
+        <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
       </div>
     </div>
 
@@ -25,10 +25,10 @@
       </div>
       <div class="form-container" data-controller="edit-game">
         <div>
-          <h3 class="light">Enregsitre ta partie <span>   <i class="far fa-save pen-cursor" data-action="click->edit-game#displayForm" ></i></span></h3>
+          <h3 class="light">Enregistre ta partie <span>   <i class="far fa-save pen-cursor" data-action="click->edit-game#displayForm" ></i></span></h3>
         </div>
-        <div class="save-form">
-          <%= form_for @game, url: saved_game_path(@game), :html => {:class => " d-none", data: { edit_game_target: 'form'}} do |f| %>
+        <div class="save-form" id="game_save">
+          <%= form_for @game, url: saved_game_path(@game), :html => {:class => " d-none", id: "save_game", data: { edit_game_target: 'form'}} do |f| %>
             <div class="form-group">
               <%= f.label :title, "Titre:", class: "control-label mb-1" %>
               <div>
@@ -41,7 +41,8 @@
                 <%= f.text_field :recipe_content, class: "form-control mb-1" %>
               </div>
             </div>
-            <%= f.submit "Sauvegarder", class: "btn-bachef" %>
+              <a class="btn-finish" id="submit-finish">Enregistrer</a>
+            <%# <%= f.submit "Enregistrer", class: "btn-finish" %>
           <% end %>
         </div>
       </div>
@@ -55,4 +56,3 @@
       <%end%>
     </div>
   </div>
-
