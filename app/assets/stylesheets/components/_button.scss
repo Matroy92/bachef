@@ -84,12 +84,10 @@ left: 80%;
 }
 
 .btn-sticky-2 {
-position: fixed;
-top: 85%;
-left: 90%;
-z-index: 99;
-
-}
+  position: sticky;
+  top: 10px;
+  align-self: flex-start;
+  }
 
 .input-calories {
 border-width:0px;
@@ -100,49 +98,6 @@ color: $blue-bachef;
 font-weight: 500;
 }
 
-.btn-finish {
-  display: inline-block;
-  height: 50px;
-  cursor: pointer;
-  padding: 0.85rem;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  letter-spacing: .15rem;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $btn-bachef;
-    border-radius: 8px;
-    z-index: -2;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: darken($btn-bachef, 15%);
-    transition: all .3s;
-    border-radius: 8px;
-    z-index: -1;
-  }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
-    }
-  }
-}
 .btn-margin {
 margin-top: 8px;
 }
