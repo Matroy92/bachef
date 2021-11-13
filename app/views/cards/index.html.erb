@@ -1,26 +1,26 @@
  <div id="background">
  <h1 class="card-title-shop m-3">Agrandissez votre collection !</h1>
-<div class="container-card m-2">
-  <div class="container-grid">
+ <h5 class="baseline text-center">Ajoutez de nouveaux ingrédients et multipliez vos possibilités de repas.</h5>
+  <div class="container-card m-2">
+    <div class="container-grid">
       <% @cards.each do |card| %>
         <%if card.premium == true %>
           <div>
-              <div class="p-3">
+            <div class="p-3">
               <%= render  "cards/card", card: card%>
-                <%# <h5 class="card-title-shop ml-2"><%= card.title %>
-                  <p class="category-card"><%= card.category %></p>
+                  <%# <h5 class="card-title-shop ml-2"><%= card.title %>
+                <p class="category-card"><%= card.category %></p>
                   <div class="card-price">
-                  <p class="card-price-shop ml-2">Total : <%= humanized_money(card.price)%> €</p>
-                  <%= form_tag orders_path do %>
-                  <%= hidden_field_tag 'card_id', card.id %> 
-                  <%= submit_tag 'Acheter', class: 'btn-shop' %>
-                  <% end %>
+                    <p class="card-price-shop ml-2">Total : <%= humanized_money(card.price)%> €</p>
+                    <%= form_tag orders_path do %>
+                    <%= hidden_field_tag 'card_id', card.id %> 
+                    <%= submit_tag 'Acheter', class: 'btn-shop' %>
+                    <% end %>
                   </div>
-              </div>
+            </div>
           </div>
         <% end %>
-        <% end %>
-      </div>
+      <% end %>
     </div>
-</div>
+  </div>
 </div>

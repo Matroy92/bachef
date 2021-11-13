@@ -26,6 +26,11 @@
   height: 100vh;
 }
 
+#container-show {
+  background-color: $beige-bg;
+  height: (100% -100px);
+}
+
 .container-form {
   display: flex;
   order: 5;
