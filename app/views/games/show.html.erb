@@ -1,5 +1,5 @@
-<div class="container" id="game_checkbox">
-<br>
+<div id="container-show">
+  <br>
   <h3 style="text-align: center"><%= "Tu as sélectionné le profil #{@game.objective}, et ton objectif est de #{@game.calories} calories"%></h3>
   <div class="container">
     <div class="row">
@@ -9,56 +9,60 @@
             <%= image_tag "broccoli.gif", class: "image_tag"%>
           </div>
           <h6>Fruits & Légumes</h6>
-          <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
-            <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
-          <% end %>
+          <div class="cards-pad droppable" id="veggies">
+            <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
+              <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-veggies" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+            <% end %>
+          </div>
         </div>
         <div class="two">
             <div>
             <%= image_tag "meat.gif", class: "image_tag"%>
           </div>
 
-            <h6>Viandes</h6>
-            <% @cards.select {|card| card.category == "Viande"}.each do |card| %>
-              <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
-            <% end %>
+            <h6>Viandes & Fruits de mer</h6>
+            <div class="cards-pad droppable" id="viandes">
+              <% @cards.select {|card| card.category == "Viande & Fruits de mer"}.each do |card| %>
+                <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+              <% end %>
+            </div>
         </div>
         <div class="three">
             <div>
             <%= image_tag "fries.gif", class: "image_tag_2"%>
           </div>
-
             <h6>Accompagnements</h6>
-            <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
-              <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
-            <% end %>
+            <div class="cards-pad droppable" id="sides">
+              <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
+                <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-sides" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+              <% end %>
+            </div>
         </div>
         <div class="four">
             <div>
             <%= image_tag "dessert.gif", class: "image_tag"%>
           </div>
           <h6>Desserts</h6>
+          <div class="cards-pad droppable" id="desserts">
             <% @cards.select {|card| card.category == "Dessert"}.each do |card| %>
-              <div class="draggable" draggable="true" id="card-<%=card.id%>" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+              <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-desserts" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
             <% end %>
+          </div>
         </div>
         <div class="five">
           <div>
             <%= image_tag "food.gif", class: "image_tag_3"%>
           </div>
-          <div class="card_checklist justify-content-center sticky-top droppable">
+          <div class="btn-sticky">
+            <h6>Mon panier</h6>
+            <div class="card_checklist justify-content-center droppable"></div>
+              <%= simple_form_for @game, url: finish_game_path, method: :post do |f| %>
+                <%= f.input :cards, as: :hidden %>
+                <%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text btn-sticky'%>
+              <% end %>
           </div>
         </div>
       </div>
     </div>
-    </div>
-  </div>
-    <div class="list-group">
-
-
-     <%= simple_form_for @game, url: finish_game_path, method: :get do |f| %>
-      <%= f.input :cards, as: :hidden %>
-      </div><%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text middle' %>
-      <% end %>
   </div>
 </div>

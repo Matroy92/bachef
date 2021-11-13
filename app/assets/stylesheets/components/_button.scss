@@ -1,88 +1,103 @@
 .button-hp {
-    margin: 0 auto;
-    width: 25%;
-    height: 70px;
-    box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-    border-radius: 80px;
-    border: 4px solid;
-    background-color: rgba(101, 172, 222, 0.5);
-    border-color: $blue-bachef;
-    margin-bottom: 100px;
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-      background-color: rgba(101, 172, 222, 1);
-      box-shadow: inset 0 0 0 2em var(--hover);
-      a {
-        color: #ffffff;
-        text-decoration: none;
-      }
-    }
-    .button-hp-text {
-      text-align: center;
-      margin-top: 10px;
-      text-decoration: none;
+  margin: 0 auto;
+  width: 80%;
+  height: 70px;
+  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+  border-radius: 80px;
+  border: 4px solid;
+  background-color: rgba(101, 172, 222, 0.5);
+  border-color: $blue-bachef;
+  margin-bottom: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(101, 172, 222, 1);
+    box-shadow: inset 0 0 0 2em var(--hover);
+    a {
       color: #ffffff;
+      text-decoration: none;
     }
   }
+  .button-hp-text {
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
 
 .btn-bachef {
-  display: inline-block;
-  margin-left: 10px;
-  height: 50px;
-  cursor: pointer;
-  padding: 0.85rem;
+display: inline-block;
+margin-left: 10px;
+height: 49px;
+cursor: pointer;
+padding: 0.85rem;
+border-radius: 10rem;
+color: #fff;
+font-size: 1rem;
+letter-spacing: .15rem;
+transition: all .3s;
+position: relative;
+overflow: hidden;
+z-index: 1;
+&:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $btn-bachef;
   border-radius: 10rem;
-  color: #fff;
-  font-size: 1rem;
-  letter-spacing: .15rem;
+  z-index: -2;
+}
+&:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: darken($btn-bachef, 15%);
   transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $orange-bachef;
-    border-radius: 10rem;
-    z-index: -2;
-  }
+  border-radius: 10rem;
+  z-index: -1;
+}
+&:hover {
+  color: #fff;
   &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: darken($orange-bachef, 15%);
-    transition: all .3s;
-    border-radius: 10rem;
-    z-index: -1;
+    width: 100%;
   }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
-    }
-  }
+}
 }
 
 .middle {
- display: flex;
- justify-content: center;
+display: flex;
+justify-content: center;
+}
+
+.btn-sticky {
+position: sticky;
+top: 10px;
+align-self: flex-start;
+left: 80%;
+}
+
+.btn-sticky-2 {
+position: fixed;
+top: 85%;
+left: 90%;
+z-index: 99;
+
 }
 
 .input-calories {
-  border-width:0px;
-  border:none;
-  text-align: center;
-  font-size: 26px;
-  color: $blue-bachef;
-  font-weight: 500;
+border-width:0px;
+border:none;
+text-align: center;
+font-size: 26px;
+color: $blue-bachef;
+font-weight: 500;
 }
 
 .btn-finish {
@@ -127,4 +142,17 @@
       width: 100%;
     }
   }
+  
+.btn-margin {
+margin-top: 8px;
+}
+
+.btn-shop {
+border-radius: 4px;
+background-color: $btn-bachef;
+font-family: Rubik;
+color: #ffffff;
+margin-left: 50px;
+border: 0;
+font-size: 14px;
 }

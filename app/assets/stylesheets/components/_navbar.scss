@@ -16,10 +16,22 @@
   width: 70px;
 }
 
- .navbar-shop img {
+ .navbar-shop {
+  font-family: Rubik;
   width: 40px;
-  opacity: 42%;
+  opacity: 60%;
+  text-decoration: none;
+  color: #E27C2F;
+  font-size: 14px;
+  &:hover {
+    opacity: 45%;
+    color: #E27C2F;
+     text-decoration: none;
+  }
+}
 
+.navbar-gap {
+  gap: 40px;
 }
 
 .bulletpoints {

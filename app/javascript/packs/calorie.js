@@ -1,4 +1,3 @@
-
 const quantityProducts = () => {
     const quantityArrowMinus = document.querySelector(".quantity-arrow-minus");
     if (quantityArrowMinus) {
@@ -8,7 +7,7 @@ const quantityProducts = () => {
             if (parseInt(quantityNum.value, 10) > 1) {
                 quantityNum.value = parseInt(quantityNum.value, 10) - 1;
             }
-            });
+        });
         quantityArrowPlus.addEventListener("click", () => {
             quantityNum.value = parseInt(quantityNum.value, 10) + 1;
         });

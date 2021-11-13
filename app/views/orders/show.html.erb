@@ -1,1 +1,12 @@
-Félicitation !
+<div class="container-show-order">
+  <h2 class="card-title-shop mb-2"> Félicitations, tu viens d'agrandir ta collection !</h2>
+  <div class="d-flex justify-content-center mt-4">
+      <div class="card card-column card-<%= @order.card.primary_color %>" data-id="<%=@order.card.id%>">
+        <div class="column-1"> 
+          <%= image_tag @order.card.image_path, height: 30, class: "card-image" %>
+        </div> 
+        <p class="card__title column-2 card-title"><%=@order.card.title%></p>
+      </div>
+  </div>
+  <h5 class="d-flex justify-content-center text-center marge-50 baseline">Tu peux créer dès maintenant de nouvelles recettes !</br> Sauras-tu valider ton objectif de calories ? </h5>
+</div>

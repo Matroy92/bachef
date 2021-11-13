@@ -2,11 +2,11 @@
 .card-rules {
     margin: 0 auto;
     width: 80%;
-    height: 350px;
-    box-shadow: 1em 1em 2em rgba(0, 0, 0, .2);
-    border-radius: 80px;
-    border: 4px solid;
-}
+    height: 225px;
+    box-shadow: 1em 1em 2em rgba(0,0,0,.2);
+    border-radius: 60px;
+    // border: 4px solid;
+  }
 
 #rule-1 {
     background-color: rgba(101, 172, 222, 0.5);
@@ -28,24 +28,25 @@
     border-color: $pink-bachef;
 }
 
-.card-rules {
-  margin: 0 auto;
-  width: 80%;
-  height: 280px;
-  box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-  border-radius: 80px;
-  border: 4px solid;
-}
 
 .title-rules {
-  margin-top: 8px;
+  margin: 20px 15px 15px;
   text-align: center;
-  color: $dark-bachef;
+  color: white;
+}
+
+.card-paragraph {
+    margin: 0 15px 0 15px;
+    text-align: center;
+    color: white;
+    font-family: Rubik;
 }
 
 /////////////////////////////////////////////////////////
 
-
+.card-margin {
+  margin: 5% auto;
+}
 ///////////////////////////////////////////////////////////////////////////////
 .cards {
     display: grid;
@@ -56,6 +57,10 @@
     margin-top: 10px;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .five {
     grid-column: 5;
 }
@@ -64,18 +69,19 @@
 
 
 .card_checklist {
-    margin: 5px;
-    padding: 5px;
-    width: 250px;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
-    background: radial-gradient(#fffd92, #e6d92b);
+  margin: 5px;
+  padding: 5px;
+  width: 250px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
+  background-size: contain;
+  overflow-y: scroll
 }
 
 
 .drag-over {
-    border: dashed 3px red;
+    border: dashed 3px grey;
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -104,15 +110,13 @@
       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
-  .main-container {
-    padding: 30px;
-  }
-
 
   /* CARDS */
 
   .card {
-    margin: 5px;
+
+    margin: 10px;
+    margin-bottom: 20px;
     padding: 5px;
     width: 200px;
     height: 70px;
@@ -131,6 +135,7 @@
   .column-1 {
     width: 25%;
     align-self: center;
+    margin-left: 5px
 }
 
 .column-2 {
@@ -180,6 +185,7 @@
   .card__title {
     font-weight: 400;
     color: #ffffff;
+    font-family: Rubik;
   }
 
   .card__apply {
@@ -188,23 +194,53 @@
   }
 
   .card-green {
-    background: radial-gradient(#1fe4f5, #3fbafe);
+    background: radial-gradient(#60efbc, #58d5c9);
   }
 
   .card-blue {
-    background: radial-gradient(#fbc1cc, #fa99b2);
+    background: radial-gradient(#1fe4f5, #3fbafe);
   }
 
   .card-orange {
-    background: radial-gradient(#76b2fe, #b69efe);
+    background: radial-gradient(#ffcc89, #ffa552);
   }
 
   .card-red {
-    background: radial-gradient(#60efbc, #58d5c9);
+    background: radial-gradient(#fd8d8d, #ff5454);
   }
 
   @media (max-width: 1600px) {
     .cards {
       justify-content: center;
     }
+  }
+
+//////////////////////////////////////////////////////////
+
+.category-card {
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.card-title-shop {
+  color: $dark-bachef;
+  text-align: center;
+}
+
+.card-price-shop {
+  font-weight: bold;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: row;
+  margin-left: 68px;
+}
+
+ .cards-pad {
+    padding: 10px;
+    margin-bottom: 20px;
+
   }

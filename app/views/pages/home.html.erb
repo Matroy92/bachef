@@ -4,12 +4,12 @@
         <div class="form-bloc">
             <div class="video-title">
             <h1>B a Chef !</h1>
-              <h5 class="baseline">A vous de trouver ce que vous allez manger ce soir ! </h5>
+              <h5 class="baseline">A toi de trouver ce que tu vas manger ce soir en validant ton objectif de calories ! </h5>
             </div>
             <div class="container-form justify-content-between" id="game_new">
               <%= form_for @game, html: { class: "d-flex align-items-center"} do |f| %>
                 <div class="d-flex">
-                  <%= f.select(:objective, %w(Vegan Végétarien Equilibré Gras), {:include_blank => "J'ai envie de manger"}, { :class => "input-home"})%>
+                  <%= f.select(:objective, Game::OBJECTIVE_TYPE, {:prompt => "J'ai envie de manger"}, { :class => "input-home"})%>
                 </div>
                 <%# <div class="d-flex"> %>
                   <div class="quantity-block">
@@ -23,7 +23,7 @@
                   </div>
                 <%# </div> %>
               <div class="text-center">
-              <h2 class="btn-bachef">C'est parti !</h2>
+              <h2 class="btn-bachef mb-0">C'est parti !</h2>
               </div>
               <% end %>
             </div>
@@ -34,8 +34,15 @@
         </div>
       <%# </section> %>
     </div>
+    <div class="d-flex text-center justify-content-center scroll">
+  <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="d-flex text-center justify-content-center scroll2">
+  <i class="fas fa-chevron-down"></i>
+    </div>
   </div>
 </div>
+
 <%# 
 <div class="main-container">
   <div class="button-hp">
@@ -45,20 +52,20 @@
 <div class="main-container mb-4">
   <div class="container-card">
     <div class="container-grid">
-      <div class="card-rules" id="rule-1">
+      <div class="card-rules card-orange">
         <div class="title-rules"><h4>Choisis </br>ton profil</h4></div>
           <p class="card-paragraph">Ton profil définit ton objectif en termes de calories et de type de repas.</p>
       </div>
-      <div class="card-rules" id="rule-2">
-        <div class="title-rules"><h2>Sélectionne </br> tes ingrédients</h2></div>
+      <div class="card-rules card-red">
+        <div class="title-rules"><h4>Sélectionne </br> tes ingrédients</h4></div>
           <p class="card-paragraph">Choisis la meilleure association d'ingrédients pour tenter de valider ton objectif !</p>
       </div>
-      <div class="card-rules"  id="rule-3">
-        <div class="title-rules"><h2>Soumets ton </br>score</h2></div>
+      <div class="card-rules card-blue">
+        <div class="title-rules"><h4>Soumets ton </br>score</h4></div>
           <p class="card-paragraph">Le score doit s'approcher le plus possible de ton objectif de points et de calories. Sauras-tu choisir la meilleure combinaison ? </p>
       </div>
-      <div class="card-rules"  id="rule-4">
-        <div class="title-rules"><h2>Cuisine ta </br>recette et rejoue !</h2></div>
+      <div class="card-rules card-green">
+        <div class="title-rules"><h4>Cuisine ta </br>recette et rejoue !</h4></div>
       <p class="card-paragraph">Sauvagarde tes asocciations d'ingrédients, choisis une des recettes proposées et n'hésite pas à rejouer avec tes amis ! </p>
       </div>
     </div>

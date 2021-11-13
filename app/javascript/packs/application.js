@@ -28,7 +28,7 @@ import "controllers"
 import { initCardSelection } from 'packs/cardselection';
 import { initBtnSubmit } from 'packs/button';
 import { getSelectedCheckboxValues } from 'packs/cards';
-import { dragInit, dragEnd } from 'packs/drag';
+import { dragInit, dragEnd, cardSelection } from 'packs/drag';
 import { stopAutoplayonHover } from 'packs/profiles';
 import { getSelectedObjective } from 'packs/form_objective';
 import { quantityProducts } from 'packs/calorie';
@@ -49,4 +49,5 @@ document.addEventListener('turbolinks:load', () => {
   stopAutoplayonHover();
   quantityProducts();
   initBtnFinishSubmit();
+  cardSelection();
 });
