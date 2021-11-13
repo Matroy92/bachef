@@ -9,7 +9,7 @@
             <div class="container-form justify-content-between" id="game_new">
               <%= form_for @game, html: { class: "d-flex align-items-center"} do |f| %>
                 <div class="d-flex">
-                  <%= f.select(:objective, Game::OBJECTIVE_TYPE, {:prompt => "J'ai envie de manger"}, { :class => "input-home"})%>
+                  <%= f.select :objective, Game::OBJECTIVE_TYPE, {:prompt => "J'ai envie de manger", required: true}, { :class => "input-home"}%>
                 </div>
                 <%# <div class="d-flex"> %>
                   <div class="quantity-block">
