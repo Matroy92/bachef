@@ -47,6 +47,11 @@
   width: 80%;
 }
 
+.container-payed {
+  background-color: $beige-bg;
+  min-height: calc(100ch - 100px);
+}
+
 .marge-50 {
   margin-top: 100px;
 }
