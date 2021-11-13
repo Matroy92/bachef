@@ -1,18 +1,27 @@
 <div class="navbar-bachef">
+  <div class="d-flex justify-content-start align-items-center navbar-gap">
   <div>
     <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "bachef_logo2.png" %>
     <% end %>
   </div>
+  <% if params[:controller] != 'pages' && params[:action] != 'home' && user_signed_in? %>
   <div>
-    <%= link_to cards_path, class: "navbar-shop" do %>
-        <%= image_tag "shopping-cart.png" %>
-    <% end %>
+    <%= link_to "Acheter de nouvelles cartes", cards_path, class: "navbar-shop" %>
+        <%# <%= image_tag "shopping-cart.png" %> 
+    <%# <<% end %> 
+  </div>
+  <% end %>
   </div>
   <div class="navbar-section">
     <% if user_signed_in? %>
+    <div class="d-flex justify-content-start align-items-center navbar-gap">
+    <div>
+      <%= link_to "Mon dashboard", games_path, class: "navbar-shop" %>
+    </div>
     <div>
       <%= image_tag "jfp.jpg", width: 50, height: 50, crop: :fill, gravity: :face, :radius => "max", class: "avatar-nav" %>
+    </div>
     </div>
     <% else %>
     <div class="nav-item">
