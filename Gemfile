@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
+gem 'font-awesome-rails (~> 4.7, >= 4.7.0.2)'
 gem 'simple_form'
 gem 'recipe_scraper'
 
