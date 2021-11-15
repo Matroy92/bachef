@@ -73,7 +73,13 @@
     text-decoration: none !important;
 }
 
-#scroll-finish {
+.scroll-finish {
   scroll-behavior: smooth;
   text-decoration: none;
+  cursor: pointer;
+  color: $dark-bachef;
+  &:hover {
+    text-decoration: none;
+    color: $dark-bachef;
+  }
 }
