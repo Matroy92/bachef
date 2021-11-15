@@ -19,7 +19,7 @@
         <h3 class="light">Ta sélection : </h3>
         <div class="card-result">
           <% @game.cards.each do |card|%>
-            <%= render "cards/card", card: card%>
+            <%= render "cards/cardfinish", card: card%>
           <%end%>
         </div>
       </div>
