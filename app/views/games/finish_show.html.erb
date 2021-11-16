@@ -12,6 +12,8 @@
       <div>
         <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
       </div>
+      </br>
+      <%= social_share_button_tag(@game.objective, :url => finish_show_game_path(@game), desc: @game.objective) %>
     </div>
 
     <div class="result-deck">
