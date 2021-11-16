@@ -36,16 +36,6 @@
           <%end%>
         </div>
       </div>
-
-      <div class="result-deck">
-        <div>
-          <h3 class="light">Ton deck: </h3>
-          <div class="card-result">
-            <% @game.cards.each do |card|%>
-              <%= render "cards/card", card: card%>
-            <%end%>
-          </div>
-        </div>
         <div class="form-container" data-controller="edit-game">
           <div>
             <h3 class="light">Enregistre ta partie <span>   <i class="far fa-save pen-cursor" data-action="click->edit-game#displayForm" ></i></span></h3>
