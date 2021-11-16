@@ -1,9 +1,10 @@
 <div class="dashboard-body">
-    <h2 class="card-title-shop mt-4">Mon dashboard</h2>
-  <div class="container-show-order mt-4"> 
+  <h2 class="card-title-shop mt-4">Mon dashboard</h2>
+  <div class="container-show-order mt-4">
     <% @games.each do |game| %>
+    <div class="game-container">
       <div class="game-row">
-        <div class="game-infos mt-2">
+        <div>
           <h2 class="title-dashboard"><%= game.recipe_title %>&nbsp; &nbsp; <%= link_to game_path(game), method: :delete, data: { confirm: "Tu es sûr de toi ?" } do %>
           <i class="bin far fa-trash-alt"></i>
           <%end%>
@@ -13,11 +14,20 @@
             <span class="dashboard-style">Mon résultat : <%= game.score %> calories <% if (-100..100).include? game.score %>😁 <%else%> 😢<%end%></span>
         </div>
         <div class="card-result">
-          <% game.cards.each do |card| %>
+            <% game.cards.each do |card| %>
               <%= render "cards/card", card: card %>
-          <% end %>
+            <% end %>
         </div>
       </div>
-    <% end %>
+      <div data-controller="display-recipes">
+        <p class="p-dashboard mt-3">Les recettes <span><i class="fas fa-chevron-down pen-cursor" data-action="click->display-recipes#displayRecipes"></i></span></p>
+        <div class="recipe-container d-none" data-display-recipes-target="recipes">
+          <% Recipe.where(game_id: game.id).each do |recipe|%>
+            <%= render "recipe/recipe_card", recipe: recipe%>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+    </div>
   </div>
 </div>

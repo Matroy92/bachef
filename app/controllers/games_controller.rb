@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
 
-
    def index
     @games = Game.where(saved: true).all
    end
@@ -54,6 +53,10 @@ class GamesController < ApplicationController
        @game = Game.find(params[:id])
        @calories =  @game.score
        recipes_scrap
+       @recipes.first(3).each do |recipe|
+         Recipe.create(game: @game, link: recipe[:link], title: recipe[:title], duration: recipe[:duration], 
+                        difficulty: recipe[:difficulty], price: recipe[:price], picture: recipe[:picture])
+      end
     end
 
     def saved
