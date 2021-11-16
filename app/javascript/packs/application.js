@@ -33,6 +33,9 @@ import { stopAutoplayonHover } from 'packs/profiles';
 import { getSelectedObjective } from 'packs/form_objective';
 import { quantityProducts } from 'packs/calorie';
 import { initBtnFinishSubmit } from 'packs/button';
+import { loop, Confetti } from 'packs/confeti';
+import { Rain, looping } from 'packs/rain';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -50,4 +53,10 @@ document.addEventListener('turbolinks:load', () => {
   quantityProducts();
   initBtnFinishSubmit();
   cardSelection();
+  loop();
+  Confetti();
+  Rain();
+  looping();
 });
+
+//////////////////////////////////
