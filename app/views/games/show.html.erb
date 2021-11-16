@@ -3,7 +3,7 @@
 
   <br>
   <h1 class="show-title" style="text-align: center">À toi de jouer !</h1>
-  <h3 class="show-title mb-4" style="text-align: center">Tu peux <em>drag & drop</em> les ingrédients pour les ajouter à ton repas.</h3>
+  <h4 class="show-title mb-4" style="text-align: center">Tu peux <em>drag & drop</em> les ingrédients pour les ajouter à ton repas.</h4>
   <div class="mt-4 container">
     <div class="row">
       <div class="cards">
@@ -60,7 +60,7 @@
             <div class="card_checklist justify-content-center droppable color-border-4"></div>
               <%= simple_form_for @game, url: finish_game_path, method: :post do |f| %>
                 <%= f.input :cards, as: :hidden %>
-                <%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text btn-sticky'%>
+                <%= f.button :submit, "J'ai fini !", class: 'button-hp button-hp-text'%>
               <% end %>
           </div>
         </div>
