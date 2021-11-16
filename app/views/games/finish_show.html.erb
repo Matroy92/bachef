@@ -13,7 +13,11 @@
         <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
       </div>
       </br>
-      <%= social_share_button_tag(@game.objective, :url => finish_show_game_path(@game), desc: @game.objective) %>
+        <div class="d-flex flex-row justify-content-start social">
+         <div> <i class="fab fa-facebook"></i></div>
+         <div><i class="fab fa-twitter"></i></div>
+         <div><i class="fab fa-instagram"></i></div>
+        </div>
     </div>
 
     <div class="result-deck">
