@@ -11,7 +11,7 @@
           </h2>
             <p class="p-dashboard"><%= game.recipe_content %></p>
             <p class="p-dashboard"><%= game.objective %> / <span id="obj-dashboard">Objectif : <%= game.calories %> calories</span></p>
-            <span class="p-dashboard">Mon résultat : <%= game.score %> calories </span>
+            <span class="dashboard-style">Mon résultat : <%= game.score %> calories <% if (-100..100).include? game.score %>😁 <%else%> 😢<%end%></span>
         </div>
         <div class="card-result">
             <% game.cards.each do |card| %>
