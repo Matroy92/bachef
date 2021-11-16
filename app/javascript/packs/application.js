@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -35,7 +36,7 @@ import { quantityProducts } from 'packs/calorie';
 import { initBtnFinishSubmit } from 'packs/button';
 import { loop, Confetti } from 'packs/confeti';
 import { Rain, looping } from 'packs/rain';
-
+import { playsound } from 'packs/sound';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -57,6 +58,7 @@ document.addEventListener('turbolinks:load', () => {
   Confetti();
   Rain();
   looping();
+  playsound();
 });
 
 //////////////////////////////////

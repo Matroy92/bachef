@@ -4,19 +4,36 @@
   <% else %>
   <canvas id="canvas2"></canvas>
   <% end %>
-  <div class="finish-body">
-    <div class="result-container">
-      <div class="message-container">
-        <% result = @calories - @game.calories %>
-        <% if (-100..100).include? result %>
-          <h3 class="light"> Ton deck contient <strong class="win"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
-          <h1>Félicitations ! &#128540;</h1>
-        <% else %>
-          <h3 class="light"> Ton deck contient <strong class="fail"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
-          <h1>Bof bof... &#128556;</h1>
-        <%end%>
-        <div>
-          <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
+<div class="finish-body">
+  <div class="result-container">
+    <div class="message-container">
+      <% result = @calories - @game.calories %>
+      <% if (-100..100).include? result %>
+        <h3 class="light"> Ton deck contient <strong class="win"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+        <h1>Félicitations ! &#128540;</h1>
+      <% else %>
+        <h3 class="light"> Ton deck contient <strong class="fail"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+        <h1>Bof bof... &#128556;</h1>
+      <%end%>
+      <div>
+        <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
+      </div>
+      </br>
+        <div class="d-flex flex-row justify-content-start social">
+         <div> <i class="fab fa-facebook"></i></div>
+         <div><i class="fab fa-twitter"></i></div>
+         <div><i class="fab fa-instagram"></i></div>
+        </div>
+    </div>
+
+    <div class="result-deck">
+      <div>
+        <h3 class="light">Ta sélection : </h3>
+        <p style="font-size: 12px;">Le nombre de calories est calculé sur une base de 100 grammes de chaque ingrédient. </p>
+        <div class="card-result">
+          <% @game.cards.each do |card|%>
+            <%= render "cards/cardfinish", card: card%>
+          <%end%>
         </div>
       </div>
 
