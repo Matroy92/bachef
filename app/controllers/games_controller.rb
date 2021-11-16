@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
 
-
    def index
     @games = Game.where(saved: true).all
    end
@@ -21,7 +20,6 @@ class GamesController < ApplicationController
 
     def show
        @game = Game.find(params[:id])
-       @cards = Card.where(premium: false)
     case @game.objective
        when 'Végétarien'
           @cards = Card.where.not(category: 'Viande & Fruits de mer')
@@ -32,6 +30,7 @@ class GamesController < ApplicationController
        when 'Equilibré'
           @cards = Card.all
        end
+       @cards = Card.where(premium: false)
     end
 
     def update
@@ -40,14 +39,6 @@ class GamesController < ApplicationController
        CardGame.create(game: @game, card: Card.find(card_id))
        end
        redirect_to finish_game_path(@game)
-    end
-
-    def calories_sum(game)
-       sum = 0
-       game.cards.each do |card_calories|
-          sum += card_calories.calories
-       end
-       return sum
     end
 
     def finish
@@ -60,8 +51,12 @@ class GamesController < ApplicationController
 
     def finish_show
        @game = Game.find(params[:id])
-       @calories = calories_sum(@game)
+       @calories =  @game.score
        recipes_scrap
+       @recipes.first(3).each do |recipe|
+         Recipe.create(game: @game, link: recipe[:link], title: recipe[:title], duration: recipe[:duration], 
+                        difficulty: recipe[:difficulty], price: recipe[:price], picture: recipe[:picture])
+      end
     end
 
     def saved
@@ -70,6 +65,12 @@ class GamesController < ApplicationController
       content = params.dig(:game, :recipe_content)
       @game.update!(saved: true, recipe_title: title, recipe_content: content)
       redirect_to games_path
+    end
+
+    def destroy
+     @game = Game.find(params[:id])
+     @game.destroy
+     redirect_to games_path
     end
 
     private

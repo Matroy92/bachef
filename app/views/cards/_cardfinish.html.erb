@@ -1,0 +1,12 @@
+    <div class="card-margin card card-column card-<%= card.primary_color %>" data-id="<%=card.id%>">
+      <div class="column-1"> 
+        <% if card.image_path %>
+        <%= image_tag card.image_path, height: 30, class: "card-image" %> 
+        <% puts card.image_path %>
+        <% else %>
+        <%= image_tag "carrot.png", height: 30, class: "card-image" %>
+        <% end %>
+        </div>
+      <p class="card__title column-2 card-title"><%=card.title%> : <%=card.calories%> calories</p>
+      </p>
+    </div>

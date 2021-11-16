@@ -3,15 +3,18 @@
   width: 80%;
   height: 70px;
   box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-  border-radius: 80px;
+  border-radius: 30px;
   border: 4px solid;
-  background-color: rgba(101, 172, 222, 0.5);
-  border-color: $blue-bachef;
+  background-color: rgba(100, 71, 249, 0.5);
+  border-color: $btn-bachef;
   margin-bottom: 100px;
   text-decoration: none;
   cursor: pointer;
+  font-family: Rubik;
+  color: #fff;
+  font-size: 28px;
   &:hover {
-    background-color: rgba(101, 172, 222, 1);
+    background-color: $btn-bachef;
     box-shadow: inset 0 0 0 2em var(--hover);
     a {
       color: #ffffff;
@@ -84,12 +87,10 @@ left: 80%;
 }
 
 .btn-sticky-2 {
-position: fixed;
-top: 85%;
-left: 90%;
-z-index: 99;
-
-}
+  position: sticky;
+  top: 10px;
+  align-self: flex-start;
+  }
 
 .input-calories {
 border-width:0px;
@@ -98,6 +99,20 @@ text-align: center;
 font-size: 26px;
 color: $blue-bachef;
 font-weight: 500;
+}
+
+.btn-margin {
+margin-top: 8px;
+}
+
+.btn-shop {
+border-radius: 4px;
+background-color: $btn-bachef;
+font-family: Rubik;
+color: #ffffff;
+margin-left: 50px;
+border: 0;
+font-size: 14px;
 }
 
 .btn-finish {
@@ -142,17 +157,4 @@ font-weight: 500;
       width: 100%;
     }
   }
-}
-.btn-margin {
-margin-top: 8px;
-}
-
-.btn-shop {
-border-radius: 4px;
-background-color: $btn-bachef;
-font-family: Rubik;
-color: #ffffff;
-margin-left: 50px;
-border: 0;
-font-size: 14px;
 }

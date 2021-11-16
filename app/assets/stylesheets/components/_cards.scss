@@ -52,7 +52,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
+    grid-gap: 25px;
     text-align: center;
     margin-top: 10px;
 }
@@ -79,6 +79,46 @@
   overflow-y: scroll
 }
 
+.cards_column {
+  height: 570px;
+  border-radius: 10px;
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.25);
+  background-size: contain;
+  overflow-y: scroll;
+}
+
+.color-border {
+  border: 1mm inset #58d5c9;
+}
+
+.color-border-1 {
+  border: 1mm inset #3fbafe;
+}
+
+.color-border-2 {
+  border: 1mm inset #ffa552;
+}
+
+.color-border-3 {
+  border: 1mm inset #ff5454;
+}
+
+.color-border-4 {
+  border: 1mm inset $btn-bachef;
+}
+
+.show-title {
+  color: $dark-bachef;
+}
+
+
+
+
+.row {
+  margin-left: -100px;
+}
+
+
 
 .drag-over {
     border: dashed 3px grey;
@@ -98,8 +138,8 @@
 }
 
 .image_tag_3 {
-    width: 200px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -135,11 +175,11 @@
   .column-1 {
     width: 25%;
     align-self: center;
-    margin-left: 5px
 }
 
 .column-2 {
     flex-grow: grow;
+    text-align: center;
     align-self: center;
     margin: 0 auto;
 }
@@ -185,7 +225,6 @@
   .card__title {
     font-weight: 400;
     color: #ffffff;
-    font-family: Rubik;
   }
 
   .card__apply {
@@ -197,17 +236,58 @@
     background: radial-gradient(#60efbc, #58d5c9);
   }
 
+  .card-green-1 {
+  font-size: 20px;
+  background: linear-gradient(#60efbc, #58d5c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 8px;
+  }
+
   .card-blue {
     background: radial-gradient(#1fe4f5, #3fbafe);
+  }
+
+  .card-blue-1 {
+  font-size: 20px;
+  background: linear-gradient(#1fe4f5, #3fbafe);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 8px;
   }
 
   .card-orange {
     background: radial-gradient(#ffcc89, #ffa552);
   }
 
+  .card-orange-1 {
+    font-size: 20px;
+    background: linear-gradient(#ffcc89, #ffa552);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 8px;
+  }
+
   .card-red {
     background: radial-gradient(#fd8d8d, #ff5454);
   }
+
+  .card-red-1 {
+    font-size: 22px;
+    background: linear-gradient(#fd8d8d, #ff5454);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 4px;
+  }
+
+  .card-panier-1 {
+    font-size: 22px;
+    background: linear-gradient($btn-bachef, $btn-bachef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 4px;
+  }
+
 
   @media (max-width: 1600px) {
     .cards {

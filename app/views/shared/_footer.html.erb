@@ -1,6 +1,6 @@
 <footer>
   <%# <div class="row"> %>
-  <% if params[:controller] == 'pages' && params[:action] == 'home'%>
+  <% if (params[:controller] == 'pages' && params[:action] == 'home') || (params[:controller] == 'games' && params[:action] == 'finish_show') %>
   <div class="col-md-12 footer-bachef footer-bachef-home">
   <% else %>
   <div class="col-md-12 footer-bachef">

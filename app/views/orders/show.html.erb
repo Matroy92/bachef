@@ -1,4 +1,4 @@
-<div class="container-show-order">
+<div class="container-payed">
   <h2 class="card-title-shop mb-2"> Félicitations, tu viens d'agrandir ta collection !</h2>
   <div class="d-flex justify-content-center mt-4">
       <div class="card card-column card-<%= @order.card.primary_color %>" data-id="<%=@order.card.id%>">
@@ -9,4 +9,7 @@
       </div>
   </div>
   <h5 class="d-flex justify-content-center text-center marge-50 baseline">Tu peux créer dès maintenant de nouvelles recettes !</br> Sauras-tu valider ton objectif de calories ? </h5>
+  <div class="d-flex justify-content-center mt-4">
+        <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
+  </div> 
 </div>
