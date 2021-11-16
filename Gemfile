@@ -35,7 +35,6 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'recipe_scraper'
-gem 'social-share-button'
 
 group :development, :test do
   gem 'pry-byebug'
