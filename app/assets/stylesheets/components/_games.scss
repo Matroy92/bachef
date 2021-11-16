@@ -1,9 +1,7 @@
 .game-row {
   display: flex;
   flex-direction: row;
-  border-bottom: solid 1px #E5E5E5;
-  height: 180px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .game-infos {
@@ -15,4 +13,11 @@
   color: grey;
   font-style: italic;
   font-family: Rubik;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border-bottom: solid 1px #E5E5E5;
 }

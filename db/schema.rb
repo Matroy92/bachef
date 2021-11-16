@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_192223) do
+ActiveRecord::Schema.define(version: 2021_11_16_094722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,19 @@ ActiveRecord::Schema.define(version: 2021_11_09_192223) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "recipes", force: :cascade do |t|
+    t.string "link"
+    t.string "title"
+    t.string "duration"
+    t.string "difficulty"
+    t.string "price"
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "picture"
+    t.index ["game_id"], name: "index_recipes_on_game_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -80,4 +93,5 @@ ActiveRecord::Schema.define(version: 2021_11_09_192223) do
   add_foreign_key "games", "users"
   add_foreign_key "orders", "cards"
   add_foreign_key "orders", "users"
+  add_foreign_key "recipes", "games"
 end

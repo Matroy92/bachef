@@ -44,7 +44,9 @@
 .container-show-order {
   background-color: $beige-bg;
   min-height: calc(100ch - 100px);
-  width: 80%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-payed {
