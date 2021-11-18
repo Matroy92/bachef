@@ -2,7 +2,7 @@
   <% if (-100..100).include? result %>
   <canvas id="canvas"></canvas>
   <% else %>
-  <canvas id="canvas2"></canvas>
+  <html style='filter: grayscale(70%)'></html>
   <% end %>
 <div class="finish-body">
   <div class="result-container">
@@ -18,7 +18,6 @@
       <div>
         <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
       </div>
-      </br>
         <div class="d-flex flex-row justify-content-start social">
          <div> <i class="fab fa-facebook"></i></div>
          <div><i class="fab fa-twitter"></i></div>

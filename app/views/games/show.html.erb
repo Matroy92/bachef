@@ -3,7 +3,7 @@
 
   <br>
   <h1 class="show-title" style="text-align: center">À toi de jouer !</h1>
-  <h4 class="show-title mb-4" style="text-align: center">Tu peux <em>drag & drop</em> les ingrédients pour les ajouter à ton repas.</h4>
+  <h4 class="show-title mb-4" style="text-align: center">Tu peux <em>glisser & déposer</em> les ingrédients pour les ajouter à ton repas.</h4>
   <div class="mt-4 container">
     <div class="row">
       <div class="cards">
@@ -12,7 +12,10 @@
             <h6 class="card-green-1">Fruits & Légumes</h6>
             <div class="btn-sticky-2 cards_column color-border">
             <div class="cards-pad droppable" id="veggies">
-              <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
+              <% @cards.select {|card| card.title == "Soupe à la tomate" }.each do |card| %>
+                <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-veggies" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
+              <% end %>
+              <% @cards.select {|card| card.category == "Fruits & Légumes" }.each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-veggies" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
             </div>
@@ -71,5 +74,3 @@
     <source src="<%=asset_path("sound.mp3")%>" type="audio/mp3">
 </audio>
 </div>
-
-
