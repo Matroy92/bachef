@@ -7,12 +7,16 @@
 <div class="finish-body">
   <div class="result-container">
     <div class="message-container">
-      <% result = @calories - @game.calories %>
-      <% if (-100..100).include? result %>
-        <h3 class="light"> Ta sélection contient <strong class="win"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+      <% @score = if @calories < @game.calories %>
+        <% 100 - ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i%>
+      <%else%>
+        <% 100 + ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i%>
+      <%end%>
+      <% if (80..120).include? @score %>
+        <h3 class="light"> Ton jeu contient <strong class="win"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> soit un score de <strong class="win"><%=@score%></strong></h3>
         <h1>Félicitations ! &#128540;</h1>
       <% else %>
-        <h3 class="light"> Ta sélection contient <strong class="fail"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> </h3>
+        <h3 class="light"> Ton jeu contient <strong class="fail"><%=@calories%></strong> calories sur un objectf de <strong class="cal-obj"><%=@game.calories%></strong> soit un score de <strong class="fail"><%=@score%></strong></h3>
         <h1>Bof bof... &#128556;</h1>
       <%end%>
       <div>
@@ -53,7 +57,7 @@
                   <%= f.text_field :recipe_content, class: "form-control mb-1" %>
                 </div>
               </div>
-                <a class="btn-finish" id="submit-finish">Enregistrer</a>
+                <a class="btn-save txt-deco mb-2" id="submit-finish">Enregistrer</a>
             <% end %>
           </div>
           <div class="mt-4">
