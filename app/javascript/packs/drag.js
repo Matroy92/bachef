@@ -5,13 +5,12 @@ import { csrfToken } from "@rails/ujs";
 
 function dragInit() {
   const draggableElements = document.querySelectorAll('.draggable');
-  console.log(draggableElements)
   draggableElements.forEach(e => {
     e.addEventListener('dragstart', dragStart);
   });
 }
 
-function dragStart(e) {
+function dragStart(e){
   e.dataTransfer.setData('card', e.target.id);
   setTimeout(() => {
     e.currentTarget.classList.add('hidden');
@@ -95,7 +94,6 @@ function drop(e) {
 
 function cardSelection() {
   const form = document.querySelector(".edit_game")
-  console.log(form);
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
