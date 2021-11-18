@@ -7,17 +7,17 @@
               <h5 class="baseline">A toi de trouver ce que tu vas manger ce soir en validant ton objectif de calories ! </h5>
             </div>
             <div class="container-form justify-content-between" id="game_new">
-              <%= form_for @game, html: { class: "d-flex align-items-center"} do |f| %>
+              <%= form_for @game, html: { class: "d-flex align-items-center gap-form"} do |f| %>
                 <div class="d-flex">
                   <%= f.select(:objective, Game::OBJECTIVE_TYPE, {:prompt => "J'ai envie de manger"}, { :class => "input-home"})%>
                 </div>
                 <%# <div class="d-flex"> %>
                   <div class="quantity-block">
                     <div class="quantity-arrow-minus">
-                      <div> - </div>    
+                      <div class="quantity-arrow-margin"> - </div>    
                     </div>
                     <div class="quantity-arrow-plus">
-                      <div> + </div>
+                      <div class="quantity-arrow-margin"> + </div>
                     </div>
                       <%= f.number_field :calories, class: "input-home-calories quantity-num", value: 500 %>
                   </div>
