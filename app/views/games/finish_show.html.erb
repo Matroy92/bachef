@@ -2,7 +2,7 @@
   <% if (-100..100).include? result %>
   <canvas id="canvas"></canvas>
   <% else %>
-  <canvas id="canvas2"></canvas>
+  <html style='filter: grayscale(70%)'></html>
   <% end %>
 <div class="finish-body">
   <div class="result-container">
@@ -18,7 +18,6 @@
       <div>
         <%= link_to "Recommencer", root_path, class: 'btn-finish txt-deco' %>
       </div>
-      </br>
         <div class="d-flex flex-row justify-content-start social">
          <div><a href="http://www.facebook.com/sharer.php?s=100" class="txt-deco" onclick="window.open(this.href, 'facebookwindow','left=20,top=20,width=600,height=700,toolbar=0,resizable=1'); return false;"> <i class="fab fa-facebook"></i></a></div>
          <div><a href="https://twitter.com/intent/tweet?text=Viens me rejoindre sur B a Chef !" class="txt-deco" onclick="window.open(this.href, 'twitterwindow','left=20,top=20,width=600,height=300,toolbar=0,resizable=1'); return false;"><i class="fab fa-twitter"></i></a></div>
