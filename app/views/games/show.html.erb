@@ -30,11 +30,11 @@
               <% end %>
             </div>
           </div>
-        </div>    
+        </div>
         <% end %>
           <div class="three">
               <h6 class="card-orange-1">Accompagnements</h6>
-              <div class=" cards_column color-border-2">
+              <div class="btn-sticky-2 cards_column color-border-2">
               <div class="cards-pad droppable" id="sides">
                 <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
                   <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-sides" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
@@ -44,7 +44,7 @@
           </div>
           <div class="four">
               <h6 class="card-red-1">Desserts</h6>
-              <div class="cards_column color-border-3">
+              <div class="btn-sticky-2 cards_column color-border-3">
               <div class="cards-pad droppable" id="desserts">
                 <% @cards.select {|card| card.category == "Dessert"}.each do |card| %>
                   <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-desserts" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
