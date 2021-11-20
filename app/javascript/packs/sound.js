@@ -8,7 +8,9 @@ function playsound() {
         media.play();
         media.volume = 1;
     } else {
-        media.stop()
+        if (media) {
+            media.stop()
+        }
     }
 
 };

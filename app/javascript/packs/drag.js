@@ -94,30 +94,31 @@ function drop(e) {
 
 function cardSelection() {
   const form = document.querySelector(".edit_game")
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault()
+      const selectedCards = document.querySelectorAll('.card_checklist .draggable');
 
-    const selectedCards = document.querySelectorAll('.card_checklist .draggable');
-
-    const selectedCardsIds = Array.from(selectedCards).map((element) => {
-      return element.dataset.id
-    })
-    let formData = new FormData();
-    formData.append('card_ids', selectedCardsIds)
-    fetch(form.action, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/html', 'X-CSRF-Token': csrfToken()
-      },
-      body: formData,
-      redirect: 'follow'
-    })
-      .then(response => response.json())
-      .then((data) => {
-        window.location.href = data.url;
+      const selectedCardsIds = Array.from(selectedCards).map((element) => {
+        return element.dataset.id
       })
-  })
+      let formData = new FormData();
+      formData.append('card_ids', selectedCardsIds)
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/html', 'X-CSRF-Token': csrfToken()
+        },
+        body: formData,
+        redirect: 'follow'
+      })
+        .then(response => response.json())
+        .then((data) => {
+          window.location.href = data.url;
+        })
+    })
+  }
 }
 
 export { dragInit, dragEnd, cardSelection };
