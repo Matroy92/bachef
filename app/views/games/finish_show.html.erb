@@ -1,8 +1,7 @@
+
 <% @score = 100 - ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i %>
       <% if (80..100).include? @score %>
   <canvas id="canvas"></canvas>
-  <% else %>
-  <html style='filter: grayscale(70%)'></html>
   <% end %>
 <div class="finish-body">
   <div class="result-container">
