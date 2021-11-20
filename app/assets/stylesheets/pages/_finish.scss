@@ -27,7 +27,7 @@
 }
 
 .card-result {
-    width: 632px;
+    width: 800px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap
@@ -73,7 +73,7 @@
     text-decoration: none !important;
 }
 
-.scroll-finish {
+#scroll-finish {
   scroll-behavior: smooth;
   text-decoration: none;
   cursor: pointer;
