@@ -29,11 +29,12 @@
       <div>
         <h3 class="light">Ta sélection : </h3>
         <p style="font-size: 12px;">Le nombre de calories est calculé sur une base de 100 grammes de chaque ingrédient. </p>
-        <div class="card-result">
+          <div class="card-result">
           <% @game.cards.each do |card|%>
             <%= render "cards/cardfinish", card: card%>
           <%end%>
-        </div>
+          <div style="flex-grow: 1;"></div>
+          </div>
       </div>
         <div class="form-container mt-4 mb-4" data-controller="edit-game">
           <div>
