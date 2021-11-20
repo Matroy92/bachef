@@ -8,16 +8,16 @@
 
 require 'csv'
 
-CardGame.delete_all
+CardGame.destroy_all
 puts 'Card games deleted'
 
-Game.delete_all
+Game.destroy_all
 puts 'Card games deleted'
 
-Card.delete_all
+Card.destroy_all
 puts 'Cards deleted'
 
-User.delete_all
+User.destroy_all
 puts "Users deleted"
 
 puts 'Create some users...'

@@ -85,8 +85,8 @@ Soupe de poissons;Viande & Fruits de mer;90;false;0;soupe-poisson.png
 Thon frais;Viande & Fruits de mer;225;false;0;thon.png
 Crabe frais;Viande & Fruits de mer;85;false;0;crabe.png
 Gambas;Viande & Fruits de mer;98;false;0;gambas.png
-Homard;Viande & Fruits de mer;80;false;0;homard.png
-Huîtres;Viande & Fruits de mer;70;false;0;huitre.png
+Homard;Viande & Fruits de mer;320;true;50;homard.png
+Huîtres;Viande & Fruits de mer;210;false;0;huitre.png
 Langoustine;Viande & Fruits de mer;90;false;0;langoustine.png
 Moules;Viande & Fruits de mer;70;false;0;moule.png
 Poulpe;Viande & Fruits de mer;70;false;0;poulpe.png
@@ -107,8 +107,8 @@ Pain blanc;Accompagnement;255;false;0;pain-blanc.png
 Pain de mie;Accompagnement;284;false;0;pain-de-mie.png
 Pain d’épice;Accompagnement;350;false;0;pain-epices.png
 Pâtes natures;Accompagnement;90;false;0;pates.png
-Riz blanc cuit;Accompagnement;90;false;0;riz-blanc.png
-Riz complet cuit;Accompagnement;98;false;0;riz-blanc.png
+Riz;Accompagnement;90;false;0;riz-blanc.png
+Riz complet;Accompagnement;98;false;0;riz-blanc.png
 Taboulé;Accompagnement;150;false;0;taboule.png
 Brioche;Dessert;386;false;0;brioche.png
 Cookies;Dessert;464;false;0;cookie.png
@@ -137,7 +137,7 @@ Tournedos;Viande & Fruits de mer;200;true;400;tournedos.png
 Hamburger;Viande & Fruits de mer;254;true;500;burger.png
 Gnocchis;Fruits & Légumes;133;true;200;gnocchi.png
 Citrouille;Fruits & Légumes;30;true;200;citrouille.png
-Truffe fraîche;Fruits & Légumes;92;true;800;truffe.png
+Truffe;Fruits & Légumes;92;true;800;truffe.png
 Carottes râpées;Fruits & Légumes;130;true;200;carotte.png
 Soupe à la tomate;Fruits & Légumes;30;true;200;soupe-tomate.png
 Eclair au chocolat;Dessert;262;true;300;eclair.png
