@@ -26,7 +26,7 @@
           <div data-controller="display-recipes">
             <p class="p-dashboard mt-3">Les recettes <span><i class="fas fa-chevron-down pen-cursor" data-action="click->display-recipes#displayRecipes"></i></span></p>
             <div class="recipe-container d-none" data-display-recipes-target="recipes">
-              <% Recipe.where(game_id: game.id).each do |recipe|%>
+              <% game.recipes.first(3).each do |recipe|%>
                 <%= render "recipe/recipe_card", recipe: recipe%>
               <%end%>
             </div>
