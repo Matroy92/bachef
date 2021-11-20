@@ -85,7 +85,7 @@ Soupe de poissons;Viande & Fruits de mer;90;false;0;soupe-poisson.png
 Thon frais;Viande & Fruits de mer;225;false;0;thon.png
 Crabe frais;Viande & Fruits de mer;85;false;0;crabe.png
 Gambas;Viande & Fruits de mer;98;false;0;gambas.png
-Homard;Viande & Fruits de mer;320;true;50;homard.png
+Homard;Viande & Fruits de mer;320;true;50000;homard.png
 Huîtres;Viande & Fruits de mer;210;false;0;huitre.png
 Langoustine;Viande & Fruits de mer;90;false;0;langoustine.png
 Moules;Viande & Fruits de mer;70;false;0;moule.png
