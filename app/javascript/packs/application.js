@@ -35,7 +35,7 @@ import { getSelectedObjective } from 'packs/form_objective';
 import { quantityProducts } from 'packs/calorie';
 import { initBtnFinishSubmit } from 'packs/button';
 import { playsound } from 'packs/sound';
-import { Confetti } from 'packs/confeti';
+import { wtf } from 'packs/confeti';
 // import { Rain } from 'packs/rain';
 
 // Internal imports, e.g:
@@ -55,7 +55,7 @@ document.addEventListener('turbolinks:load', () => {
   initBtnFinishSubmit();
   cardSelection();
   playsound();
-  Confetti();
+  wtf();
 });
 
 //////////////////////////////////
