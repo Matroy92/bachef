@@ -7,16 +7,13 @@
 <div class="finish-body">
   <div class="result-container">
     <div class="message-container">
-      <% @score = if @calories < @game.calories %>
-        <% 100 - ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i%>
-      <%else%>
-        <% 100 + ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i%>
-      <%end%>
-      <% if (80..120).include? @score %>
-        <h3 class="light"> Ton jeu contient <strong class="win"><%=@calories%></strong> calories sur un objectif de <strong class="cal-obj"><%=@game.calories%></strong> soit un score de <strong class="win"><%=@score%></strong></h3>
+      <% @score = 100 - ((((@game.calories - @calories).to_f/@game.calories).to_f.abs)*100).to_i %>
+      <% if (80..100).include? @score %>
+        <h3 class="light"> Ton menu contient <strong class="win"><%=@calories%></strong> calories sur un objectif de <strong class="cal-obj"><%=@game.calories%></strong>.<br><br>Soit un score de <strong class="win"><%=@score%></strong> / 100</h3><br>
         <h1>Félicitations ! &#128540;</h1>
       <% else %>
-        <h3 class="light"> Ton jeu contient <strong class="fail"><%=@calories%></strong> calories sur un objectif de <strong class="cal-obj"><%=@game.calories%></strong> soit un score de <strong class="fail"><%=@score%></strong></h3>
+        <h3 class="light"> Ton menu contient <strong class="fail"><%=@calories%></strong> calories sur un objectif de <strong class="cal-obj"><%=@game.calories%></strong>.<br><br>Soit un score de <strong class="fail"><%=@score%></strong> / 100, obtiens un score d'au moins 80 pour gagner ! </h3><br>
+
         <h1>Bof bof... &#128556;</h1>
       <%end%>
       <div>
