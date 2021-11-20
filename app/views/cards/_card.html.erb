@@ -1,5 +1,5 @@
-    <% if card.title == "Truffe fraîche"%>
-      <div class="card-margin card card-column card-color" data-id="<%=card.id%>">
+    <% if card.title == "Homard"%>
+      <div class="card-margin card card-column card-<%= card.primary_color %>" data-id="<%=card.id%>">
       <%= image_tag "premium.png", height: 30, class: "card-image premium-place" %>
         <div class="column-1">
           <% if card.image_path %>
