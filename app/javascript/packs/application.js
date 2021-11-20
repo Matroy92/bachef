@@ -36,7 +36,6 @@ import { quantityProducts } from 'packs/calorie';
 import { initBtnFinishSubmit } from 'packs/button';
 import { playsound } from 'packs/sound';
 import { Confetti } from 'packs/confeti';
-// import { Rain } from 'packs/rain';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
