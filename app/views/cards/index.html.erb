@@ -9,14 +9,21 @@
           <div>
             <div class="d-flex flex-column p-3">
               <div class="d-flex justify-content-center">
-              <%= render  "cards/card", card: card%>
+                        <div class="d-flex justify-content-center mt-4">
+                <div class="card card-column card-<%= card.primary_color %>" data-id="<%=card.id%>">
+                  <div class="column-1">
+                    <%= image_tag card.image_path, height: 30, class: "card-image" %>
+                  </div>
+                  <p class="card__title column-2 card-title"><%=card.title%></p>
+                </div>
+            </div>
               </div>
                   <%# <h5 class="card-title-shop ml-2"><%= card.title %>
                 <p class="category-card"><%= card.category %></p>
                   <div class="card-price">
                     <p class="card-price-shop ml-2">Total : <%= humanized_money(card.price)%> €</p>
                     <%= form_tag orders_path do %>
-                    <%= hidden_field_tag 'card_id', card.id %> 
+                    <%= hidden_field_tag 'card_id', card.id %>
                     <%= submit_tag 'Acheter', class: 'btn-shop' %>
                     <% end %>
                   </div>
@@ -27,4 +34,3 @@
     </div>
   </div>
 </div>
-
