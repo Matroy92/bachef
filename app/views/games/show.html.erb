@@ -10,7 +10,7 @@
             <h6 class="card-green-1">Fruits & Légumes</h6>
             <div class="btn-sticky-2 cards_column color-border">
             <div class="cards-pad droppable" id="veggies">
-              <% @cards.select {|card| card.category == "Fruits & Légumes"}.each do |card| %>
+              <% @cards.select {|card| card.category == "Fruits & Légumes"}.sort_by(&:title).each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-veggies" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
             </div>
@@ -25,7 +25,7 @@
               <% @cards.select {|card| card.title == "Homard"}.each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
-              <% @cards.select {|card| card.category == "Viande & Fruits de mer" && card.title != "Homard"}.each do |card| %>
+              <% @cards.select {|card| card.category == "Viande & Fruits de mer" && card.title != "Homard"}.sort_by(&:title).each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
             </div>
@@ -36,7 +36,7 @@
               <h6 class="card-orange-1">Accompagnements</h6>
               <div class="btn-sticky-2 cards_column color-border-2">
               <div class="cards-pad droppable" id="sides">
-                <% @cards.select {|card| card.category == "Accompagnement"}.each do |card| %>
+                <% @cards.select {|card| card.category == "Accompagnement"}.sort_by(&:title).each do |card| %>
                   <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-sides" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
                 <% end %>
               </div>
@@ -46,7 +46,7 @@
               <h6 class="card-red-1">Desserts</h6>
               <div class="btn-sticky-2 cards_column color-border-3">
               <div class="cards-pad droppable" id="desserts">
-                <% @cards.select {|card| card.category == "Dessert"}.each do |card| %>
+                <% @cards.select {|card| card.category == "Dessert"}.sort_by(&:title).each do |card| %>
                   <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-desserts" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
                 <% end %>
               </div>
