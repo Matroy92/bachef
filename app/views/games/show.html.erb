@@ -2,10 +2,9 @@
 <div id="container-show">
   <br>
   <h1 class="show-title" style="text-align: center">À toi de jouer !</h1>
-  <div class="one btn-sticky-2">
+  <div class="btn-sticky-2">
     <h4 class="show-title mb-4" style="text-align: center">Tu peux <em>drag & drop</em> les ingrédients pour les ajouter à ton repas.</h4>
     <div class="mt-4 container">
-      <div class="row">
         <div class="cards">
         <% if @game.objective != "Gras"%>
           <div class="one">
@@ -58,7 +57,7 @@
             <div>
               <%= image_tag "panier.gif", class: "image_tag_3"%>
             </div>
-            <div>
+            <div class="btn-sticky">
               <h6 class="card-panier-1">Mon panier</h6>
               <div class="card_checklist justify-content-center droppable color-border-4"></div>
                 <%= simple_form_for @game, url: finish_game_path, method: :post do |f| %>
@@ -68,7 +67,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
   <audio id="sound" loop>

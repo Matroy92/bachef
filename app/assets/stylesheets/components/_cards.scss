@@ -75,7 +75,7 @@
 
 .card_checklist {
   margin: 5px;
-  padding: 5px;
+  padding: 36px;
   width: 250px;
   height: 400px;
   background: linear-gradient(300deg, #412fa525, #6547f925);
@@ -120,11 +120,6 @@
 
 
 
-.row {
-  margin-left: -100px;
-}
-
-
 
 .drag-over {
     border: dashed 3px grey;
@@ -164,7 +159,7 @@
     // margin: 10px;
     margin-bottom: 20px;
     padding: 5px;
-    width: 200px;
+    width: 170px;
     height: 70px;
     display: grid;
     border-radius: 10px;
@@ -356,4 +351,30 @@ background: linear-gradient(#60efbc, #58d5c9);
   position: absolute;
   top: -8px;
   right: -8px;
+}
+
+
+
+///////////////////////////
+.light-grey {
+  color: #000!important;
+  background-color: #f1f1f1!important;
+}
+
+.round-xlarge {
+  border-radius: 16px;
+}
+
+.blue, .hover-blue:hover {
+  color: #fff!important;
+  background-color: #2196F3!important;
+}
+
+.container, .panel {
+  padding: 0.01em
+  16px;
+}
+
+.round-large {
+  border-radius: 8px;
 }
