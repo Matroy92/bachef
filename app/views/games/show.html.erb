@@ -20,8 +20,8 @@
       <% end %>
         <% unless ['Végétarien', 'Vegan'].include?(@game.objective) %>
         <div class="two">
-            <h6 class="card-blue-1">Viandes & Fruits de mer</h6>
-            <div class="btn-sticky-2 cards_column color-border-1">
+          <h6 class="card-blue-1">Viandes & Fruits de mer</h6>
+          <div class="btn-sticky-2 cards_column color-border-1">
             <div class="cards-pad droppable" id="viandes">
               <% @cards.select {|card| card.title == "Homard"}.each do |card| %>
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
@@ -30,19 +30,9 @@
                 <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
               <% end %>
             </div>
-        <% end %>
-          <% unless ['Végétarien', 'Vegan'].include?(@game.objective) %>
-          <div class="two">
-              <h6 class="card-blue-1">Viandes & Fruits de mer</h6>
-              <div class=" cards_column color-border-1">
-              <div class="cards-pad droppable" id="viandes">
-                <% @cards.select {|card| card.category == "Viande & Fruits de mer"}.each do |card| %>
-                  <div class="draggable" draggable="true" id="card-<%=card.id%>" data-category="card-viandes" data-id="<%=card.id%>"><%= render "cards/card", card: card%></div>
-                <% end %>
-              </div>
-            </div>
           </div>
-          <% end %>
+        </div>    
+        <% end %>
           <div class="three">
               <h6 class="card-orange-1">Accompagnements</h6>
               <div class=" cards_column color-border-2">
