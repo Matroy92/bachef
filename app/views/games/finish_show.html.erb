@@ -1,8 +1,7 @@
+
 <% result = @calories - @game.calories %>
   <% if (-100..100).include? result %>
   <canvas id="canvas"></canvas>
-  <% else %>
-  <html style='filter: grayscale(70%)'></html>
   <% end %>
 <div class="finish-body">
   <div class="result-container">
