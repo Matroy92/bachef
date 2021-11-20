@@ -117,7 +117,7 @@ class GamesController < ApplicationController
           texts = element.search(".RCP__sc-1418ayg-1.dbYbAl")
          #puts "\n\n\n#{element.text.strip}\n\n\n"
          #puts element.text.strip
-          texts.each_with_index do |text,  id|
+          texts.each_with_index do |text, id|
              @recipes[index][:duration] = text.children.text if id == 0
              @recipes[index][:difficulty] =  text.children.text if id == 1
              @recipes[index][:price] = text.children.text if id == 2
