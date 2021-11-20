@@ -14,7 +14,8 @@
                 <p class="p-dashboard"><%= game.recipe_content %></p>
                 <p class="p-dashboard"><%= game.objective %> / <span id="obj-dashboard">Objectif : <%= game.calories %> calories</span></p>
                 <span class="dashboard-style">Mon résultat : <%= game.score %> calories <% if (-100..100).include? game.score - game.calories %>😁 <% else %> 😢<%end%></span>
-                <p class="p-dashboard">Score : <% @score%></p>
+                <% @score = 100 - ((((game.calories - game.score).to_f/game.calories).to_f.abs)*100).to_i %>
+                <p class="p-dashboard">Score : <%= @score %></p>
             </div>
             <div class="card-result">
                 <% game.cards.each do |card| %>
